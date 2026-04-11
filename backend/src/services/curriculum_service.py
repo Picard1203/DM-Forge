@@ -5,7 +5,7 @@ from typing import List, Optional
 from src.models.curriculum import Module, Task
 from src.repositories.abstract.module_repository import AbstractModuleRepository
 from src.repositories.abstract.task_repository import AbstractTaskRepository
-from src.utils.exceptions import ResourceNotFoundError
+from src.utils.exceptions import ModuleNotFoundError
 
 
 class CurriculumService:
@@ -30,55 +30,44 @@ class CurriculumService:
         self._module_repository = module_repository
         self._task_repository = task_repository
 
-    async def list_modules(self) -> List[Module]:
-        """Return all modules ordered by their order field.
+    async def get_all_modules(self) -> List[Module]:
+        """Return all modules ordered by their order field ascending.
 
         Returns:
-            List[Module]: Ordered list of Module documents.
+            (List[Module]): Ordered list of Module documents.
         """
-        return await self._module_repository.get_ordered()
+        return await self._module_repository.get_all()
 
-    async def get_module(self, module_id: str) -> Module:
-        """Fetch a single module by ID.
+    async def get_module_by_slug(self, slug: str) -> Module:
+        """Fetch a single module by its URL slug.
 
         Args:
-            module_id (str): The module's document ID.
+            slug (str): The URL-safe slug to search for.
 
         Returns:
-            Module: The matching Module document.
+            (Module): The matching Module document.
 
         Raises:
-            ResourceNotFoundError: If no module with that ID exists.
+            ModuleNotFoundError: If no module with that slug exists.
         """
-        module: Optional[Module] = await self._module_repository.get_by_id(module_id)
+        module: Optional[Module] = await self._module_repository.get_by_slug(slug)
         if module is None:
-            raise ResourceNotFoundError("Module")
+            raise ModuleNotFoundError()
         return module
 
-    async def get_module_tasks(self, module_id: str) -> List[Task]:
-        """Fetch all tasks for a module, ordered by order ascending.
+    async def get_tasks_for_module(self, slug: str) -> List[Task]:
+        """Fetch all tasks for a module identified by slug, ordered by order ascending.
 
         Args:
-            module_id (str): The parent module's document ID.
+            slug (str): The URL-safe slug of the parent module.
 
         Returns:
-            List[Task]: Ordered list of Task documents.
-        """
-        return await self._task_repository.get_by_module(module_id)
-
-    async def get_task(self, task_id: str) -> Task:
-        """Fetch a single task by ID.
-
-        Args:
-            task_id (str): The task's document ID.
-
-        Returns:
-            Task: The matching Task document.
+            (List[Task]): Ordered list of Task documents for the module.
 
         Raises:
-            ResourceNotFoundError: If no task with that ID exists.
+            ModuleNotFoundError: If no module with that slug exists.
         """
-        task: Optional[Task] = await self._task_repository.get_by_id(task_id)
-        if task is None:
-            raise ResourceNotFoundError("Task")
-        return task
+        module: Optional[Module] = await self._module_repository.get_by_slug(slug)
+        if module is None:
+            raise ModuleNotFoundError()
+        return await self._task_repository.get_by_module_id(str(module.id))

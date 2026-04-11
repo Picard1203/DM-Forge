@@ -1,38 +1,8 @@
 """Pydantic schemas for curriculum endpoints."""
 
-from typing import List, Optional
+from typing import Any, Dict, Optional
 
 from pydantic import BaseModel
-
-
-class TaskResponse(BaseModel):
-    """Serialised Task returned from curriculum endpoints.
-
-    Attributes:
-        id (str): MongoDB document ID.
-        module_id (str): Parent module ID.
-        slug (str): URL-safe identifier.
-        title (str): Display title.
-        task_type (str): Category of task.
-        content_url (Optional[str]): Optional external content URL.
-        description (str): Short task description.
-        order (int): Position within the module.
-        estimated_minutes (int): Approximate completion time.
-        xp_reward (int): XP awarded on completion.
-        tags (List[str]): List of category tags.
-    """
-
-    id: str
-    module_id: str
-    slug: str
-    title: str
-    task_type: str
-    content_url: Optional[str]
-    description: str
-    order: int
-    estimated_minutes: int
-    xp_reward: int
-    tags: List[str]
 
 
 class ModuleResponse(BaseModel):
@@ -44,9 +14,10 @@ class ModuleResponse(BaseModel):
         title (str): Display title.
         description (str): Module overview text.
         order (int): Position in the curriculum.
-        estimated_minutes (int): Total estimated completion time.
-        icon (Optional[str]): Optional display icon.
-        is_extension (bool): True if this is an extension module.
+        icon (Optional[str]): Optional display icon glyph.
+        is_extension (bool): True if this is an optional extension module.
+        estimated_hours (int): Approximate hours to complete the module.
+        xp_reward (int): Total XP awarded upon module completion.
     """
 
     id: str
@@ -54,16 +25,33 @@ class ModuleResponse(BaseModel):
     title: str
     description: str
     order: int
-    estimated_minutes: int
     icon: Optional[str]
     is_extension: bool
+    estimated_hours: int
+    xp_reward: int
 
 
-class ModuleDetailResponse(ModuleResponse):
-    """Extended module response including the task list.
+class TaskResponse(BaseModel):
+    """Serialised Task returned from curriculum endpoints.
 
     Attributes:
-        tasks (List[TaskResponse]): Ordered list of tasks.
+        id (str): MongoDB document ID.
+        slug (str): URL-safe identifier.
+        title (str): Display title.
+        description (str): Short task description.
+        order (int): Position within the parent module.
+        task_type (str): Category of activity (video, reading, exercise, etc.).
+        estimated_minutes (int): Approximate completion time in minutes.
+        xp_reward (int): XP awarded on completion.
+        content (Dict[str, Any]): Type-specific payload from the YAML definition.
     """
 
-    tasks: List[TaskResponse]
+    id: str
+    slug: str
+    title: str
+    description: str
+    order: int
+    task_type: str
+    estimated_minutes: int
+    xp_reward: int
+    content: Dict[str, Any]
