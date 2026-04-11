@@ -3,8 +3,9 @@
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from src.config import settings
 from src.database import init_db
@@ -62,6 +63,23 @@ def register_exception_handlers(application: FastAPI) -> None:
     Args:
         application (FastAPI): The FastAPI application instance to configure.
     """
+
+    @application.exception_handler(HTTPException)
+    async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+        """Handle all HTTPExceptions by returning a structured JSON response.
+
+        Args:
+            request (Request): The incoming HTTP request.
+            exc (HTTPException): The raised HTTP exception.
+
+        Returns:
+            JSONResponse: A formatted JSON response with the error detail.
+        """
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={"detail": exc.detail},
+            headers=exc.headers,
+        )
 
 
 def create_app() -> FastAPI:
