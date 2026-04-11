@@ -64,7 +64,7 @@ async def client() -> AsyncClient:
 async def mock_user() -> User:
     """Insert and return a pre-registered test user."""
     user = User(
-        email="hero@dmforge.test",
+        email="hero@dmforge.com",
         username="HeroUser",
         hashed_password=get_password_hash("Str0ngPass!"),
     )
@@ -77,7 +77,7 @@ async def auth_token(client: AsyncClient, mock_user: User) -> str:
     """Return a valid JWT for the mock user by calling the login endpoint."""
     response = await client.post(
         "/api/v1/auth/login",
-        json={"email": "hero@dmforge.test", "password": "Str0ngPass!"},
+        json={"email": "hero@dmforge.com", "password": "Str0ngPass!"},
     )
     assert response.status_code == 200
     return response.json()["access_token"]

@@ -10,7 +10,7 @@ async def test_register_success(client: AsyncClient) -> None:
     response = await client.post(
         "/api/v1/auth/register",
         json={
-            "email": "new@dmforge.test",
+            "email": "new@dmforge.com",
             "username": "NewUser",
             "password": "Str0ngPass!",
         },
@@ -27,7 +27,7 @@ async def test_register_duplicate_email(client: AsyncClient, mock_user) -> None:
     response = await client.post(
         "/api/v1/auth/register",
         json={
-            "email": "hero@dmforge.test",
+            "email": "hero@dmforge.com",
             "username": "AnotherUser",
             "password": "Str0ngPass!",
         },
@@ -42,7 +42,7 @@ async def test_register_duplicate_username(client: AsyncClient, mock_user) -> No
     response = await client.post(
         "/api/v1/auth/register",
         json={
-            "email": "different@dmforge.test",
+            "email": "different@dmforge.com",
             "username": "HeroUser",
             "password": "Str0ngPass!",
         },
@@ -56,7 +56,7 @@ async def test_login_success(client: AsyncClient, mock_user) -> None:
     """Login with correct credentials returns 200 + token."""
     response = await client.post(
         "/api/v1/auth/login",
-        json={"email": "hero@dmforge.test", "password": "Str0ngPass!"},
+        json={"email": "hero@dmforge.com", "password": "Str0ngPass!"},
     )
     assert response.status_code == 200
     body = response.json()
@@ -69,7 +69,7 @@ async def test_login_wrong_password(client: AsyncClient, mock_user) -> None:
     """Login with incorrect password returns 401 Unauthorized."""
     response = await client.post(
         "/api/v1/auth/login",
-        json={"email": "hero@dmforge.test", "password": "wrongpassword"},
+        json={"email": "hero@dmforge.com", "password": "wrongpassword"},
     )
     assert response.status_code == 401
 
@@ -79,7 +79,7 @@ async def test_login_nonexistent_user(client: AsyncClient) -> None:
     """Login with an unregistered email returns 401 Unauthorized."""
     response = await client.post(
         "/api/v1/auth/login",
-        json={"email": "ghost@dmforge.test", "password": "Str0ngPass!"},
+        json={"email": "ghost@dmforge.com", "password": "Str0ngPass!"},
     )
     assert response.status_code == 401
 
@@ -93,7 +93,7 @@ async def test_me_with_valid_token(client: AsyncClient, auth_token: str) -> None
     )
     assert response.status_code == 200
     body = response.json()
-    assert body["email"] == "hero@dmforge.test"
+    assert body["email"] == "hero@dmforge.com"
     assert body["username"] == "HeroUser"
 
 
