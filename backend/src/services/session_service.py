@@ -51,31 +51,28 @@ class SessionService:
                 already_done = await self._progress_service.is_task_complete(
                     user_id=user_id, task_id=str(task.id)
                 )
-                if already_done is True:
-                    continue
-                if task.estimated_minutes > remaining:
-                    continue
-                task_response = TaskResponse(
-                    id=str(task.id),
-                    module_id=task.module_id,
-                    slug=task.slug,
-                    title=task.title,
-                    task_type=task.task_type,
-                    content_url=task.content_url,
-                    description=task.description,
-                    order=task.order,
-                    estimated_minutes=task.estimated_minutes,
-                    xp_reward=task.xp_reward,
-                    tags=task.tags,
-                )
-                items.append(
-                    SessionTaskItem(
-                        task=task_response,
+                if already_done is False and task.estimated_minutes <= remaining:
+                    task_response = TaskResponse(
+                        id=str(task.id),
+                        module_id=task.module_id,
+                        slug=task.slug,
+                        title=task.title,
+                        task_type=task.task_type,
+                        content_url=task.content_url,
+                        description=task.description,
+                        order=task.order,
                         estimated_minutes=task.estimated_minutes,
+                        xp_reward=task.xp_reward,
+                        tags=task.tags,
                     )
-                )
-                remaining -= task.estimated_minutes
-                xp_potential += task.xp_reward
+                    items.append(
+                        SessionTaskItem(
+                            task=task_response,
+                            estimated_minutes=task.estimated_minutes,
+                        )
+                    )
+                    remaining -= task.estimated_minutes
+                    xp_potential += task.xp_reward
         return SessionPlanResponse(
             items=items,
             total_minutes=budget - remaining,
