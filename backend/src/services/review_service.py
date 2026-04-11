@@ -70,17 +70,16 @@ class ReviewService:
             card: Optional[SpacedRepCard] = await self._review_card_repository.get_by_id(
                 review.card_id
             )
-            if card is None:
-                continue
-            responses.append(
-                CardReviewResponse(
-                    review_id=str(review.id),
-                    card_id=str(card.id),
-                    front=card.front,
-                    back=card.back,
-                    module_id=card.module_id,
+            if card is not None:
+                responses.append(
+                    CardReviewResponse(
+                        review_id=str(review.id),
+                        card_id=str(card.id),
+                        front=card.front,
+                        back=card.back,
+                        module_id=card.module_id,
+                    )
                 )
-            )
         return responses
 
     async def submit_review(
