@@ -41,6 +41,8 @@ async def init_test_db():
     )
     yield
     await User.find_all().delete()
+    await Module.find_all().delete()
+    await Task.find_all().delete()
 
 
 def _override_auth_service() -> AuthService:
@@ -81,3 +83,61 @@ async def auth_token(client: AsyncClient, mock_user: User) -> str:
     )
     assert response.status_code == 200
     return response.json()["access_token"]
+
+
+@pytest_asyncio.fixture
+async def seeded_curriculum() -> dict:
+    """Insert two test modules with tasks and return them keyed by slug.
+
+    Returns:
+        (dict): Mapping of module slug to inserted Module document.
+    """
+    module_alpha = Module(
+        slug="rules-fundamentals",
+        title="Rules Fundamentals",
+        description="Core rules",
+        order=1,
+        estimated_hours=10,
+        xp_reward=500,
+        is_extension=False,
+    )
+    await module_alpha.insert()
+
+    module_beta = Module(
+        slug="narrative-tools",
+        title="Narrative Tools",
+        description="Storytelling techniques",
+        order=2,
+        estimated_hours=8,
+        xp_reward=400,
+        is_extension=False,
+    )
+    await module_beta.insert()
+
+    task_one = Task(
+        module_id=str(module_alpha.id),
+        slug="rf-intro-video",
+        title="Intro Video",
+        description="Watch the intro",
+        order=1,
+        task_type="video",
+        estimated_minutes=5,
+        xp_reward=15,
+        content={"youtube_url": "https://example.com/video1"},
+    )
+    await task_one.insert()
+
+    task_two = Task(
+        module_id=str(module_alpha.id),
+        slug="rf-reading-phb",
+        title="Read PHB p.4",
+        description="Opening pages",
+        order=2,
+        task_type="reading",
+        estimated_minutes=10,
+        xp_reward=20,
+        content={"book_title": "PHB", "page_start": 4, "page_end": 5},
+    )
+    await task_two.insert()
+
+    return {"rules-fundamentals": module_alpha, "narrative-tools": module_beta}
