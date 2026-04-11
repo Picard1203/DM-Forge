@@ -1,5 +1,7 @@
 """Quizzes router: quiz retrieval and answer submission endpoints."""
 
+from typing import List
+
 from fastapi import APIRouter, Depends
 
 from src.deps import get_current_user, get_quiz_service
@@ -27,7 +29,7 @@ async def get_quiz(
         QuizResponse: A QuizResponse with embedded questions.
     """
     quiz, questions = await quiz_service.get_quiz_with_questions(quiz_id)
-    question_responses: list[QuizQuestionResponse] = []
+    question_responses: List[QuizQuestionResponse] = []
     for question in questions:
         question_responses.append(
             QuizQuestionResponse(
