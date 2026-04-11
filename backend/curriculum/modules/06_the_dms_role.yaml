@@ -1,0 +1,129 @@
+# curriculum/modules/06_the_dms_role.yaml
+
+slug: the-dms-role
+title: "The DM's Role"
+description: "What a DM does. Session zero. Table rules. Safety tools. Player types. Sandbox vs. railroad. Improv basics. DMG Chapters 1 and 2."
+order: 6
+icon: crown
+is_extension: false
+estimated_hours: 7
+xp_reward: 400
+
+tasks:
+  - slug: dr-dmg-ch1-basics
+    title: "Read: DMG — Ch.1 The Basics: What Does a DM Do? + Things You Need + Preparing/Running a Session + Example of Play (p.4-12)"
+    description: "The DMG opens with what being a DM means. Includes a full example of play showing the conversation rhythm."
+    order: 1
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 4
+      page_end: 12
+      summary_hint: "Page 10 — Example of Play — is the most practical thing in the book for a new DM. It shows what running a game LOOKS like in conversation."
+
+  - slug: dr-dmg-every-dm-unique
+    title: "Read: DMG — Every DM is Unique + Ensuring Fun for All + Respect (p.13-19)"
+    description: "Different DM styles, mutual respect, player-DM social contract, ensuring everyone has fun, respect for players and for the DM."
+    order: 2
+    task_type: reading
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 13
+      page_end: 19
+      summary_hint: "Page 15 — Ensuring Fun for All — covers safety tools and table expectations. Essential reading before running for your unit."
+
+  - slug: dr-dmg-know-players
+    title: "Read: DMG — Ch.2 Running the Game: Know Your Players + Group Size + Narration (p.20-26)"
+    description: "Understanding player types, managing group size (directly relevant to your 9-player situation), and narration techniques."
+    order: 3
+    task_type: reading
+    estimated_minutes: 15
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 20
+      page_end: 26
+      summary_hint: "Page 23 — Group Size — directly addresses large groups. Page 25 — Multiple DMs — is worth knowing about for future reference."
+
+  - slug: dr-mercer-gm-tips
+    title: "Watch: Matt Mercer — GM Tips (First 4 Episodes)"
+    description: "Mercer's short-format DM advice: getting started, NPC creation, world building, handling the unexpected."
+    order: 4
+    task_type: video
+    estimated_minutes: 40
+    xp_reward: 35
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+mercer+gm+tips+geek+sundry+playlist"
+      channel_name: "Geek & Sundry"
+      duration_minutes: 40
+
+  - slug: dr-colville-player-types
+    title: "Watch: Matt Colville — Types of Players (Running the Game #11)"
+    description: "Power Gamers, Butt-Kickers, Tacticians, Actors, Storytellers, Casuals. Know your players."
+    order: 5
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+types+of+players"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: dr-colville-sandbox-railroad
+    title: "Watch: Matt Colville — Sandbox vs Railroad (Running the Game #12)"
+    description: "The spectrum between total player freedom and tightly plotted story. Where to aim."
+    order: 6
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+sandbox+railroad"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: dr-session-zero-video
+    title: "Watch: Bob World Builder — How to Run a Session Zero"
+    description: "Session zero: set expectations, agree on rules, discuss tone, make characters together."
+    order: 7
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=bob+world+builder+session+zero"
+      channel_name: "Bob World Builder"
+      duration_minutes: 15
+
+  - slug: dr-safety-tools
+    title: "Watch: Ginny Di — Safety Tools for D&D"
+    description: "X-card, lines & veils. Important for playing with people who don't know each other well."
+    order: 8
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=ginny+di+safety+tools+dnd"
+      channel_name: "Ginny Di"
+      duration_minutes: 12
+
+  - slug: dr-exercise-session-zero-plan
+    title: "Exercise: Draft Your Session Zero Agenda"
+    description: "Write an agenda for your unit: what D&D is, table rules, schedule, what you need from players, what they can expect from you."
+    order: 9
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 40
+    content:
+      instructions: "Write it as if presenting to your team leader for approval."
+
+  - slug: dr-quiz-dm-role
+    title: "Quiz: The DM's Role"
+    order: 10
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: dr-quiz-dm-role

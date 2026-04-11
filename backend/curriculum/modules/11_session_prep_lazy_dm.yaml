@@ -1,0 +1,107 @@
+# curriculum/modules/11_session_prep_lazy_dm.yaml
+slug: session-prep-lazy-dm
+title: "Session Prep & The Lazy DM"
+description: "The Lazy DM 8-step methodology applied to real session preparation. Minimal-prep approaches for your ADHD brain and soldier schedule. Note-taking during and after sessions. Improvisation when players go off-script."
+order: 11
+icon: clipboard-list
+is_extension: false
+estimated_hours: 6
+xp_reward: 400
+
+tasks:
+
+  - slug: sp-dmg-preparing-session
+    title: "Read: DMG — Preparing a Session + How to Run a Session (p.8-9)"
+    description: "The DMG's own concise advice on session prep and execution. Two pages that outline exactly what the designers think a DM should do before and during play."
+    order: 1
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 8
+      page_end: 9
+      summary_hint: "The DMG's prep advice is intentionally minimal: know the adventure, know the key NPCs, have the maps ready. Everything else is improvisation. The Lazy DM methodology expands on this with a concrete 8-step checklist."
+
+  - slug: sp-lazy-dm-audiobook
+    title: "Listen: Return of the Lazy Dungeon Master (Audible) — Chapters 1-3"
+    description: "The core philosophy and the 8-step checklist. Listen on your treadmill. This is THE book for DMs with limited prep time."
+    order: 2
+    task_type: podcast
+    estimated_minutes: 45
+    xp_reward: 40
+    content:
+      podcast_name: "Return of the Lazy Dungeon Master (Audiobook)"
+      episode_title: "Chapters 1-3: The Philosophy & The 8 Steps"
+      url: "https://www.audible.com/pd/Sly-Flourishs-Return-of-the-Lazy-Dungeon-Master-Audiobook/B07HBBG6R7"
+      duration_minutes: 45
+
+  - slug: sp-lazy-dm-chapters-4-6
+    title: "Listen: Return of the Lazy Dungeon Master — Chapters 4-6"
+    description: "Running your game, building encounters, and truths of the game. Continue on Audible."
+    order: 3
+    task_type: podcast
+    estimated_minutes: 45
+    xp_reward: 40
+    content:
+      podcast_name: "Return of the Lazy Dungeon Master (Audiobook)"
+      episode_title: "Chapters 4-6: Running, Building, Truths"
+      url: "https://www.audible.com/pd/Sly-Flourishs-Return-of-the-Lazy-Dungeon-Master-Audiobook/B07HBBG6R7"
+      duration_minutes: 45
+
+  - slug: sp-lazy-dm-finish
+    title: "Listen: Return of the Lazy Dungeon Master — Remaining Chapters"
+    description: "Finish the book. By the end you should have a complete understanding of the 8-step prep method."
+    order: 4
+    task_type: podcast
+    estimated_minutes: 40
+    xp_reward: 40
+    content:
+      podcast_name: "Return of the Lazy Dungeon Master (Audiobook)"
+      episode_title: "Remaining Chapters"
+      url: "https://www.audible.com/pd/Sly-Flourishs-Return-of-the-Lazy-Dungeon-Master-Audiobook/B07HBBG6R7"
+      duration_minutes: 40
+
+  - slug: sp-sly-flourish-free-doc
+    title: "Read: Sly Flourish's Lazy GM Resource Document (Free)"
+    description: "The free Creative Commons version of the 8 steps with examples. Bookmark this — you'll reference it every time you prep a session."
+    order: 5
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      book_title: "Lazy GM Resource Document (slyflourish.com)"
+      page_start: 0
+      page_end: 0
+      summary_hint: "Available free at slyflourish.com/lazy_gm_resource_document.html — read the 8 steps section with all the examples. Print this out for your DM binder."
+
+  - slug: sp-note-taking
+    title: "Watch: Bob World Builder — DM Note Taking Methods"
+    description: "How to take notes during and after sessions. What to write down, what to skip, how to organize notes for the next session."
+    order: 6
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=bob+world+builder+dm+note+taking+methods"
+      channel_name: "Bob World Builder"
+      duration_minutes: 15
+
+  - slug: sp-exercise-prep-session
+    title: "Exercise: Prep a Session Using the 8 Steps"
+    description: "Pick your starting village from the world building exercise. Prep a session using ALL 8 Lazy DM steps. Write it on a single page. This is your proof of concept."
+    order: 7
+    task_type: exercise
+    estimated_minutes: 30
+    xp_reward: 60
+    content:
+      instructions: "Use the village you built (Millhaven or your version). Fill in: 1) Review characters (use your pre-built Fighter and Wizard), 2) Strong start (what's happening when the session opens?), 3) Potential scenes (3-5 things that might happen), 4) Secrets and clues (5-10 pieces of information), 5) Fantastic locations (2-3 evocative places), 6) Important NPCs (3-5 from your NPC exercise), 7) Relevant monsters (from your encounter building exercise), 8) Treasure/magic items (one interesting reward). One page. That's it."
+
+  - slug: sp-quiz-session-prep
+    title: "Quiz: Session Prep"
+    order: 8
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: sp-quiz-session-prep

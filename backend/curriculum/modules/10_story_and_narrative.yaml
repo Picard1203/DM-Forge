@@ -1,0 +1,114 @@
+# curriculum/modules/10_story_and_narrative.yaml
+slug: story-and-narrative
+title: "Story & Narrative"
+description: "Story structure for D&D: hooks, rising action, climax, resolution. Player agency vs. DM narrative. Branching storylines. Villain arcs. Foreshadowing. Pacing. Descriptive narration. This is the craft that makes a game feel like a story worth telling."
+order: 10
+icon: book-text
+is_extension: false
+estimated_hours: 7
+xp_reward: 400
+
+tasks:
+
+  - slug: sn-dmg-narration
+    title: "Read: DMG — Ch.2 Narration (p.26)"
+    description: "A single focused page on the DM's voice as narrator: how to describe scenes, set tone, and transition between moments. Short but foundational."
+    order: 1
+    task_type: reading
+    estimated_minutes: 5
+    xp_reward: 10
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 26
+      page_end: 26
+      summary_hint: "Narration is the DM's primary tool. Your voice is the camera, the soundtrack, and the stage directions all at once. This page defines what that means in practice."
+
+  - slug: sn-dmg-adventures-chapter
+    title: "Read: DMG — Ch.4 Creating Adventures (p.104-125)"
+    description: "How to design adventures: adventure structure, encounter design as narrative beats, plot hooks, complications, climaxes, and resolutions. The 2024 DMG treats adventures as 'usable' — designed to be run, not just read."
+    order: 2
+    task_type: reading
+    estimated_minutes: 60
+    xp_reward: 40
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 104
+      page_end: 125
+      summary_hint: "An adventure is a story with a beginning (the hook), a middle (challenges and choices), and an end (climax and resolution). But unlike a novel, the players write the middle."
+
+  - slug: sn-colville-story-structure
+    title: "Watch: Matt Colville — Story Structure (Running the Game #16-17)"
+    description: "Colville covers narrative structure in D&D: the steady state world, the call to action, rising tension, and the climax. Uses Star Wars and Lord of the Rings as examples."
+    order: 3
+    task_type: video
+    estimated_minutes: 35
+    xp_reward: 30
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+story+structure"
+      channel_name: "Matthew Colville"
+      duration_minutes: 35
+
+  - slug: sn-player-agency
+    title: "Watch: Matt Colville — Player Agency"
+    description: "The most important concept in D&D storytelling: players must feel their choices matter. If the story goes the same way regardless of what players do, they'll check out — just like you did with BG3."
+    order: 4
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+player+agency+running+the+game"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: sn-descriptive-narration
+    title: "Watch: The DM Lair — Descriptive Narration Tips"
+    description: "How to describe scenes vividly: use all five senses, be specific, keep it brief. 'The tavern smells of wood smoke and spilled ale. A bard with a cracked lute plays in the corner. Three dwarves argue loudly over a card game.' That's three sentences and the players SEE the tavern."
+    order: 5
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dm+lair+descriptive+narration+tips"
+      channel_name: "The DM Lair"
+      duration_minutes: 12
+
+  - slug: sn-pacing
+    title: "Watch: Matt Colville — The Slog (Running the Game #32)"
+    description: "What happens when the game gets boring. How to recognize it, what causes it, and what to do. Sometimes it's not fixable and you just ride it out — that's normal."
+    order: 6
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+the+slog"
+      channel_name: "Matthew Colville"
+      duration_minutes: 15
+
+  - slug: sn-foreshadowing
+    title: "Exercise: Write 3 Foreshadowing Hooks"
+    description: "Foreshadowing makes later reveals feel earned. Write 3 small details you could drop into early sessions that pay off later."
+    order: 7
+    task_type: exercise
+    estimated_minutes: 15
+    xp_reward: 30
+    content:
+      instructions: "Example: 'The innkeeper has an unusual scar on his wrist — a brand mark.' This seems like flavor text, but 20 sessions later, the players discover it's the mark of a secret cult, and the innkeeper has been reporting their movements. Write 3 of these: a visual detail, a rumor an NPC mentions, and a strange object found in a dungeon."
+
+  - slug: sn-exercise-scene-descriptions
+    title: "Exercise: Write 5 Scene Descriptions"
+    description: "Practice descriptive narration. Write a 2-3 sentence description for each: (1) Entering a dark forest, (2) The moment before a boss fight, (3) A peaceful village at sunset, (4) A dungeon corridor with a trap, (5) An NPC revealing a betrayal."
+    order: 8
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 40
+    content:
+      instructions: "Use all senses. Be specific. Keep it under 3 sentences each. Read them out loud — if they sound natural spoken, they'll work at the table. This is the skill you said you want to develop. It develops by doing."
+
+  - slug: sn-quiz-narrative
+    title: "Quiz: Story & Narrative"
+    order: 9
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: sn-quiz-narrative

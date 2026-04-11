@@ -1,0 +1,81 @@
+# curriculum/modules/04_spells_and_magic.yaml
+
+slug: spells-and-magic
+title: "Spells & Magic"
+description: "Spell slots, preparation, concentration, ritual casting, spell schools, components, cantrips vs. leveled spells. PHB Chapter 7. You need this to run enemy spellcasters and adjudicate player magic."
+order: 4
+icon: sparkles
+is_extension: false
+estimated_hours: 8
+xp_reward: 450
+
+tasks:
+  - slug: sm-phb-gaining-spells
+    title: "Read: PHB — Ch.7 Gaining Spells + Casting Spells (p.234-238)"
+    description: "How spellcasting works: spell level vs. character level, gaining spells, spell slots, cantrips, preparing spells, casting time, range, components (V/S/M), duration, concentration, ritual casting, areas of effect."
+    order: 1
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 30
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 234
+      page_end: 238
+      summary_hint: "SPELL level (0-9) ≠ character level. A level 1 wizard has level 1 spell slots. A level 5 wizard unlocks level 3 spell slots. Cantrips (level 0) = free, unlimited."
+
+  - slug: sm-spell-slots-video
+    title: "Watch: Dungeon Dudes — Spell Slots Explained"
+    description: "Visual explanation of spell slots, refreshing, and upcasting."
+    order: 2
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dungeon+dudes+spell+slots+explained+5e"
+      channel_name: "Dungeon Dudes"
+      duration_minutes: 15
+
+  - slug: sm-concentration-deep
+    title: "Read: PHB — Concentration (within Ch.7 casting rules)"
+    description: "One concentration spell at a time. Taking damage = Con save (DC 10 or half damage, whichever higher). Casting another concentration spell = previous one drops."
+    order: 3
+    task_type: reading
+    estimated_minutes: 5
+    xp_reward: 15
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 236
+      page_end: 236
+      summary_hint: "As DM, ALWAYS track concentration. This is the #1 balance mechanism for powerful spells. If you forget it, casters dominate everything."
+
+  - slug: sm-phb-spell-descriptions
+    title: "Read: PHB — Key Spell Descriptions (p.239+, selected spells)"
+    description: "Read these specific spells: Fire Bolt, Sacred Flame, Eldritch Blast, Mage Hand, Prestidigitation, Healing Word, Shield, Magic Missile, Sleep, Cure Wounds, Hold Person, Misty Step, Spiritual Weapon, Fireball, Counterspell, Revivify, Spirit Guardians, Dimension Door, Polymorph."
+    order: 4
+    task_type: reading
+    estimated_minutes: 35
+    xp_reward: 35
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 239
+      page_end: 343
+      summary_hint: "You don't need to read all 400 spells. These ~20 are the ones that come up in almost every session. Know them cold."
+
+  - slug: sm-exercise-prepared-vs-known
+    title: "Exercise: Compare Prepared vs. Known Spellcasters"
+    description: "Write a paragraph explaining: how Wizard (prepared from spellbook) differs from Sorcerer (known spells, Metamagic) differs from Warlock (Pact Magic, short rest slots)."
+    order: 5
+    task_type: exercise
+    estimated_minutes: 15
+    xp_reward: 30
+    content:
+      instructions: "Prepared = flexible, change daily. Known = fixed, change on level-up. Pact Magic = few slots, recharge on short rest. Write it in your own words."
+
+  - slug: sm-quiz-spells
+    title: "Quiz: Spells & Magic"
+    order: 6
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: sm-quiz-spells

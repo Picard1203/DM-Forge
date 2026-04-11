@@ -1,0 +1,102 @@
+# curriculum/modules/05_combat_mastery.yaml
+
+slug: combat-mastery
+title: "Combat Mastery"
+description: "Running combat smoothly as a DM. This module goes deeper into the PHB combat rules and adds the DMG's combat running guidance. Initiative, attacks, positioning, opportunity attacks, cover, grappling, and most importantly — making combat FEEL exciting."
+order: 5
+icon: swords
+is_extension: false
+estimated_hours: 9
+xp_reward: 550
+
+tasks:
+  - slug: cm-colville-running-dungeon
+    title: "Watch: Matt Colville — Running Your First Dungeon (Running the Game #3)"
+    description: "Running combat with goblins. Initiative, surprise, making enemies fight smart, describing combat cinematically."
+    order: 1
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=jPRMDMclBfA"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: cm-dmg-running-combat
+    title: "Read: DMG — Ch.2 Running Combat: Rolling Initiative through Fight or Flight (p.42-49)"
+    description: "The DMG's combat guidance for DMs: tracking initiative, tracking HP, using and tracking conditions, miniatures, tracking position at long range, narration in combat, keeping combat moving, adjusting difficulty, morale."
+    order: 2
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 42
+      page_end: 49
+      summary_hint: "Page 46 — Narration in Combat — is gold. Page 47 — Keeping Combat Moving — solves the 'combat takes too long' problem. Read these twice."
+
+  - slug: cm-dmg-resolving-outcomes
+    title: "Read: DMG — Ch.2 Resolving Outcomes: Ability Checks, Attack Rolls, Saving Throws, DC, Advantage/Disadvantage, Consequences, Improvising Damage/Answers (p.27-31)"
+    description: "How to adjudicate rules as DM: setting DCs, when to call for rolls, improvising damage for falling chandeliers and exploding barrels, improvising answers when players do the unexpected."
+    order: 3
+    task_type: reading
+    estimated_minutes: 15
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 27
+      page_end: 31
+      summary_hint: "Improvising Damage table (p.30) is one of the most useful DM tools in the book. Player drops a chandelier on enemies? Look up the damage. Memorize this page exists."
+
+  - slug: cm-colville-tactics
+    title: "Watch: Matt Colville — Tactics (Running the Game #9)"
+    description: "Running monsters tactically. Goblins use hit-and-run. Wolves trip and swarm. Smart enemies target the healer."
+    order: 4
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+tactics"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: cm-dm-lair-combat
+    title: "Watch: The DM Lair — How to Run Combat Like a Pro"
+    description: "Pre-rolling initiative for monsters, tracking HP efficiently, describing attacks narratively, using a timer."
+    order: 5
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dm+lair+how+to+run+combat+like+a+pro"
+      channel_name: "The DM Lair"
+      duration_minutes: 15
+
+  - slug: cm-cr-study-combat
+    title: "Exercise: Study a Critical Role C2 Combat (Episodes 1-13)"
+    description: "Re-watch 10 minutes of any combat from C2 that you've seen. Watch HOW Mercer describes hits, misses, spells, and environment. Write 3 phrases you want to steal."
+    order: 6
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 30
+    content:
+      instructions: "Study, not entertainment. Notice his rhythm: describe action → pause → deliver result. Write down 3 descriptions you can adapt for your own table."
+
+  - slug: cm-exercise-mock-combat
+    title: "Exercise: Run a Solo Mock Combat"
+    description: "1 Fighter vs. 3 Goblins. Roll initiative. Run each turn. Track HP, movement, attacks. Practice narrating each attack. Physical dice and paper."
+    order: 7
+    task_type: exercise
+    estimated_minutes: 30
+    xp_reward: 50
+    content:
+      instructions: "Fighter: AC 16, HP 12, Attack +5, 1d8+3 (longsword). Goblin: AC 15, HP 7, Attack +4, 1d6+2 (scimitar). Goblins have Nimble Escape (bonus action Disengage). Run 3-4 rounds. Practice the flow."
+
+  - slug: cm-quiz-combat
+    title: "Quiz: Combat Mastery"
+    order: 8
+    task_type: quiz_ref
+    estimated_minutes: 10
+    xp_reward: 60
+    content:
+      quiz_slug: cm-quiz-combat

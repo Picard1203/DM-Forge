@@ -1,0 +1,44 @@
+slug: ext-campaign-launch
+title: "Campaign Launch Checklist"
+description: "Everything you need to successfully launch a multi-session campaign: world bible, social contract, and session one."
+order: 16
+estimated_minutes: 55
+icon: "🚀"
+is_extension: true
+
+tasks:
+  - slug: cl-world-bible
+    title: "Writing Your World Bible"
+    task_type: reading
+    description: "Capture the essential facts, tone, and rules of your setting in a living document."
+    order: 0
+    estimated_minutes: 12
+    xp_reward: 15
+    tags: [campaign, world-building]
+
+  - slug: cl-social-contract
+    title: "The Social Contract & Safety Tools"
+    task_type: reading
+    description: "X-Card, Lines & Veils, CATS framework — making the table safe for everyone."
+    order: 1
+    estimated_minutes: 10
+    xp_reward: 15
+    tags: [safety, social-contract]
+
+  - slug: cl-session-one
+    title: "Running a Killer Session One"
+    task_type: reading
+    description: "Hook characters together, establish tone, and end with a compelling question."
+    order: 2
+    estimated_minutes: 12
+    xp_reward: 15
+    tags: [session-one, campaign]
+
+  - slug: cl-quiz
+    title: "Campaign Launch Quiz"
+    task_type: quiz
+    description: "Test your campaign launch readiness."
+    order: 3
+    estimated_minutes: 10
+    xp_reward: 50
+    tags: [quiz, assessment]

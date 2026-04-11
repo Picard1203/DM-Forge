@@ -1,0 +1,119 @@
+# curriculum/modules/07_monsters_and_encounters.yaml
+
+slug: monsters-and-encounters
+title: "Monsters & Encounters"
+description: "The Monster Manual and DMG encounter building rules. Reading stat blocks, CR, action economy, legendary actions, encounter design. MM 'How to Use a Monster' (p.5-8) + DMG encounter guidance."
+order: 7
+icon: skull
+is_extension: false
+estimated_hours: 10
+xp_reward: 550
+
+tasks:
+  - slug: me-mm-how-to-use
+    title: "Read: MM — How to Use a Monster + Stat Block Overview + Monster Entries + Parts of a Stat Block + Running a Monster (p.5-9)"
+    description: "How stat blocks work: AC, HP, speed, abilities, saving throws, skills, resistances, immunities, senses, languages, CR, special traits, actions, legendary actions."
+    order: 1
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 30
+    content:
+      book_title: "Monster Manual (2025)"
+      page_start: 5
+      page_end: 9
+      summary_hint: "This is the instruction manual for every monster in the book. Read it before browsing any stat blocks."
+
+  - slug: me-cr-video
+    title: "Watch: Dungeon Dudes — Challenge Rating Explained"
+    description: "CR measures monster difficulty. CR 1 = fair for four level-1 characters. But CR is a guide, not gospel."
+    order: 2
+    task_type: video
+    estimated_minutes: 18
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dungeon+dudes+challenge+rating+explained+5e"
+      channel_name: "Dungeon Dudes"
+      duration_minutes: 18
+
+  - slug: me-dmg-encounter-building
+    title: "Read: DMG — Ch.4 Plan Encounters + Combat/Social/Exploration Encounters + Encounter Pace and Tension (p.112-120)"
+    description: "How to build encounters: XP budgets by difficulty, adjusted for party size and monster count. Action economy. Social and exploration encounters."
+    order: 3
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 112
+      page_end: 120
+      summary_hint: "Page 116 — Monster Behavior — teaches you to run monsters intelligently. Page 118 — Encounter Pace and Tension — solves pacing problems."
+
+  - slug: me-mm-browse-low-cr
+    title: "Read: MM — Browse Low-CR Monsters: Goblin (p.142-144), Kobold (p.185), Skeleton (p.282), Zombie (p.346), Wolf (p.335), Orc (p.195), Bugbear (p.62), Ogre (p.231)"
+    description: "These are your bread-and-butter monsters for early adventures. Read each stat block."
+    order: 4
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 25
+    content:
+      book_title: "Monster Manual (2025)"
+      page_start: 62
+      page_end: 346
+      summary_hint: "For each: What's its AC/HP? What attacks? Any special abilities? What's its Intelligence — does it fight smart or mindlessly?"
+
+  - slug: me-mm-iconic-monsters
+    title: "Read: MM — Iconic Monsters: Owlbear (p.234), Beholder (p.289 Spectator as intro), Mind Flayer (p.214), Dragon (pick one Adult Dragon entry)"
+    description: "The monsters players dream of fighting. Read at least one dragon entry to understand Legendary Actions and Lair Actions."
+    order: 5
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      book_title: "Monster Manual (2025)"
+      page_start: 214
+      page_end: 289
+      summary_hint: "Legendary Actions solve the action economy problem for boss fights. A dragon with 3 legendary actions per round effectively gets 4 turns versus the party's 4+."
+
+  - slug: me-mm-appendix-lists
+    title: "Read: MM — App. B Monster Lists: By Habitat, Creature Type, CR (p.374-382)"
+    description: "These lists are your quick-reference when building encounters. Need forest monsters? Check Monsters by Habitat. Need CR 2 monsters? Check Monsters by CR."
+    order: 6
+    task_type: reading
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      book_title: "Monster Manual (2025)"
+      page_start: 374
+      page_end: 382
+      summary_hint: "Bookmark these pages. When you need to build an encounter fast, these lists are your best friend."
+
+  - slug: me-action-economy-video
+    title: "Watch: The DM Lair — Action Economy in D&D"
+    description: "Why four goblins are more dangerous than one ogre. Action economy is the most important tactical concept."
+    order: 7
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dm+lair+action+economy+dnd"
+      channel_name: "The DM Lair"
+      duration_minutes: 12
+
+  - slug: me-exercise-build-encounters
+    title: "Exercise: Build Three Encounters at Different Difficulties"
+    description: "Using DMG rules + MM monsters, build Easy, Medium, and Hard encounters for 4 level-1 players. Write the monsters, HP, and tactics."
+    order: 8
+    task_type: exercise
+    estimated_minutes: 25
+    xp_reward: 50
+    content:
+      instructions: "Easy: 3 Goblins. Medium: 1 Bugbear + 2 Goblins. Hard: 1 Ogre + 4 Goblins. For each: where does the fight happen? How do the monsters fight?"
+
+  - slug: me-quiz-monsters
+    title: "Quiz: Monsters & Encounters"
+    order: 9
+    task_type: quiz_ref
+    estimated_minutes: 10
+    xp_reward: 60
+    content:
+      quiz_slug: me-quiz-monsters
