@@ -14,7 +14,7 @@ class AbstractModuleRepository(ABC):
         """Retrieve all modules sorted by display order.
 
         Returns:
-            (List[Module]): All Module documents ordered by their order field ascending.
+        List[Module]: All Module documents ordered by their order field ascending.
         """
         raise NotImplementedError
 
@@ -26,6 +26,6 @@ class AbstractModuleRepository(ABC):
             slug (str): The URL-safe slug to search for.
 
         Returns:
-            (Optional[Module]): The matching Module document, or None if not found.
+        Optional[Module]: The matching Module document, or None if not found.
         """
         raise NotImplementedError
