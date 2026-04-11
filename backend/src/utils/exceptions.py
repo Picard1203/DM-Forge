@@ -103,3 +103,35 @@ class ForbiddenError(HTTPException):
             status_code=status.HTTP_403_FORBIDDEN,
             detail="You do not have permission to access this resource.",
         )
+
+
+class ModuleNotFoundError(HTTPException):
+    """Raised when a requested curriculum module cannot be located.
+
+    Attributes:
+        status_code: HTTP 404 Not Found.
+
+    """
+
+    def __init__(self) -> None:
+        """Initialise with a fixed 404 status and descriptive detail."""
+        super().__init__(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Module not found.",
+        )
+
+
+class TaskNotFoundError(HTTPException):
+    """Raised when a requested curriculum task cannot be located.
+
+    Attributes:
+        status_code: HTTP 404 Not Found.
+
+    """
+
+    def __init__(self) -> None:
+        """Initialise with a fixed 404 status and descriptive detail."""
+        super().__init__(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Task not found.",
+        )
