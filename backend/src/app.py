@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 from src.config import settings
 from src.database import init_db
 from src.routers import achievements, auth, curriculum, progress, quizzes, review, sessions, users
+from src.seeders.seed_curriculum import seed_curriculum
 
 
 @asynccontextmanager
@@ -23,6 +24,7 @@ async def lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
         None: Control is yielded to the running application.
     """
     await init_db()
+    await seed_curriculum()
     yield
 
 
