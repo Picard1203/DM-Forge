@@ -2,8 +2,6 @@
 
 from typing import List, Optional
 
-from beanie import PydanticObjectId
-
 from src.models.curriculum import Module
 from src.repositories.abstract.module_repository import AbstractModuleRepository
 
@@ -12,63 +10,20 @@ class MongoModuleRepository(AbstractModuleRepository):
     """Concrete MongoDB repository for Module documents using Beanie ODM."""
 
     async def get_all(self) -> List[Module]:
-        """Fetch all modules, unordered.
+        """Retrieve all modules sorted by display order ascending.
 
         Returns:
-            List[Module]: List of all Module documents.
+            (List[Module]): All Module documents ordered by their order field.
         """
-        return await Module.find_all().to_list()
-
-    async def get_ordered(self) -> List[Module]:
-        """Fetch all modules sorted by order ascending.
-
-        Returns:
-            List[Module]: Ordered list of Module documents.
-        """
-        return await Module.find_all().sort(+Module.order).to_list()
-
-    async def get_by_id(self, module_id: str) -> Optional[Module]:
-        """Fetch a module by its document ID.
-
-        Args:
-            module_id (str): String representation of the MongoDB ObjectId.
-
-        Returns:
-            Optional[Module]: The matching Module document, or None if not found.
-        """
-        return await Module.get(PydanticObjectId(module_id))
+        return await Module.find_all().sort("+order").to_list()
 
     async def get_by_slug(self, slug: str) -> Optional[Module]:
-        """Fetch a module by its URL slug.
+        """Retrieve a single module by its URL slug.
 
         Args:
             slug (str): The URL-safe slug to search for.
 
         Returns:
-            Optional[Module]: The matching Module document, or None if not found.
+            (Optional[Module]): The matching Module document, or None if not found.
         """
         return await Module.find_one(Module.slug == slug)
-
-    async def create(self, module: Module) -> Module:
-        """Persist a new module document.
-
-        Args:
-            module (Module): The Module instance to insert.
-
-        Returns:
-            Module: The persisted Module document with its assigned ID.
-        """
-        await module.insert()
-        return module
-
-    async def update(self, module: Module) -> Module:
-        """Persist changes to an existing module document.
-
-        Args:
-            module (Module): The Module instance with updated fields.
-
-        Returns:
-            Module: The updated Module document.
-        """
-        await module.save()
-        return module
