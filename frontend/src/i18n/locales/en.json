@@ -1,0 +1,46 @@
+{
+  "auth": {
+    "login": "Log In",
+    "register": "Register",
+    "logout": "Log Out",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Submit",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "sign_up": "Sign up",
+    "sign_in": "Sign in"
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {{username}}",
+    "level": "Level {{level}}",
+    "xp": "{{xp}} XP",
+    "streak": "{{count}} day streak",
+    "title": "{{title}}"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "curriculum": "Curriculum",
+    "review": "Review",
+    "session": "Session",
+    "achievements": "Achievements",
+    "settings": "Settings"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "invalid_credentials": "Invalid email or password.",
+    "email_taken": "That email is already registered.",
+    "username_taken": "That username is already taken.",
+    "network": "Network error. Are you online?"
+  },
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "back": "Back",
+    "next": "Next",
+    "complete": "Complete",
+    "minutes": "{{count}} min"
+  }
+}
