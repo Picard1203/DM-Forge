@@ -1,0 +1,186 @@
+# curriculum/achievements.yaml
+
+achievements:
+  - slug: first-quest
+    title: "First Quest"
+    description: "Complete your first module"
+    icon: flag
+    trigger_type: module_complete
+    trigger_value: "1"
+    xp_reward: 100
+
+  - slug: rules-sage
+    title: "Rules Sage"
+    description: "Complete the Rules Fundamentals module"
+    icon: book-open
+    trigger_type: module_complete
+    trigger_value: "rules-fundamentals"
+    xp_reward: 150
+
+  - slug: character-smith
+    title: "Character Smith"
+    description: "Complete the Character Creation module"
+    icon: user-plus
+    trigger_type: module_complete
+    trigger_value: "character-creation"
+    xp_reward: 150
+
+  - slug: combat-veteran
+    title: "Combat Veteran"
+    description: "Complete the Combat Mastery module"
+    icon: swords
+    trigger_type: module_complete
+    trigger_value: "combat-mastery"
+    xp_reward: 150
+
+  - slug: monster-scholar
+    title: "Monster Scholar"
+    description: "Complete the Monsters & Encounters module"
+    icon: skull
+    trigger_type: module_complete
+    trigger_value: "monsters-and-encounters"
+    xp_reward: 150
+
+  - slug: voice-actor
+    title: "Voice Actor"
+    description: "Complete the NPC Design & Roleplay module"
+    icon: mic
+    trigger_type: module_complete
+    trigger_value: "npc-design-and-roleplay"
+    xp_reward: 150
+
+  - slug: world-shaper
+    title: "World Shaper"
+    description: "Complete the World Building module"
+    icon: globe
+    trigger_type: module_complete
+    trigger_value: "world-building"
+    xp_reward: 150
+
+  - slug: lazy-master
+    title: "Lazy Master"
+    description: "Complete the Session Prep & Lazy DM module"
+    icon: clipboard-list
+    trigger_type: module_complete
+    trigger_value: "session-prep-lazy-dm"
+    xp_reward: 150
+
+  - slug: tool-wielder
+    title: "Tool Wielder"
+    description: "Complete the Tools & Platforms module"
+    icon: wrench
+    trigger_type: module_complete
+    trigger_value: "tools-and-platforms"
+    xp_reward: 150
+
+  - slug: table-commander
+    title: "Table Commander"
+    description: "Complete the Running the Table module"
+    icon: layout-dashboard
+    trigger_type: module_complete
+    trigger_value: "running-the-table"
+    xp_reward: 150
+
+  - slug: half-way-there
+    title: "Halfway There"
+    description: "Complete 8 modules"
+    icon: milestone
+    trigger_type: module_complete
+    trigger_value: "8"
+    xp_reward: 200
+
+  - slug: core-complete
+    title: "Core Complete"
+    description: "Complete all 15 core modules"
+    icon: award
+    trigger_type: module_complete
+    trigger_value: "15"
+    xp_reward: 500
+
+  - slug: perfect-quiz
+    title: "Perfect Roll"
+    description: "Score 100% on any quiz"
+    icon: check-circle
+    trigger_type: quiz_perfect
+    trigger_value: "any"
+    xp_reward: 100
+
+  - slug: quiz-master
+    title: "Quiz Master"
+    description: "Score 100% on 5 different quizzes"
+    icon: brain
+    trigger_type: quiz_perfect
+    trigger_value: "5"
+    xp_reward: 250
+
+  - slug: three-day-streak
+    title: "Consistent Adventurer"
+    description: "Complete tasks 3 days in a row"
+    icon: flame
+    trigger_type: streak
+    trigger_value: "3"
+    xp_reward: 50
+
+  - slug: seven-day-streak
+    title: "Dedicated Scholar"
+    description: "Complete tasks 7 days in a row"
+    icon: flame
+    trigger_type: streak
+    trigger_value: "7"
+    xp_reward: 150
+
+  - slug: fourteen-day-streak
+    title: "Relentless"
+    description: "Complete tasks 14 days in a row"
+    icon: flame
+    trigger_type: streak
+    trigger_value: "14"
+    xp_reward: 300
+
+  - slug: first-blood
+    title: "First Blood"
+    description: "Complete 10 tasks total"
+    icon: zap
+    trigger_type: tasks_completed
+    trigger_value: "10"
+    xp_reward: 50
+
+  - slug: grinder
+    title: "Grinder"
+    description: "Complete 50 tasks total"
+    icon: zap
+    trigger_type: tasks_completed
+    trigger_value: "50"
+    xp_reward: 200
+
+  - slug: completionist
+    title: "Completionist"
+    description: "Complete 100 tasks total"
+    icon: zap
+    trigger_type: tasks_completed
+    trigger_value: "100"
+    xp_reward: 400
+
+  - slug: oneshot-ready
+    title: "One-Shot Ready"
+    description: "Complete the One-Shot Preparation extension module"
+    icon: target
+    trigger_type: module_complete
+    trigger_value: "oneshot-preparation"
+    xp_reward: 300
+
+  - slug: campaign-ready
+    title: "Campaign Ready"
+    description: "Complete the Campaign Launch extension module"
+    icon: rocket
+    trigger_type: module_complete
+    trigger_value: "campaign-launch"
+    xp_reward: 300
+
+  - slug: dm-ascendant
+    title: "DM Ascendant"
+    description: "Complete every module and extension. You are forged."
+    icon: crown
+    trigger_type: module_complete
+    trigger_value: "all"
+    xp_reward: 1000

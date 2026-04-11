@@ -1,0 +1,95 @@
+# curriculum/modules/12_magic_items_and_treasure.yaml
+slug: magic-items-and-treasure
+title: "Magic Items & Treasure"
+description: "Distributing loot: when, how much, what rarity. Reading the DMG magic item tables. Cursed items. Sentient items. Artifacts. Economy balance. Custom items that tell a story."
+order: 12
+icon: gem
+is_extension: false
+estimated_hours: 6
+xp_reward: 350
+
+tasks:
+
+  - slug: mt-dmg-treasure-overview
+    title: "Read: DMG — Ch.7 Treasure: Overview + Magic Item Categories + Rarity + Awarding Magic Items (p.212-218)"
+    description: "Chapter 7 of the 2024 DMG opens with treasure distribution philosophy, then moves into item categories, the rarity system (Common through Artifact), and guidelines for how many and how often to award magic items."
+    order: 1
+    task_type: reading
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 212
+      page_end: 218
+      summary_hint: "Rarity guides when items appear: Common/Uncommon at levels 1-4, Rare at 5-10, Very Rare at 11-16, Legendary at 17+. Don't give a Rare item to level 1 characters — it breaks the game."
+
+  - slug: mt-dmg-cursed-crafting-artifacts
+    title: "Read: DMG — Cursed Items + Crafting Magic Items + Artifacts (p.220-225)"
+    description: "Cursed items look beneficial but have hidden drawbacks. Crafting rules let players create their own items between adventures. Artifacts are unique legendary items with histories — one-of-a-kind story tools."
+    order: 2
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 220
+      page_end: 225
+      summary_hint: "Use cursed items sparingly and with purpose. A sword that makes the wielder increasingly aggressive over time is a great plot device. Random 'gotcha' cursed items just annoy players."
+
+  - slug: mt-dmg-sentient-items
+    title: "Read: DMG — Sentient Magic Items (p.226)"
+    description: "Sentient items have personalities, alignments, senses, and can communicate with their wielder. They can conflict with a character's choices and even attempt to dominate them. Incredible storytelling tools."
+    order: 3
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 226
+      page_end: 226
+      summary_hint: "A sentient weapon that disapproves of killing innocent creatures gives a fighter a constant moral tension without requiring a rule change. Personality creates more interesting problems than mechanics alone."
+
+  - slug: mt-dmg-magic-items-az
+    title: "Read: DMG — Magic Items A-Z: Browse Common through Rare (p.227-325)"
+    description: "Flip through and read items your players might actually find in early to mid levels. Know the classics: Bag of Holding, Cloak of Protection, +1 Weapons, Healing Potions, Boots of Speed, Rope of Climbing."
+    order: 4
+    task_type: reading
+    estimated_minutes: 40
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 227
+      page_end: 325
+      summary_hint: "As DM, magic items should be exciting discoveries, not shopping lists. 'You find a sword' is boring. 'You find a blade etched with runes that glow faintly blue in the presence of undead' is memorable — even if it's just a +1 longsword mechanically."
+
+  - slug: mt-dmg-random-tables
+    title: "Read: DMG — Treasure Random Tables (p.326-331)"
+    description: "The random treasure tables let you quickly generate loot for any encounter. Individual treasure (coins, gems, art objects) and hoard treasure (including magic items) by Challenge Rating tier."
+    order: 5
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 20
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 326
+      page_end: 331
+      summary_hint: "Bookmark these tables. When you don't know what treasure to give, roll here. A CR 1-4 hoard typically contains coins, a few gems, and one Uncommon magic item. That's the baseline for early levels."
+
+  - slug: mt-exercise-custom-item
+    title: "Exercise: Design a Custom Magic Item"
+    description: "Create a unique Uncommon magic item that ties into your village's story. Give it a name, description, mechanical effect, and a one-sentence backstory."
+    order: 6
+    task_type: exercise
+    estimated_minutes: 15
+    xp_reward: 35
+    content:
+      instructions: "Example: 'The Millhaven Lantern — a battered oil lantern that burns with a cold blue flame. Once per day, the wielder can cast Detect Evil and Good without using a spell slot. It was crafted by the village priestess Elara to ward against the creatures stealing the livestock.' Make yours tie into YOUR village."
+
+  - slug: mt-quiz-treasure
+    title: "Quiz: Magic Items & Treasure"
+    order: 7
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 40
+    content:
+      quiz_slug: mt-quiz-treasure

@@ -1,0 +1,114 @@
+# curriculum/modules/08_npc_design_and_roleplay.yaml
+slug: npc-design-and-roleplay
+title: "NPC Design & Roleplay"
+description: "Creating memorable NPCs: personality, motivation, secrets, voice. Roleplaying NPCs at the table. Running social encounters. Improvisation techniques. This is where your voice skills from Gollum to Gandalf become DM superpowers."
+order: 8
+icon: message-circle
+is_extension: false
+estimated_hours: 7
+xp_reward: 400
+
+tasks:
+
+  - slug: nr-colville-npcs
+    title: "Watch: Matt Colville — Making NPCs (Running the Game #5)"
+    description: "How to create NPCs that feel real: give them a want, a secret, and a personality quirk. That's it. Three things and they come alive."
+    order: 1
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+making+npcs"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: nr-mercer-npc-creation
+    title: "Watch: Matt Mercer — GM Tips: NPC Creation"
+    description: "Mercer's approach to NPCs: think about who they were before the players arrived, what they want, and how they express that through voice and mannerism."
+    order: 2
+    task_type: video
+    estimated_minutes: 10
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+mercer+gm+tips+npc+creation"
+      channel_name: "Geek & Sundry"
+      duration_minutes: 10
+
+  - slug: nr-ginny-di-voices
+    title: "Watch: Ginny Di — NPC Voice Tips for DMs"
+    description: "Practical voice techniques: changing pitch, pace, accent, vocabulary. You don't need to be a professional voice actor. Small changes make characters distinct."
+    order: 3
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=ginny+di+npc+voices+tips+dm"
+      channel_name: "Ginny Di"
+      duration_minutes: 15
+
+  - slug: nr-dmg-social-interaction
+    title: "Read: DMG — Running Social Interaction + Roleplaying + Attitude (p.32-33)"
+    description: "How social encounters work mechanically: NPC attitudes (friendly, indifferent, hostile) and how to shift them through roleplay and ability checks. When to use dice vs. pure roleplay."
+    order: 4
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 32
+      page_end: 33
+      summary_hint: "A common mistake: requiring Persuasion checks for everything. If the request is reasonable and the NPC is friendly, just say yes. Dice are for uncertain outcomes."
+
+  - slug: nr-dmg-nonplayer-characters
+    title: "Read: DMG — Nonplayer Characters (p.84-89)"
+    description: "The DMG's dedicated NPC section: stat blocks for generic NPCs, how to customize them, personality traits, ideals, bonds, and flaws. The mechanical foundation beneath the roleplay."
+    order: 5
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 84
+      page_end: 89
+      summary_hint: "Use the generic NPC stat blocks as a starting point — you don't need to build every NPC from scratch. A bandit captain is a bandit captain. Give them a name and a motivation and move on."
+
+  - slug: nr-villain-design
+    title: "Watch: Matt Colville — Villains (Running the Game #13 and #15)"
+    description: "Creating compelling villains. The 'hologram technique' — introduce the villain early, let players see their power before they can fight them. Retreating villains build long-term tension."
+    order: 6
+    task_type: video
+    estimated_minutes: 30
+    xp_reward: 30
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+villains"
+      channel_name: "Matthew Colville"
+      duration_minutes: 30
+
+  - slug: nr-exercise-create-npcs
+    title: "Exercise: Create 5 NPCs"
+    description: "Create 5 NPCs for a small town tavern setting. For each: name, species, occupation, one personality trait, one secret, one thing they want, and a brief voice description (e.g., 'speaks slowly with a deep voice, clears throat often')."
+    order: 7
+    task_type: exercise
+    estimated_minutes: 25
+    xp_reward: 50
+    content:
+      instructions: "1) The tavern keeper, 2) A shady merchant, 3) A retired soldier, 4) A young adventurer looking for a party, 5) A mysterious hooded figure. Make them feel like real people with real motivations, not quest dispensers."
+
+  - slug: nr-exercise-practice-voices
+    title: "Exercise: Practice 3 Distinct NPC Voices Out Loud"
+    description: "Pick 3 of the NPCs you created and actually speak as them out loud. Record yourself on your phone if comfortable. The goal is to make each voice immediately distinguishable from the others."
+    order: 8
+    task_type: exercise
+    estimated_minutes: 15
+    xp_reward: 40
+    content:
+      instructions: "Use your voice skills. The tavern keeper might sound like a gruff dwarf (think Gimli). The shady merchant might have a wheedling, high-pitched tone (think Gollum negotiating). The retired soldier speaks in short, clipped sentences. Practice switching between them."
+
+  - slug: nr-quiz-npc
+    title: "Quiz: NPC Design & Roleplay"
+    order: 9
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: nr-quiz-npc

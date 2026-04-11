@@ -1,0 +1,229 @@
+# curriculum/modules/01_rules_fundamentals.yaml
+
+slug: rules-fundamentals
+title: "Rules Fundamentals"
+description: "Core D&D 5e (2024) rules from the ground up. The d20, ability scores, checks, saves, actions, conditions, death, and resting. This is your foundation — everything else builds on this."
+order: 1
+icon: book-open
+is_extension: false
+estimated_hours: 10
+xp_reward: 500
+
+tasks:
+  - slug: rf-colville-intro
+    title: "Watch: Matt Colville — Running the Game (Introduction)"
+    description: "Colville's intro to the entire series — why you should DM, what to expect, and why it's the most fun you can have at a table."
+    order: 1
+    task_type: video
+    estimated_minutes: 2
+    xp_reward: 15
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=e-YZvLUXcR8"
+      channel_name: "Matthew Colville"
+      duration_minutes: 2
+
+  - slug: rf-welcome-colville
+    title: "Watch: Matt Colville — Your First Adventure (Running the Game #1)"
+    description: "The single best introduction to D&D from a DM's perspective. Colville walks through creating a simple adventure called The Delian Tomb. Just absorb the overview."
+    order: 2
+    task_type: video
+    estimated_minutes: 13
+    xp_reward: 30
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=zTD2RZz6mlo&t=13s"
+      channel_name: "Matthew Colville"
+      duration_minutes: 13
+
+  - slug: rf-phb-welcome
+    title: "Read: PHB — Welcome to Adventure + Using This Book (p.4-5)"
+    description: "The very opening of the book. What D&D is, who this book is for, how it's organized."
+    order: 3
+    task_type: reading
+    estimated_minutes: 5
+    xp_reward: 10
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 4
+      page_end: 5
+      summary_hint: "Quick orientation. Sets the stage for everything that follows."
+
+  - slug: rf-phb-playing-the-game-intro
+    title: "Read: PHB — Ch.1 Playing the Game: Player or DM? + Rhythm of Play + Dice (p.6-9)"
+    description: "The game loop: DM describes → players decide → dice resolve → DM narrates. The d20. Types of dice. What each die looks like."
+    order: 4
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 6
+      page_end: 9
+      summary_hint: "This is the heartbeat of D&D. Every single moment of play follows this loop. Internalize it."
+
+  - slug: rf-phb-ability-scores
+    title: "Read: PHB — The Six Abilities + D20 Tests + Ability Checks + Saving Throws (p.10-11)"
+    description: "The six ability scores (Str, Dex, Con, Int, Wis, Cha), how modifiers work, what a D20 Test is, ability checks vs. saving throws."
+    order: 5
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 20
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 10
+      page_end: 11
+      summary_hint: "Modifier = (score - 10) / 2 rounded down. 14 = +2. 8 = -1. This formula is the backbone of every roll in the game."
+
+  - slug: rf-ability-scores-video
+    title: "Watch: Dungeon Dudes — Ability Scores Explained"
+    description: "Visual reinforcement of what you just read. Seeing it explained differently helps it stick."
+    order: 6
+    task_type: video
+    estimated_minutes: 7
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=n102OyetelI"
+      channel_name: "Dungeon Dudes"
+      duration_minutes: 7
+
+  - slug: rf-phb-attack-rolls-advdis-prof
+    title: "Read: PHB — Attack Rolls + Advantage/Disadvantage + Proficiency (p.12-13)"
+    description: "How attack rolls work (d20 + mod + proficiency vs. AC). Advantage = roll 2d20 take higher. Disadvantage = take lower. Proficiency bonus by level."
+    order: 7
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 20
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 12
+      page_end: 13
+      summary_hint: "Proficiency: +2 at levels 1-4, +3 at 5-8, +4 at 9-12, +5 at 13-16, +6 at 17-20. Multiple advantages don't stack — one advantage + one disadvantage = straight roll."
+
+  - slug: rf-quiz-ability-scores
+    title: "Quiz: Ability Scores, Modifiers & D20 Tests"
+    order: 8
+    task_type: quiz_ref
+    estimated_minutes: 5
+    xp_reward: 40
+    content:
+      quiz_slug: rf-quiz-ability-scores
+
+  - slug: rf-phb-actions
+    title: "Read: PHB — Actions + Bonus Actions + Reactions (p.15-16)"
+    description: "The action economy. On your turn: move + one action + potentially one bonus action. Reactions happen on others' turns. Key actions: Attack, Cast a Spell, Dash, Disengage, Dodge, Help, Hide, Ready, Search, Utilize."
+    order: 9
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 20
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 15
+      page_end: 16
+      summary_hint: "This is the most fundamental combat concept. Each action type does something specific. Know all of them."
+
+  - slug: rf-phb-social-interaction
+    title: "Read: PHB — Social Interaction (p.16-18)"
+    description: "How non-combat interactions work: Persuasion, Deception, Intimidation, Insight. When to roll and when roleplay alone is enough."
+    order: 10
+    task_type: reading
+    estimated_minutes: 8
+    xp_reward: 15
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 16
+      page_end: 18
+      summary_hint: "As DM: not every conversation needs a dice roll. If the request is reasonable and the NPC is friendly, just say yes."
+
+  - slug: rf-phb-exploration
+    title: "Read: PHB — Exploration: Vision and Light, Hiding, Interacting with Objects, Hazards, Travel (p.19-22)"
+    description: "Darkvision, dim light, darkness, hiding rules, object interaction, hazards, travel pace."
+    order: 11
+    task_type: reading
+    estimated_minutes: 12
+    xp_reward: 15
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 19
+      page_end: 22
+      summary_hint: "Darkvision doesn't let you see in total darkness as if it's bright light — it treats darkness as dim light (disadvantage on Perception). New DMs get this wrong constantly."
+
+  - slug: rf-phb-combat
+    title: "Read: PHB — Combat: Order of Combat, Movement and Position, Making an Attack (p.23-27)"
+    description: "Initiative, turn order, movement, making attacks (melee, ranged), mounted combat, underwater combat, damage and healing, hit points, damage rolls, critical hits."
+    order: 12
+    task_type: reading
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 23
+      page_end: 27
+      summary_hint: "Combat sequence: 1) Establish positions, 2) Roll initiative (d20 + Dex mod), 3) Take turns in initiative order, 4) Repeat until combat ends. On each turn: move + action."
+
+  - slug: rf-phb-damage-healing-death
+    title: "Read: PHB — Saving Throws and Damage, Damage Types, Resistance/Vulnerability/Immunity, Healing, Dropping to 0 HP, Temporary HP (p.27-29)"
+    description: "Damage types (fire, cold, etc.), resistance (half damage), vulnerability (double damage), immunity (no damage). What happens at 0 HP: death saving throws. Natural 20 = regain 1 HP, natural 1 = two failures."
+    order: 13
+    task_type: reading
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 27
+      page_end: 29
+      summary_hint: "Death saves: d20, 10+ = success, 9 or below = failure. Three successes = stabilize. Three failures = dead. As DM: let the table feel the weight of each death save roll."
+
+  - slug: rf-phb-conditions
+    title: "Read: PHB — Conditions (App. C Rules Glossary, p.360+)"
+    description: "All conditions: Blinded, Charmed, Deafened, Exhaustion, Frightened, Grappled, Incapacitated, Invisible, Paralyzed, Petrified, Poisoned, Prone, Restrained, Stunned, Unconscious. In the Rules Glossary at the back."
+    order: 14
+    task_type: reading
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 360
+      page_end: 378
+      summary_hint: "Don't memorize all — know the common ones: Prone, Frightened, Grappled, Stunned, Poisoned, Unconscious. Skim the rest so you know where to look them up fast."
+
+  - slug: rf-conditions-video
+    title: "Watch: XP to Level 3 — The Rule that Grinds My Gears"
+    description: "Fun, visual breakdown of conditions."
+    order: 15
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=w_6fHrOUoXM"
+      channel_name: "XP to Level 3"
+      duration_minutes: 12
+
+  - slug: rf-quiz-core-rules
+    title: "Quiz: Core Rules Comprehensive"
+    order: 16
+    task_type: quiz_ref
+    estimated_minutes: 10
+    xp_reward: 60
+    content:
+      quiz_slug: rf-quiz-core-rules
+
+  - slug: rf-colville-first-session
+    title: "Watch: Matt Colville — Your First Session (Running the Game #2)"
+    description: "How to actually start a session. Starting at a tavern, introducing NPCs, plot hooks. Watch with DM eyes."
+    order: 17
+    task_type: video
+    estimated_minutes: 20
+    xp_reward: 30
+    content:
+      youtube_url: "https://www.youtube.com/watch?v=zTD2RZz6mlo"
+      channel_name: "Matthew Colville"
+      duration_minutes: 20
+
+  - slug: rf-exercise-explain-rules
+    title: "Exercise: Explain the Rules to an Imaginary Player"
+    description: "Without looking at the book, explain: (1) What are ability scores? (2) How does an attack roll work? (3) What happens at 0 HP? (4) What's advantage? Write it out. If you get stuck, you know what to review."
+    order: 18
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 40
+    content:
+      instructions: "Write it as if teaching a friend. Simple language. If you can explain it, you understand it."

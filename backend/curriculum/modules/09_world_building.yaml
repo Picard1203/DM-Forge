@@ -1,0 +1,118 @@
+# curriculum/modules/09_world_building.yaml
+slug: world-building
+title: "World Building"
+description: "Creating a setting: geography, factions, history, religion, economy. Starting small and expanding. Using existing settings vs. homebrew. Maps. This is where your storytelling passion from the Inheritance Cycle and Tolkien meets DM craft."
+order: 9
+icon: globe
+is_extension: false
+estimated_hours: 9
+xp_reward: 500
+
+tasks:
+
+  - slug: wb-dmg-campaign-setting
+    title: "Read: DMG — Ch.5 Creating Campaigns: Campaign Setting + Campaign Start (p.136-137)"
+    description: "The 2024 DMG Chapter 5 opens with the philosophy of building your own campaign setting and how to start your first campaign. Two focused pages that answer: where do you begin?"
+    order: 1
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 136
+      page_end: 137
+      summary_hint: "Start small: one village, one quest, one dungeon. Expand as needed. You don't need a full world map before session 1. You need 3 NPCs, 1 tavern, and 1 problem."
+
+  - slug: wb-dmg-greyhawk
+    title: "Read: DMG — Greyhawk Setting (p.143-171)"
+    description: "The 2024 DMG includes Greyhawk as its full example campaign setting. Even if you don't use Greyhawk, study HOW it's presented: what details they provide, what they leave open, how factions and locations connect."
+    order: 2
+    task_type: reading
+    estimated_minutes: 60
+    xp_reward: 40
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 143
+      page_end: 171
+      summary_hint: "Greyhawk shows you the template: a regional map, key locations with 1-2 sentence descriptions, major factions, important NPCs, and adventure hooks. You can build your own setting following this exact pattern."
+
+  - slug: wb-colville-worldbuilding
+    title: "Watch: Matt Colville — World Building (Running the Game #7-8)"
+    description: "Colville's approach: build from the ground up. Start with where the players are. What's the nearest town? Who runs it? What's the problem? Expand from there as the players explore."
+    order: 3
+    task_type: video
+    estimated_minutes: 35
+    xp_reward: 30
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+world+building"
+      channel_name: "Matthew Colville"
+      duration_minutes: 35
+
+  - slug: wb-factions
+    title: "Watch: Bob World Builder — Creating Factions"
+    description: "Factions give your world depth and conflict. A thieves' guild, a noble house, a church, a mercenary company — each with goals that intersect and conflict. Players can ally with, oppose, or play factions against each other."
+    order: 4
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=bob+world+builder+creating+factions+dnd"
+      channel_name: "Bob World Builder"
+      duration_minutes: 15
+
+  - slug: wb-map-tools
+    title: "Tool Exploration: Inkarnate (Free Tier)"
+    description: "Create a free account on Inkarnate (inkarnate.com) and make a simple regional map. Include: one town, one forest, one mountain, one dungeon entrance, and one road connecting them."
+    order: 5
+    task_type: tool_exploration
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      tool_name: "Inkarnate"
+      url: "https://inkarnate.com"
+      instructions: "Sign up for free. Choose 'Regional Map' style. Place terrain, add a town icon, label it, draw a road. Export as image. This is your first campaign map. It doesn't need to be pretty — it needs to be functional."
+
+  - slug: wb-dmg-cosmology
+    title: "Read: DMG — Ch.6 Cosmology (p.172-180)"
+    description: "The planes of existence: Material Plane, Shadowfell, Feywild, Outer Planes. Religion in D&D: gods, domains, and how divine magic ties to worship. Clerics and Paladins need to know who they serve and where power comes from."
+    order: 6
+    task_type: reading
+    estimated_minutes: 30
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 172
+      page_end: 180
+      summary_hint: "For your first game: use a generic pantheon or tell players 'pick a god that fits your character concept and we'll define it together.' Don't over-plan religion unless your story needs it."
+
+  - slug: wb-dmg-lore-glossary
+    title: "Read: DMG — Appendix A: Lore Glossary (p.354-364)"
+    description: "The 2024 DMG lore glossary covers famous D&D settings, characters, and locations: Forgotten Realms, Greyhawk, Dragonlance, Eberron, Ravenloft, etc. Know what exists so you can choose to use it or be inspired by it."
+    order: 7
+    task_type: reading
+    estimated_minutes: 35
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 354
+      page_end: 364
+      summary_hint: "You don't need to use an existing setting. But knowing about Forgotten Realms (high fantasy kitchen sink), Ravenloft (gothic horror), and Eberron (noir/magitech) gives you templates and inspiration."
+
+  - slug: wb-exercise-build-village
+    title: "Exercise: Build a Starting Village"
+    description: "Create a starting village for an adventure. Include: village name, population (~200), 3 important locations (tavern, temple, market), 3 key NPCs, one current problem, and one secret."
+    order: 8
+    task_type: exercise
+    estimated_minutes: 30
+    xp_reward: 50
+    content:
+      instructions: "Example: Millhaven, pop ~200. Locations: The Broken Barrel (tavern), Shrine of Pelor (temple, tended by an elderly priestess), Old Marketplace (weekly market, currently closed due to 'the problem'). NPCs: Tavern keeper Bren, Priestess Elara, Mayor Aldric. Problem: livestock disappearing at night. Secret: the mayor's son is selling livestock to a goblin tribe in exchange for protection."
+
+  - slug: wb-quiz-worldbuilding
+    title: "Quiz: World Building"
+    order: 9
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: wb-quiz-worldbuilding

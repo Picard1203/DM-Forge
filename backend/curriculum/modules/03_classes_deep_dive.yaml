@@ -1,0 +1,118 @@
+# curriculum/modules/03_classes_deep_dive.yaml
+
+slug: classes-deep-dive
+title: "Classes Deep Dive"
+description: "All 12 classes and their subclasses from PHB Ch.3. What each class does, how it plays, what role it fills. You need this to help players choose and to understand what your party can do."
+order: 3
+icon: users
+is_extension: false
+estimated_hours: 12
+xp_reward: 600
+
+tasks:
+  - slug: cd-barbarian-fighter
+    title: "Read: PHB — Barbarian (p.50-57) + Fighter (p.90-98)"
+    description: "The two frontline martial classes. Barbarian: Rage, reckless attack, unarmored defense. Subclasses: Berserker, Wild Heart, World Tree, Zealot. Fighter: Action Surge, Extra Attack, most ASIs. Subclasses: Battle Master, Champion, Eldritch Knight, Psi Warrior."
+    order: 1
+    task_type: reading
+    estimated_minutes: 30
+    xp_reward: 30
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 50
+      page_end: 98
+      summary_hint: "Champion Fighter is the simplest subclass in the game — great for beginners. Battle Master is the most tactical. Recommend one of these to your first-time players who want to hit things."
+
+  - slug: cd-monk-rogue
+    title: "Read: PHB — Monk (p.100-107) + Rogue (p.128-137)"
+    description: "Monk: martial arts, ki/discipline points, Flurry of Blows, Stunning Strike. Subclasses: Mercy, Shadow, Elements, Open Hand. Rogue: Sneak Attack, Expertise, Cunning Action. Subclasses: Arcane Trickster, Assassin, Soulknife, Thief."
+    order: 2
+    task_type: reading
+    estimated_minutes: 30
+    xp_reward: 30
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 100
+      page_end: 137
+      summary_hint: "Rogue's Sneak Attack is the #1 rule new DMs get wrong. It triggers once per TURN (not round), when the rogue has advantage OR an ally is within 5 feet of the target."
+
+  - slug: cd-cleric-druid-paladin-ranger
+    title: "Read: PHB — Cleric (p.68-77) + Druid (p.78-88) + Paladin (p.108-116) + Ranger (p.118-127)"
+    description: "The divine and nature casters + half-casters. Cleric: domains (Life, Light, Trickery, War). Druid: Wild Shape, circles. Paladin: Divine Smite, oaths. Ranger: favored enemy, subclasses."
+    order: 3
+    task_type: reading
+    estimated_minutes: 45
+    xp_reward: 40
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 68
+      page_end: 127
+      summary_hint: "Paladin Divine Smite: spend a spell slot on a melee hit for huge burst damage. Players will nova bosses with this. Be ready for it."
+
+  - slug: cd-bard-sorcerer-warlock-wizard
+    title: "Read: PHB — Bard (p.58-67) + Sorcerer (p.138-149) + Warlock (p.152-163) + Wizard (p.164-175)"
+    description: "The arcane full casters. Bard: Bardic Inspiration, jack of all trades. Sorcerer: Metamagic, innate magic. Warlock: Pact Magic (short rest slots), Eldritch Blast. Wizard: largest spell list, spellbook, prepared caster."
+    order: 4
+    task_type: reading
+    estimated_minutes: 45
+    xp_reward: 40
+    content:
+      book_title: "Player's Handbook (2024)"
+      page_start: 58
+      page_end: 175
+      summary_hint: "Wizard prepares from spellbook (flexible, huge list). Sorcerer knows fewer spells but modifies them with Metamagic. Warlock has few slots that recharge on short rest — completely different pacing."
+
+  - slug: cd-martial-video
+    title: "Watch: Dungeon Dudes — Martial Classes Overview (2024)"
+    description: "Comparative overview of martial classes, what changed in 2024."
+    order: 5
+    task_type: video
+    estimated_minutes: 25
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dungeon+dudes+martial+classes+2024+ranked"
+      channel_name: "Dungeon Dudes"
+      duration_minutes: 25
+
+  - slug: cd-caster-video
+    title: "Watch: Dungeon Dudes — Spellcasting Classes Overview (2024)"
+    description: "How casters compare in 2024."
+    order: 6
+    task_type: video
+    estimated_minutes: 25
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dungeon+dudes+spellcasting+classes+2024+ranked"
+      channel_name: "Dungeon Dudes"
+      duration_minutes: 25
+
+  - slug: cd-ginny-di-choose-class
+    title: "Watch: Ginny Di — How to Choose Your D&D Class"
+    description: "Personality-based class selection. Useful for helping your players pick."
+    order: 7
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=ginny+di+how+to+choose+your+dnd+class"
+      channel_name: "Ginny Di"
+      duration_minutes: 12
+
+  - slug: cd-exercise-party-comp
+    title: "Exercise: Build a Balanced Party of 4 for Beginners"
+    description: "Choose 4 classes for first-time players. For each: class, role, why a beginner would enjoy it, recommended subclass."
+    order: 8
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 40
+    content:
+      instructions: "Think about your actual team. Map classes to real people's personalities."
+
+  - slug: cd-quiz-classes
+    title: "Quiz: Classes Knowledge Check"
+    order: 9
+    task_type: quiz_ref
+    estimated_minutes: 10
+    xp_reward: 60
+    content:
+      quiz_slug: cd-quiz-classes

@@ -1,0 +1,80 @@
+# curriculum/modules/13_tools_and_platforms.yaml
+slug: tools-and-platforms
+title: "Tools & Platforms"
+description: "D&D Beyond, virtual tabletops, world-building tools, map makers, music tools. Hands-on exploration of the digital ecosystem every modern DM uses."
+order: 13
+icon: wrench
+is_extension: false
+estimated_hours: 6
+xp_reward: 350
+
+tasks:
+
+  - slug: tp-dndbeyond-setup
+    title: "Tool Exploration: D&D Beyond — Create Account & Explore"
+    description: "Create a free D&D Beyond account. Explore: character builder (build a test character), monster lookup, spell reference, encounter builder. This is the most-used D&D digital tool and you need to know it."
+    order: 1
+    task_type: tool_exploration
+    estimated_minutes: 30
+    xp_reward: 35
+    content:
+      tool_name: "D&D Beyond"
+      url: "https://www.dndbeyond.com"
+      instructions: "Create free account. Build one character using the builder (use the free options). Look up 'Goblin' in the monster section. Look up 'Fireball' in the spell section. Explore the encounter builder. Familiarize yourself with navigation."
+
+  - slug: tp-dndbeyond-character
+    title: "Tool Exploration: D&D Beyond — Build a Full Character"
+    description: "Use D&D Beyond to build a character from scratch. Compare the digital process with your paper exercise from Module 2. Notice what the tool automates for you."
+    order: 2
+    task_type: tool_exploration
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      tool_name: "D&D Beyond"
+      url: "https://www.dndbeyond.com/characters/builder"
+      instructions: "Build the same Fighter you built on paper. Notice how D&D Beyond calculates AC, attack bonuses, saving throws automatically. This is what you'll recommend your players use for ongoing campaigns."
+
+  - slug: tp-owlbear-rodeo
+    title: "Tool Exploration: Owlbear Rodeo (Virtual Tabletop)"
+    description: "Free, simple virtual tabletop. No account needed. Upload a map image, place tokens, share a link with players. This is the easiest VTT for beginners — useful if you ever run online or want to project a map."
+    order: 3
+    task_type: tool_exploration
+    estimated_minutes: 20
+    xp_reward: 25
+    content:
+      tool_name: "Owlbear Rodeo"
+      url: "https://www.owlbear.rodeo"
+      instructions: "Open the site. Create a room. Upload any map image (or use the default). Place some tokens. Move them around. This is what online D&D looks like. You might use this with your projector at base someday."
+
+  - slug: tp-inkarnate-deeper
+    title: "Tool Exploration: Inkarnate — Build a Dungeon Map"
+    description: "Go back to Inkarnate and create a simple dungeon map (5-7 rooms). This complements the regional map you made in Module 9."
+    order: 4
+    task_type: tool_exploration
+    estimated_minutes: 25
+    xp_reward: 30
+    content:
+      tool_name: "Inkarnate"
+      url: "https://inkarnate.com"
+      instructions: "Choose 'Battle Map' or 'Dungeon' style. Create a simple 5-room dungeon: entrance, corridor, trap room, treasure room, boss room. Add doors and basic furnishing. Export as image."
+
+  - slug: tp-music-ambiance
+    title: "Tool Exploration: YouTube Ambient Music for D&D"
+    description: "Find and bookmark YouTube playlists for: tavern ambiance, combat music, dungeon exploration, peaceful travel, boss fight. You said you can connect to YouTube at base — music transforms the atmosphere."
+    order: 5
+    task_type: tool_exploration
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      tool_name: "YouTube"
+      url: "https://www.youtube.com/results?search_query=dnd+ambiance+music+playlist"
+      instructions: "Search for and bookmark at least 4 playlists: 'tavern music dnd', 'combat music dnd', 'exploration music dnd', 'boss fight music epic.' Create a YouTube playlist or bookmark them for easy access during sessions."
+
+  - slug: tp-quiz-tools
+    title: "Quiz: Tools & Platforms"
+    order: 6
+    task_type: quiz_ref
+    estimated_minutes: 6
+    xp_reward: 40
+    content:
+      quiz_slug: tp-quiz-tools

@@ -1,0 +1,44 @@
+slug: ext-oneshot-preparation
+title: "One-Shot Preparation"
+description: "Master the art of running a complete, satisfying adventure in a single session."
+order: 15
+estimated_minutes: 50
+icon: "⚡"
+is_extension: true
+
+tasks:
+  - slug: os-structure
+    title: "One-Shot Structure: Beginning, Middle & End in 3 Hours"
+    task_type: reading
+    description: "Compress the story spine into a tight single-session format."
+    order: 0
+    estimated_minutes: 12
+    xp_reward: 15
+    tags: [one-shot, structure]
+
+  - slug: os-pre-gens
+    title: "Pre-Generated Characters for One-Shots"
+    task_type: reading
+    description: "Why and how to provide pre-gens that hit the ground running."
+    order: 1
+    estimated_minutes: 8
+    xp_reward: 10
+    tags: [one-shot, characters]
+
+  - slug: os-time-management
+    title: "Time Management During the Session"
+    task_type: reading
+    description: "How to pace a one-shot so it ends on time with a satisfying conclusion."
+    order: 2
+    estimated_minutes: 10
+    xp_reward: 15
+    tags: [one-shot, pacing]
+
+  - slug: os-quiz
+    title: "One-Shot Prep Quiz"
+    task_type: quiz
+    description: "Test your one-shot mastery."
+    order: 3
+    estimated_minutes: 10
+    xp_reward: 50
+    tags: [quiz, assessment]

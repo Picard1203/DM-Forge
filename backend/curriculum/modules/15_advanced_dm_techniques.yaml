@@ -1,0 +1,108 @@
+# curriculum/modules/15_advanced_dm_techniques.yaml
+slug: advanced-dm-techniques
+title: "Advanced DM Techniques"
+description: "Puzzle design, trap design, chase mechanics, downtime activities, travel & exploration, environmental hazards, handling PvP, character death, rule of cool vs. rules as written. The techniques that separate a good DM from a great one."
+order: 15
+icon: trophy
+is_extension: false
+estimated_hours: 8
+xp_reward: 500
+
+tasks:
+
+  - slug: ad-dmg-toolbox-part1
+    title: "Read: DMG — Ch.3 DM's Toolbox: Alignment + Chases + Creating a Background + Creating a Creature + Creating a Magic Item + Creating a Spell (p.51-59)"
+    description: "The DM's Toolbox chapter covers the optional rules and creation tools that expand what you can do at the table. This first block covers alignment as a tool, chase mechanics, and how to create custom backgrounds, creatures, magic items, and spells."
+    order: 1
+    task_type: reading
+    estimated_minutes: 35
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 51
+      page_end: 59
+      summary_hint: "Chase rules (p.52) are immediately usable — they take a standard 'roll Athletics to catch them' situation and turn it into a multi-round mini-game with complications. Creating creatures (p.56) is how you build custom monsters when nothing in the manual fits."
+
+  - slug: ad-dmg-toolbox-part2
+    title: "Read: DMG — Ch.3 DM's Toolbox: Curses + Death + Doors + Dungeons + Environmental Effects (p.60-68)"
+    description: "More toolbox options: curse mechanics, how to handle character death meaningfully, locked and magical doors, dungeon design principles, and environmental hazards like extreme heat, cold, and underwater combat."
+    order: 2
+    task_type: reading
+    estimated_minutes: 35
+    xp_reward: 30
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 60
+      page_end: 68
+      summary_hint: "Dungeon design (p.65) teaches the 'three-node' structure: entrance, middle, end. Most good dungeon rooms have a purpose, a hazard, and a choice. Never put a room in just to fill space."
+
+  - slug: ad-dmg-toolbox-part3
+    title: "Read: DMG — Ch.3 DM's Toolbox: Hazards + Settlements + Traps (p.76, p.93, p.100)"
+    description: "Environmental hazards (quicksand, lava, blizzards), settlement design for towns and cities, and the full trap design rules including simple traps and complex multi-round trap encounters."
+    order: 3
+    task_type: reading
+    estimated_minutes: 30
+    xp_reward: 25
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 76
+      page_end: 100
+      summary_hint: "Good traps (p.100): players can detect them (Perception), investigate them (Investigation), and disarm them (Thieves' Tools or creative solutions). Bad traps: 'you walk into a room, take 20 damage, there was no warning.' Don't do that."
+
+  - slug: ad-dmg-bastions
+    title: "Read: DMG — Ch.8 Bastions (p.332-353)"
+    description: "New in the 2024 DMG: Bastions are player-owned bases of operations. Characters can build and upgrade a stronghold with rooms and facilities that provide mechanical benefits. Unlocks at level 5."
+    order: 4
+    task_type: reading
+    estimated_minutes: 60
+    xp_reward: 35
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 332
+      page_end: 353
+      summary_hint: "Bastions give players long-term investment in the world. Players choose rooms/facilities (workshop, library, sanctum, greenhouse) that provide benefits between sessions. This is one of the biggest new features of the 2024 edition — worth knowing in detail."
+
+  - slug: ad-puzzle-design
+    title: "Watch: The DM Lair — How to Design Puzzles for D&D"
+    description: "Puzzles in D&D are tricky — the PLAYERS solve them, not the CHARACTERS. The puzzle should have multiple solutions and shouldn't gate progress entirely."
+    order: 5
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dm+lair+how+to+design+puzzles+dnd"
+      channel_name: "The DM Lair"
+      duration_minutes: 15
+
+  - slug: ad-character-death
+    title: "Watch: Matt Colville — Character Death"
+    description: "When and how characters should die. Making death meaningful, not random. The difference between dramatic death and frustrating death."
+    order: 6
+    task_type: video
+    estimated_minutes: 18
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+character+death"
+      channel_name: "Matthew Colville"
+      duration_minutes: 18
+
+  - slug: ad-rule-of-cool
+    title: "Watch: XP to Level 3 — Rule of Cool vs. Rules as Written"
+    description: "When to bend the rules for an awesome moment and when to enforce them. Finding the balance between fun and game integrity."
+    order: 7
+    task_type: video
+    estimated_minutes: 10
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=xp+to+level+3+rule+of+cool+vs+rules+as+written"
+      channel_name: "XP to Level 3"
+      duration_minutes: 10
+
+  - slug: ad-quiz-advanced
+    title: "Quiz: Advanced Techniques"
+    order: 8
+    task_type: quiz_ref
+    estimated_minutes: 10
+    xp_reward: 60
+    content:
+      quiz_slug: ad-quiz-advanced

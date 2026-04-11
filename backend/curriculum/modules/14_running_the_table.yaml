@@ -1,0 +1,130 @@
+# curriculum/modules/14_running_the_table.yaml
+slug: running-the-table
+title: "Running the Table"
+description: "Practical table management no rulebook teaches: spotlight sharing, pacing, handling disruptions, managing large groups (directly relevant to your 9-player one-shot), reading the room, when to take breaks, handling rules disputes."
+order: 14
+icon: layout-dashboard
+is_extension: false
+estimated_hours: 6
+xp_reward: 400
+
+tasks:
+
+  - slug: rt-dmg-know-players
+    title: "Read: DMG — Ch.2 Know Your Players + Group Size (p.21-23)"
+    description: "The DMG's own advice on understanding your players and managing group dynamics. Pages 21-23 cover player types and directly address the challenges of larger groups — relevant to your 9-player situation."
+    order: 1
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 21
+      page_end: 23
+      summary_hint: "Page 23 on Group Size directly names the problems you'll face: slower combat, harder spotlight management, more chaos. The solutions it offers are a starting point — Module 14's videos go deeper."
+
+  - slug: rt-dmg-keeping-combat-moving
+    title: "Read: DMG — Keeping Combat Moving + Adjusting Difficulty (p.47-48)"
+    description: "Two pages of practical combat management: how to keep the pace up when players stall, how to adjust encounter difficulty mid-fight if it's going too easy or too hard."
+    order: 2
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 47
+      page_end: 48
+      summary_hint: "The '15-second rule' equivalent: if a player hasn't decided what to do within 15 seconds of their turn, monsters act and their turn is delayed. Not mean — necessary for keeping 9 players engaged."
+
+  - slug: rt-dmg-fear-mental-stress
+    title: "Read: DMG — Fear and Mental Stress (p.70-71)"
+    description: "Optional rules for horror elements and psychological pressure. Useful for knowing the tools available and deciding whether they fit your table's tone."
+    order: 3
+    task_type: reading
+    estimated_minutes: 10
+    xp_reward: 15
+    content:
+      book_title: "Dungeon Master's Guide (2024)"
+      page_start: 70
+      page_end: 71
+      summary_hint: "Fear and stress mechanics add weight to scary encounters. For your first games, probably skip these — but know they exist for when you run darker adventures down the line."
+
+  - slug: rt-spotlight-management
+    title: "Watch: Matt Colville — Sharing the Spotlight"
+    description: "Every player should feel like the main character for at least part of each session. How to rotate focus, engage quiet players, and rein in dominant ones."
+    order: 4
+    task_type: video
+    estimated_minutes: 18
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=matt+colville+running+the+game+spotlight+sharing"
+      channel_name: "Matthew Colville"
+      duration_minutes: 18
+
+  - slug: rt-pacing-techniques
+    title: "Watch: The DM Lair — Pacing Your D&D Sessions"
+    description: "When to speed up (combat dragging), when to slow down (emotional moment), when to cut a scene ('you travel for two days without incident'). Pacing is the invisible skill that makes good DMs great."
+    order: 5
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=dm+lair+pacing+dnd+sessions"
+      channel_name: "The DM Lair"
+      duration_minutes: 12
+
+  - slug: rt-large-groups
+    title: "Watch: Any Video on Running D&D for Large Groups (6+ Players)"
+    description: "Specific techniques for your situation: group initiative, simultaneous actions, shared spotlight, streamlined combat, and keeping engagement high when players wait."
+    order: 6
+    task_type: video
+    estimated_minutes: 15
+    xp_reward: 25
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=running+dnd+large+group+8+players+tips"
+      channel_name: "Various"
+      duration_minutes: 15
+
+  - slug: rt-problem-players
+    title: "Watch: XP to Level 3 — Problem Players"
+    description: "The rules lawyer, the main character syndrome player, the phone addict, the murder hobo. How to handle each type with grace and firmness."
+    order: 7
+    task_type: video
+    estimated_minutes: 12
+    xp_reward: 20
+    content:
+      youtube_url: "https://www.youtube.com/results?search_query=xp+to+level+3+problem+players+dnd"
+      channel_name: "XP to Level 3"
+      duration_minutes: 12
+
+  - slug: rt-la-kriti-podcast
+    title: "Listen: לא קריטי Podcast — Pick Any Episode on Table Management"
+    description: "Israeli TTRPG podcast. Browse their episodes and find one about table management, running games, or DM advice. Listen in Hebrew for a different perspective."
+    order: 8
+    task_type: podcast
+    estimated_minutes: 30
+    xp_reward: 25
+    content:
+      podcast_name: "לא קריטי"
+      episode_title: "Browse and pick a relevant episode"
+      url: "https://www.youtube.com/results?search_query=%D7%9C%D7%90+%D7%A7%D7%A8%D7%99%D7%98%D7%99+%D7%A4%D7%95%D7%93%D7%A7%D7%90%D7%A1%D7%98"
+      duration_minutes: 30
+
+  - slug: rt-exercise-contingency-plans
+    title: "Exercise: Write Contingency Plans for 5 Common Problems"
+    description: "Before your first game, prepare for: (1) A player tries to kill another player's character, (2) A player wants to do something not covered by any rule, (3) Combat is taking too long and players are bored, (4) Players split the party, (5) A player is dominating the conversation and others aren't engaging."
+    order: 9
+    task_type: exercise
+    estimated_minutes: 20
+    xp_reward: 40
+    content:
+      instructions: "Write 2-3 sentences for each scenario: what you'd say and what you'd do. Having these answers pre-loaded means you won't freeze at the table."
+
+  - slug: rt-quiz-running-table
+    title: "Quiz: Running the Table"
+    order: 10
+    task_type: quiz_ref
+    estimated_minutes: 8
+    xp_reward: 50
+    content:
+      quiz_slug: rt-quiz-running-table
