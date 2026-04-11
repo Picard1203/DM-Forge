@@ -40,3 +40,6 @@ frontend/.vite/
 # Logs
 *.log
 logs/
+
+# Documentation
+docs/
