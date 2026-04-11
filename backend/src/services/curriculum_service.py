@@ -34,7 +34,7 @@ class CurriculumService:
         """Return all modules ordered by their order field ascending.
 
         Returns:
-            (List[Module]): Ordered list of Module documents.
+        List[Module]: Ordered list of Module documents.
         """
         return await self._module_repository.get_all()
 
@@ -62,7 +62,7 @@ class CurriculumService:
             slug (str): The URL-safe slug of the parent module.
 
         Returns:
-            (List[Task]): Ordered list of Task documents for the module.
+        List[Task]: Ordered list of Task documents for the module.
 
         Raises:
             ModuleNotFoundError: If no module with that slug exists.
