@@ -1,51 +1,45 @@
-"""Abstract base repository defining generic CRUD operations."""
+"""Abstract base repository defining core interface contract."""
 
 from abc import ABC, abstractmethod
-from typing import Generic, List, Optional, TypeVar
-
-T = TypeVar("T")
+from typing import Any, Optional
 
 
-class AbstractBaseRepository(ABC, Generic[T]):
-    """Generic abstract repository for common CRUD operations.
-
-    Subclasses should bind the TypeVar ``T`` to a specific Beanie Document
-    type and implement all abstract methods against a real data store.
-    """
+class AbstractBaseRepository(ABC):
+    """Abstract interface for standard repository operations."""
 
     @abstractmethod
-    async def get_by_id(self, document_id: str) -> Optional[T]:
+    async def get_by_id(self, document_id: str) -> Optional[Any]:
         """Fetch a single document by its ID.
 
         Args:
-            document_id: The string representation of the MongoDB ObjectId.
+            document_id (str): The string representation of the MongoDB ObjectId.
 
         Returns:
-            The matching document, or None if not found.
+            Optional[Any]: The matching document, or None if not found.
         """
         raise NotImplementedError
 
     @abstractmethod
-    async def create(self, document: T) -> T:
+    async def create(self, document: Any) -> Any:
         """Persist a new document to the data store.
 
         Args:
-            document: The document instance to insert.
+            document (Any): The document instance to insert.
 
         Returns:
-            The persisted document with its assigned ID populated.
+            Any: The persisted document with its assigned ID populated.
         """
         raise NotImplementedError
 
     @abstractmethod
-    async def update(self, document: T) -> T:
+    async def update(self, document: Any) -> Any:
         """Update an existing document in the data store.
 
         Args:
-            document: The document instance with updated fields.
+            document (Any): The document instance with updated fields.
 
         Returns:
-            The updated document.
+            Any: The updated document.
         """
         raise NotImplementedError
 
@@ -54,6 +48,6 @@ class AbstractBaseRepository(ABC, Generic[T]):
         """Delete a document from the data store.
 
         Args:
-            document_id: The string representation of the MongoDB ObjectId.
+            document_id (str): The string representation of the MongoDB ObjectId.
         """
         raise NotImplementedError

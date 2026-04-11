@@ -1,12 +1,13 @@
 """Abstract repository interface for the Achievement domain."""
 
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional
 
 from src.models.achievement import Achievement, UserAchievement
+from src.repositories.abstract.base_repository import AbstractBaseRepository
 
 
-class AbstractAchievementRepository(ABC):
+class AbstractAchievementRepository(AbstractBaseRepository):
     """Abstract contract for achievement data persistence operations."""
 
     @abstractmethod
@@ -14,19 +15,19 @@ class AbstractAchievementRepository(ABC):
         """Fetch all achievement definitions.
 
         Returns:
-            List of all Achievement documents.
+            List[Achievement]: List of all Achievement documents.
         """
         raise NotImplementedError
 
     @abstractmethod
     async def get_by_slug(self, slug: str) -> Optional[Achievement]:
-        """Fetch an achievement definition by its slug.
+        """Fetch an achievement by its slug.
 
         Args:
-            slug: Machine-readable identifier.
+            slug (str): Machine-readable identifier.
 
         Returns:
-            The matching Achievement, or None if not found.
+            Optional[Achievement]: The matching Achievement, or None if not found.
         """
         raise NotImplementedError
 
@@ -35,10 +36,10 @@ class AbstractAchievementRepository(ABC):
         """Fetch all achievements earned by a user.
 
         Args:
-            user_id: The user's document ID.
+            user_id (str): The user's document ID.
 
         Returns:
-            List of UserAchievement documents for the given user.
+            List[UserAchievement]: List of UserAchievement documents.
         """
         raise NotImplementedError
 
@@ -47,11 +48,11 @@ class AbstractAchievementRepository(ABC):
         """Check whether a user has already earned a specific achievement.
 
         Args:
-            user_id: The user's document ID.
-            achievement_id: The Achievement's document ID.
+            user_id (str): The user's document ID.
+            achievement_id (str): The Achievement's document ID.
 
         Returns:
-            True if the user has already earned the achievement.
+            bool: True if the user has already earned the achievement.
         """
         raise NotImplementedError
 
@@ -60,9 +61,9 @@ class AbstractAchievementRepository(ABC):
         """Persist a newly earned achievement for a user.
 
         Args:
-            user_achievement: The UserAchievement document to insert.
+            user_achievement (UserAchievement): The document to insert.
 
         Returns:
-            The persisted UserAchievement with its assigned ID.
+            UserAchievement: The persisted UserAchievement with its assigned ID.
         """
         raise NotImplementedError

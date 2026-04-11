@@ -15,21 +15,21 @@ class MongoQuizRepository(AbstractQuizRepository):
         """Fetch a quiz by its document ID.
 
         Args:
-            quiz_id: String representation of the MongoDB ObjectId.
+            quiz_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching Quiz document, or None if not found.
+            Optional[Quiz]: The matching Quiz document, or None if not found.
         """
         return await Quiz.get(PydanticObjectId(quiz_id))
 
     async def get_questions(self, quiz_id: str) -> List[QuizQuestion]:
-        """Fetch all questions for a quiz, ordered by ``order`` ascending.
+        """Fetch all questions for a quiz, ordered by order ascending.
 
         Args:
-            quiz_id: The parent quiz's document ID.
+            quiz_id (str): The parent quiz's document ID.
 
         Returns:
-            Ordered list of QuizQuestion documents.
+            List[QuizQuestion]: Ordered list of QuizQuestion documents.
         """
         return await QuizQuestion.find(
             QuizQuestion.quiz_id == quiz_id
@@ -39,10 +39,10 @@ class MongoQuizRepository(AbstractQuizRepository):
         """Persist a new quiz attempt.
 
         Args:
-            attempt: The QuizAttempt document to insert.
+            attempt (QuizAttempt): The QuizAttempt document to insert.
 
         Returns:
-            The persisted QuizAttempt with its assigned ID.
+            QuizAttempt: The persisted QuizAttempt with its assigned ID.
         """
         await attempt.insert()
         return attempt
@@ -51,11 +51,11 @@ class MongoQuizRepository(AbstractQuizRepository):
         """Fetch all attempts a user has made on a specific quiz.
 
         Args:
-            user_id: The user's document ID.
-            quiz_id: The quiz's document ID.
+            user_id (str): The user's document ID.
+            quiz_id (str): The quiz's document ID.
 
         Returns:
-            List of QuizAttempt documents, most recent first.
+            List[QuizAttempt]: List of QuizAttempt documents.
         """
         return await QuizAttempt.find(
             QuizAttempt.user_id == user_id,
@@ -66,15 +66,15 @@ class MongoQuizRepository(AbstractQuizRepository):
         """Check whether a user has ever passed a specific quiz.
 
         Args:
-            user_id: The user's document ID.
-            quiz_id: The quiz's document ID.
+            user_id (str): The user's document ID.
+            quiz_id (str): The quiz's document ID.
 
         Returns:
-            True if at least one passing attempt exists.
+            bool: True if at least one passing attempt exists.
         """
         passing = await QuizAttempt.find_one(
             QuizAttempt.user_id == user_id,
             QuizAttempt.quiz_id == quiz_id,
-            QuizAttempt.passed == True,
+            QuizAttempt.passed is True,
         )
         return passing is not None

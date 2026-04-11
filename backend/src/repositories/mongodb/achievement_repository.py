@@ -13,7 +13,7 @@ class MongoAchievementRepository(AbstractAchievementRepository):
         """Fetch all achievement definitions.
 
         Returns:
-            List of all Achievement documents.
+            List[Achievement]: List of all Achievement documents.
         """
         return await Achievement.find_all().to_list()
 
@@ -21,10 +21,10 @@ class MongoAchievementRepository(AbstractAchievementRepository):
         """Fetch an achievement by its slug.
 
         Args:
-            slug: Machine-readable identifier.
+            slug (str): Machine-readable identifier.
 
         Returns:
-            The matching Achievement, or None if not found.
+            Optional[Achievement]: The matching Achievement, or None if not found.
         """
         return await Achievement.find_one(Achievement.slug == slug)
 
@@ -32,10 +32,10 @@ class MongoAchievementRepository(AbstractAchievementRepository):
         """Fetch all achievements earned by a user.
 
         Args:
-            user_id: The user's document ID.
+            user_id (str): The user's document ID.
 
         Returns:
-            List of UserAchievement documents for the given user.
+            List[UserAchievement]: List of UserAchievement documents.
         """
         return await UserAchievement.find(UserAchievement.user_id == user_id).to_list()
 
@@ -43,11 +43,11 @@ class MongoAchievementRepository(AbstractAchievementRepository):
         """Check whether a user has already earned a specific achievement.
 
         Args:
-            user_id: The user's document ID.
-            achievement_id: The Achievement's document ID.
+            user_id (str): The user's document ID.
+            achievement_id (str): The Achievement's document ID.
 
         Returns:
-            True if the user has already earned the achievement.
+            bool: True if the user has already earned the achievement.
         """
         existing = await UserAchievement.find_one(
             UserAchievement.user_id == user_id,
@@ -59,10 +59,10 @@ class MongoAchievementRepository(AbstractAchievementRepository):
         """Persist a newly earned achievement for a user.
 
         Args:
-            user_achievement: The UserAchievement document to insert.
+            user_achievement (UserAchievement): The document to insert.
 
         Returns:
-            The persisted UserAchievement with its assigned ID.
+            UserAchievement: The persisted UserAchievement with its assigned ID.
         """
         await user_achievement.insert()
         return user_achievement

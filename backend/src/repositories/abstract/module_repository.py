@@ -1,12 +1,13 @@
 """Abstract repository interface for the Module domain."""
 
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional
 
 from src.models.curriculum import Module
+from src.repositories.abstract.base_repository import AbstractBaseRepository
 
 
-class AbstractModuleRepository(ABC):
+class AbstractModuleRepository(AbstractBaseRepository):
     """Abstract contract for module data persistence operations."""
 
     @abstractmethod
@@ -14,16 +15,16 @@ class AbstractModuleRepository(ABC):
         """Fetch all modules, unordered.
 
         Returns:
-            List of all Module documents.
+            List[Module]: List of all Module documents.
         """
         raise NotImplementedError
 
     @abstractmethod
     async def get_ordered(self) -> List[Module]:
-        """Fetch all modules sorted by their ``order`` field ascending.
+        """Fetch all modules sorted by order ascending.
 
         Returns:
-            Ordered list of Module documents.
+            List[Module]: Ordered list of Module documents.
         """
         raise NotImplementedError
 
@@ -32,10 +33,10 @@ class AbstractModuleRepository(ABC):
         """Fetch a module by its document ID.
 
         Args:
-            module_id: String representation of the MongoDB ObjectId.
+            module_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching Module document, or None if not found.
+            Optional[Module]: The matching Module document, or None if not found.
         """
         raise NotImplementedError
 
@@ -44,10 +45,10 @@ class AbstractModuleRepository(ABC):
         """Fetch a module by its URL slug.
 
         Args:
-            slug: The URL-safe slug to search for.
+            slug (str): The URL-safe slug to search for.
 
         Returns:
-            The matching Module document, or None if not found.
+            Optional[Module]: The matching Module document, or None if not found.
         """
         raise NotImplementedError
 
@@ -56,10 +57,10 @@ class AbstractModuleRepository(ABC):
         """Persist a new module document.
 
         Args:
-            module: The Module instance to insert.
+            module (Module): The Module instance to insert.
 
         Returns:
-            The persisted Module document with its assigned ID.
+            Module: The persisted Module document with its assigned ID.
         """
         raise NotImplementedError
 
@@ -68,9 +69,9 @@ class AbstractModuleRepository(ABC):
         """Persist changes to an existing module document.
 
         Args:
-            module: The Module instance with updated fields.
+            module (Module): The Module instance with updated fields.
 
         Returns:
-            The updated Module document.
+            Module: The updated Module document.
         """
         raise NotImplementedError
