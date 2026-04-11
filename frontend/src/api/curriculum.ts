@@ -1,12 +1,17 @@
 import client from './client'
-import type { Module, ModuleDetail } from '@/types'
+import type { Module, Task } from '@/types'
 
-export async function listModules(): Promise<Module[]> {
+export async function getModules(): Promise<Module[]> {
   const response = await client.get<Module[]>('/modules')
   return response.data
 }
 
-export async function getModule(moduleId: string): Promise<ModuleDetail> {
-  const response = await client.get<ModuleDetail>(`/modules/${moduleId}`)
+export async function getModule(slug: string): Promise<Module> {
+  const response = await client.get<Module>(`/modules/${slug}`)
+  return response.data
+}
+
+export async function getModuleTasks(slug: string): Promise<Task[]> {
+  const response = await client.get<Task[]>(`/modules/${slug}/tasks`)
   return response.data
 }

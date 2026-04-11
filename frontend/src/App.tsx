@@ -36,7 +36,7 @@ const App: React.FC = () => {
       <Route element={<ProtectedRoute />}>
         <Route path="/" element={<DashboardPage />} />
         <Route path="/curriculum" element={<CurriculumPage />} />
-        <Route path="/curriculum/:moduleId" element={<ModulePage />} />
+        <Route path="/curriculum/:slug" element={<ModulePage />} />
         <Route path="/quiz/:quizId" element={<QuizPage />} />
         <Route path="/review" element={<ReviewPage />} />
         <Route path="/session" element={<SessionPage />} />

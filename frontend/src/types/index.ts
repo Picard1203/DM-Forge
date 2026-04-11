@@ -9,33 +9,36 @@ export interface User {
   longest_streak: number
 }
 
+export type TaskType =
+  | 'reading'
+  | 'video'
+  | 'podcast'
+  | 'exercise'
+  | 'tool_exploration'
+  | 'quiz_ref'
+
 export interface Module {
   id: string
   slug: string
   title: string
   description: string
   order: number
-  estimated_minutes: number
-  icon: string
+  icon: string | null
   is_extension: boolean
+  estimated_hours: number
+  xp_reward: number
 }
 
 export interface Task {
   id: string
-  module_id: string
   slug: string
   title: string
-  task_type: string
-  content_url: string | null
   description: string
   order: number
+  task_type: TaskType
   estimated_minutes: number
   xp_reward: number
-  tags: string[]
-}
-
-export interface ModuleDetail extends Module {
-  tasks: Task[]
+  content: Record<string, unknown>
 }
 
 export interface Quiz {
