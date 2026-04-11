@@ -71,19 +71,15 @@ class AchievementService:
         all_achievements: List[Achievement] = await self._achievement_repository.get_all()
         newly_awarded: List[str] = []
         for achievement in all_achievements:
-            if achievement.trigger_type != trigger_type:
-                continue
-            if current_value < achievement.trigger_threshold:
-                continue
-            already_has = await self._achievement_repository.has_achievement(
-                user_id=user_id, achievement_id=str(achievement.id)
-            )
-            if already_has is True:
-                continue
-            user_achievement = UserAchievement(
-                user_id=user_id,
-                achievement_id=str(achievement.id),
-            )
-            await self._achievement_repository.award(user_achievement)
-            newly_awarded.append(achievement.slug)
+            if achievement.trigger_type == trigger_type and current_value >= achievement.trigger_threshold:
+                already_has = await self._achievement_repository.has_achievement(
+                    user_id=user_id, achievement_id=str(achievement.id)
+                )
+                if already_has is False:
+                    user_achievement = UserAchievement(
+                        user_id=user_id,
+                        achievement_id=str(achievement.id),
+                    )
+                    await self._achievement_repository.award(user_achievement)
+                    newly_awarded.append(achievement.slug)
         return newly_awarded
