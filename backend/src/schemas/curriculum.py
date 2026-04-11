@@ -9,17 +9,17 @@ class TaskResponse(BaseModel):
     """Serialised Task returned from curriculum endpoints.
 
     Attributes:
-        id: MongoDB document ID as a string.
-        module_id: Parent module ID.
-        slug: URL-safe identifier.
-        title: Display title.
-        task_type: Category of task.
-        content_url: Optional external content URL.
-        description: Short task description.
-        order: Position within the module.
-        estimated_minutes: Approximate completion time.
-        xp_reward: XP awarded on completion.
-        tags: List of category tags.
+        id (str): MongoDB document ID.
+        module_id (str): Parent module ID.
+        slug (str): URL-safe identifier.
+        title (str): Display title.
+        task_type (str): Category of task.
+        content_url (Optional[str]): Optional external content URL.
+        description (str): Short task description.
+        order (int): Position within the module.
+        estimated_minutes (int): Approximate completion time.
+        xp_reward (int): XP awarded on completion.
+        tags (List[str]): List of category tags.
     """
 
     id: str
@@ -39,14 +39,14 @@ class ModuleResponse(BaseModel):
     """Serialised Module returned from curriculum endpoints.
 
     Attributes:
-        id: MongoDB document ID as a string.
-        slug: URL-safe identifier.
-        title: Display title.
-        description: Module overview text.
-        order: Position in the curriculum.
-        estimated_minutes: Total estimated completion time.
-        icon: Optional display icon.
-        is_extension: True if this is an extension module.
+        id (str): MongoDB document ID.
+        slug (str): URL-safe identifier.
+        title (str): Display title.
+        description (str): Module overview text.
+        order (int): Position in the curriculum.
+        estimated_minutes (int): Total estimated completion time.
+        icon (Optional[str]): Optional display icon.
+        is_extension (bool): True if this is an extension module.
     """
 
     id: str
@@ -63,7 +63,7 @@ class ModuleDetailResponse(ModuleResponse):
     """Extended module response including the task list.
 
     Attributes:
-        tasks: Ordered list of tasks within this module.
+        tasks (List[TaskResponse]): Ordered list of tasks.
     """
 
     tasks: List[TaskResponse]

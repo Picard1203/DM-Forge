@@ -15,15 +15,15 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Fetch all modules, unordered.
 
         Returns:
-            List of all Module documents.
+            List[Module]: List of all Module documents.
         """
         return await Module.find_all().to_list()
 
     async def get_ordered(self) -> List[Module]:
-        """Fetch all modules sorted by ``order`` ascending.
+        """Fetch all modules sorted by order ascending.
 
         Returns:
-            Ordered list of Module documents.
+            List[Module]: Ordered list of Module documents.
         """
         return await Module.find_all().sort(+Module.order).to_list()
 
@@ -31,10 +31,10 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Fetch a module by its document ID.
 
         Args:
-            module_id: String representation of the MongoDB ObjectId.
+            module_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching Module document, or None if not found.
+            Optional[Module]: The matching Module document, or None if not found.
         """
         return await Module.get(PydanticObjectId(module_id))
 
@@ -42,10 +42,10 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Fetch a module by its URL slug.
 
         Args:
-            slug: The URL-safe slug to search for.
+            slug (str): The URL-safe slug to search for.
 
         Returns:
-            The matching Module document, or None if not found.
+            Optional[Module]: The matching Module document, or None if not found.
         """
         return await Module.find_one(Module.slug == slug)
 
@@ -53,10 +53,10 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Persist a new module document.
 
         Args:
-            module: The Module instance to insert.
+            module (Module): The Module instance to insert.
 
         Returns:
-            The persisted Module document with its assigned ID.
+            Module: The persisted Module document with its assigned ID.
         """
         await module.insert()
         return module
@@ -65,10 +65,10 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Persist changes to an existing module document.
 
         Args:
-            module: The Module instance with updated fields.
+            module (Module): The Module instance with updated fields.
 
         Returns:
-            The updated Module document.
+            Module: The updated Module document.
         """
         await module.save()
         return module

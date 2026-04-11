@@ -16,10 +16,10 @@ async def get_my_profile(current_user: User = Depends(get_current_user)) -> User
     """Return the authenticated user's profile.
 
     Args:
-        current_user: The user resolved from the Bearer token.
+        current_user (User): The user resolved from the Bearer token.
 
     Returns:
-        A UserResponse with the user's public profile fields.
+        UserResponse: Public profile fields.
     """
     return UserResponse(
         id=str(current_user.id),
@@ -42,12 +42,12 @@ async def update_my_profile(
     """Update the authenticated user's profile.
 
     Args:
-        update: Partial update payload.
-        current_user: The user resolved from the Bearer token.
-        user_service: Injected UserService instance.
+        update (UserUpdate): Partial update payload.
+        current_user (User): The user resolved from the Bearer token.
+        user_service (UserService): Injected service instance.
 
     Returns:
-        The updated UserResponse.
+        UserResponse: The updated UserResponse.
     """
     updated = await user_service.update_profile(user=current_user, update=update)
     return UserResponse(
@@ -67,12 +67,11 @@ async def get_my_stats(current_user: User = Depends(get_current_user)) -> UserSt
     """Return gamification stats for the authenticated user.
 
     Args:
-        current_user: The user resolved from the Bearer token.
+        current_user (User): The user resolved from the Bearer token.
 
     Returns:
-        A UserStatsResponse with XP, level, streak, and title data.
+        UserStatsResponse: Response with XP, level, streak, and title data.
     """
-    # tasks_completed_total will be wired up via ProgressService in a future step
     return UserStatsResponse(
         xp=current_user.xp,
         level=current_user.level,

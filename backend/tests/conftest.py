@@ -1,6 +1,5 @@
 """Test configuration: async client, in-memory MongoDB, dependency overrides."""
 
-import pytest
 import pytest_asyncio
 from beanie import init_beanie
 from httpx import ASGITransport, AsyncClient

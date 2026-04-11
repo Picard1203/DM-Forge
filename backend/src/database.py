@@ -30,10 +30,6 @@ _document_models: List[type[Document]] = [
 
 
 async def init_db() -> None:
-    """Initialise Beanie with all Document models.
-
-    Creates the async Motor client and calls beanie.init_beanie so that all
-    Document subclasses are bound to the correct MongoDB collections.
-    """
+    """Initialise Beanie with all Document models."""
     client = motor.motor_asyncio.AsyncIOMotorClient(settings.mongodb_url)
     await init_beanie(database=client.get_default_database(), document_models=_document_models)

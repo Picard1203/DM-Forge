@@ -14,10 +14,11 @@ class AbstractTaskRepository(ABC):
         """Fetch a task by its document ID.
 
         Args:
-            task_id: String representation of the MongoDB ObjectId.
+            task_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching Task document, or None if not found.
+            Optional[Task]: The matching Task document, or None if not found.
+
         """
         raise NotImplementedError
 
@@ -26,22 +27,24 @@ class AbstractTaskRepository(ABC):
         """Fetch a task by its URL slug.
 
         Args:
-            slug: The URL-safe slug to search for.
+            slug (str): The URL-safe slug to search for.
 
         Returns:
-            The matching Task document, or None if not found.
+            Optional[Task]: The matching Task document, or None if not found.
+
         """
         raise NotImplementedError
 
     @abstractmethod
     async def get_by_module(self, module_id: str) -> List[Task]:
-        """Fetch all tasks belonging to a module, ordered by ``order`` ascending.
+        """Fetch all tasks belonging to a module, ordered by order ascending.
 
         Args:
-            module_id: The parent module's document ID.
+            module_id (str): The parent module's document ID.
 
         Returns:
-            Ordered list of Task documents for the given module.
+            List[Task]: Ordered list of Task documents.
+
         """
         raise NotImplementedError
 
@@ -50,10 +53,11 @@ class AbstractTaskRepository(ABC):
         """Persist a new task document.
 
         Args:
-            task: The Task instance to insert.
+            task (Task): The Task instance to insert.
 
         Returns:
-            The persisted Task document with its assigned ID.
+            Task: The persisted Task document with its assigned ID.
+
         """
         raise NotImplementedError
 
@@ -62,9 +66,10 @@ class AbstractTaskRepository(ABC):
         """Persist changes to an existing task document.
 
         Args:
-            task: The Task instance with updated fields.
+            task (Task): The Task instance with updated fields.
 
         Returns:
-            The updated Task document.
+            Task: The updated Task document.
+
         """
         raise NotImplementedError

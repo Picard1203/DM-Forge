@@ -1,12 +1,13 @@
 """Abstract repository interface for the Spaced Repetition domain."""
 
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import List, Optional
 
 from src.models.review_card import SpacedRepCard, UserCardReview
+from src.repositories.abstract.base_repository import AbstractBaseRepository
 
 
-class AbstractReviewCardRepository(ABC):
+class AbstractReviewCardRepository(AbstractBaseRepository):
     """Abstract contract for spaced repetition card persistence operations."""
 
     @abstractmethod
@@ -14,10 +15,10 @@ class AbstractReviewCardRepository(ABC):
         """Fetch a flashcard by its document ID.
 
         Args:
-            card_id: String representation of the MongoDB ObjectId.
+            card_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching SpacedRepCard, or None if not found.
+            Optional[SpacedRepCard]: The matching SpacedRepCard, or None if not found.
         """
         raise NotImplementedError
 
@@ -26,11 +27,11 @@ class AbstractReviewCardRepository(ABC):
         """Fetch cards due for review by the given user.
 
         Args:
-            user_id: The user's document ID.
-            limit: Maximum number of due cards to return.
+            user_id (str): The user's document ID.
+            limit (int): Maximum number of due cards to return.
 
         Returns:
-            List of UserCardReview documents with ``next_review_at`` in the past.
+            List[UserCardReview]: List of UserCardReview documents.
         """
         raise NotImplementedError
 
@@ -39,11 +40,11 @@ class AbstractReviewCardRepository(ABC):
         """Fetch the SM-2 review state for a specific user–card pair.
 
         Args:
-            user_id: The user's document ID.
-            card_id: The SpacedRepCard's document ID.
+            user_id (str): The user's document ID.
+            card_id (str): The SpacedRepCard's document ID.
 
         Returns:
-            The UserCardReview document, or None if the card has never been reviewed.
+            Optional[UserCardReview]: The review state, or None if never reviewed.
         """
         raise NotImplementedError
 
@@ -52,9 +53,9 @@ class AbstractReviewCardRepository(ABC):
         """Create or update the SM-2 state for a user–card pair.
 
         Args:
-            review: The UserCardReview document to upsert.
+            review (UserCardReview): The UserCardReview document to upsert.
 
         Returns:
-            The persisted or updated UserCardReview document.
+            UserCardReview: The persisted or updated UserCardReview document.
         """
         raise NotImplementedError

@@ -7,11 +7,11 @@ class Settings(BaseSettings):
     """Application settings sourced from environment variables.
 
     Attributes:
-        mongodb_url: MongoDB Atlas connection string.
-        jwt_secret: Secret key for signing JWTs.
-        jwt_algorithm: Algorithm used to sign JWTs.
-        access_token_expire_minutes: Token lifetime in minutes.
-        app_name: Human-readable application name.
+        mongodb_url (str): MongoDB Atlas connection string.
+        jwt_secret (str): Secret key for signing JWTs.
+        jwt_algorithm (str): Algorithm used to sign JWTs.
+        access_token_expire_minutes (int): Token lifetime in minutes.
+        app_name (str): Human-readable application name.
     """
 
     mongodb_url: str

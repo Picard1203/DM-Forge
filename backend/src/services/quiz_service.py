@@ -12,14 +12,14 @@ class QuizService:
     """Handles quiz retrieval, grading, and attempt persistence.
 
     Attributes:
-        _quiz_repository: Injected repository for quiz data operations.
+        _quiz_repository (AbstractQuizRepository): Injected repository for operations.
     """
 
     def __init__(self, quiz_repository: AbstractQuizRepository) -> None:
         """Initialise the service with a quiz repository.
 
         Args:
-            quiz_repository: An AbstractQuizRepository implementation.
+            quiz_repository (AbstractQuizRepository): Repository instance.
         """
         self._quiz_repository = quiz_repository
 
@@ -29,10 +29,10 @@ class QuizService:
         """Fetch a quiz and its ordered questions.
 
         Args:
-            quiz_id: The quiz's document ID.
+            quiz_id (str): The quiz's document ID.
 
         Returns:
-            A tuple of (Quiz, ordered list of QuizQuestion).
+            tuple[Quiz, List[QuizQuestion]]: A tuple of (Quiz, questions).
 
         Raises:
             ResourceNotFoundError: If no quiz with that ID exists.
@@ -49,19 +49,20 @@ class QuizService:
         """Grade a quiz submission and persist the attempt.
 
         Args:
-            user_id: The ID of the submitting user.
-            quiz_id: The quiz's document ID.
-            request: The list of question-answer pairs.
+            user_id (str): The ID of the submitting user.
+            quiz_id (str): The quiz's document ID.
+            request (SubmitAnswersRequest): The answer submissions.
 
         Returns:
-            A QuizResultResponse with score, pass status, and XP awarded.
+            QuizResultResponse: Result with score, pass status, and XP.
 
         Raises:
             ResourceNotFoundError: If the quiz does not exist.
         """
         quiz, questions = await self.get_quiz_with_questions(quiz_id=quiz_id)
-        question_map = {str(q.id): q for q in questions}
-
+        question_map: dict[str, QuizQuestion] = {}
+        for question in questions:
+            question_map[str(question.id)] = question
         answers: List[QuizAttemptAnswer] = []
         correct_count = 0
         for item in request.answers:
@@ -78,16 +79,13 @@ class QuizService:
                     is_correct=is_correct,
                 )
             )
-
         total = len(questions)
         score = (correct_count / total * 100) if total > 0 else 0.0
         passed = score >= quiz.passing_score
-
         already_passed = await self._quiz_repository.has_passed(
             user_id=user_id, quiz_id=quiz_id
         )
         xp_awarded = quiz.xp_reward if (passed is True and already_passed is False) else 0
-
         attempt = QuizAttempt(
             user_id=user_id,
             quiz_id=quiz_id,
@@ -96,7 +94,6 @@ class QuizService:
             passed=passed,
         )
         await self._quiz_repository.save_attempt(attempt)
-
         return QuizResultResponse(
             score=score,
             passed=passed,

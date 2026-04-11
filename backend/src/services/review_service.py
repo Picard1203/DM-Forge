@@ -1,6 +1,6 @@
 """Review service: spaced repetition scheduling using the SM-2 algorithm."""
 
-from datetime import datetime, timedelta
+from datetime import UTC, datetime, timedelta
 from typing import List, Optional
 
 from src.models.review_card import SpacedRepCard, UserCardReview
@@ -13,11 +13,11 @@ def _apply_sm2(review: UserCardReview, quality: int) -> UserCardReview:
     """Apply the SM-2 algorithm to update a card's scheduling state.
 
     Args:
-        review: The current UserCardReview state.
-        quality: Response quality from 0 (complete blackout) to 5 (perfect).
+        review (UserCardReview): The current UserCardReview state.
+        quality (int): Response quality from 0 to 5.
 
     Returns:
-        The updated UserCardReview with new interval, repetitions, and EF.
+        UserCardReview: The updated review with new interval and EF.
     """
     if quality < 3:
         review.repetitions = 0
@@ -30,11 +30,10 @@ def _apply_sm2(review: UserCardReview, quality: int) -> UserCardReview:
         else:
             review.interval_days = round(review.interval_days * review.easiness_factor)
         review.repetitions += 1
-
     new_ef = review.easiness_factor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
     review.easiness_factor = max(1.3, new_ef)
-    review.next_review_at = datetime.utcnow() + timedelta(days=review.interval_days)
-    review.last_reviewed_at = datetime.utcnow()
+    review.next_review_at = datetime.now(UTC) + timedelta(days=review.interval_days)
+    review.last_reviewed_at = datetime.now(UTC)
     return review
 
 
@@ -42,14 +41,14 @@ class ReviewService:
     """Handles spaced repetition card retrieval and review submission.
 
     Attributes:
-        _review_card_repository: Injected repository for review card operations.
+        _review_card_repository (AbstractReviewCardRepository): Injected repository.
     """
 
     def __init__(self, review_card_repository: AbstractReviewCardRepository) -> None:
         """Initialise the service with a review card repository.
 
         Args:
-            review_card_repository: An AbstractReviewCardRepository implementation.
+            review_card_repository (AbstractReviewCardRepository): Repository instance.
         """
         self._review_card_repository = review_card_repository
 
@@ -57,11 +56,11 @@ class ReviewService:
         """Fetch cards due for review and resolve their flashcard content.
 
         Args:
-            user_id: The reviewing user's document ID.
-            limit: Maximum number of cards to return (default 20).
+            user_id (str): The reviewing user's document ID.
+            limit (int): Maximum number of cards to return.
 
         Returns:
-            List of CardReviewResponse objects with front/back content.
+            List[CardReviewResponse]: List of CardReviewResponse objects.
         """
         due_reviews: List[UserCardReview] = await self._review_card_repository.get_due_cards(
             user_id=user_id, limit=limit
@@ -90,11 +89,11 @@ class ReviewService:
         """Process a card review submission using the SM-2 algorithm.
 
         Args:
-            user_id: The reviewing user's document ID.
-            request: Contains the review ID and quality rating.
+            user_id (str): The reviewing user's document ID.
+            request (ReviewSubmitRequest): The review ID and quality.
 
         Returns:
-            A ReviewSubmitResponse with the updated schedule.
+            ReviewSubmitResponse: Response with the updated schedule.
 
         Raises:
             ResourceNotFoundError: If the review state cannot be found.
@@ -104,10 +103,8 @@ class ReviewService:
         )
         if review is None:
             raise ResourceNotFoundError("Review")
-
         updated = _apply_sm2(review=review, quality=request.quality)
         saved = await self._review_card_repository.save_review(updated)
-
         return ReviewSubmitResponse(
             review_id=str(saved.id),
             next_review_at=saved.next_review_at,

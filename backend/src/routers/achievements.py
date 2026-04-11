@@ -20,11 +20,11 @@ async def list_achievements(
     """Return all achievement definitions.
 
     Args:
-        _current_user: Authenticated user (access guard).
-        achievement_service: Injected AchievementService instance.
+        _current_user (User): Authenticated user (access guard).
+        achievement_service (AchievementService): Injected service instance.
 
     Returns:
-        List of AchievementResponse objects.
+        List[AchievementResponse]: List of AchievementResponse objects.
     """
     return await achievement_service.list_all()
 
@@ -37,14 +37,11 @@ async def list_my_achievements(
     """Return achievements earned by the authenticated user.
 
     Args:
-        current_user: The authenticated user.
-        achievement_service: Injected AchievementService instance.
+        current_user (User): The authenticated user.
+        achievement_service (AchievementService): Injected service instance.
 
     Returns:
-        List of AchievementResponse objects for earned achievements.
-
-    Note:
-        Full implementation pending join logic in AchievementService.
+        List[AchievementResponse]: List of AchievementResponse objects.
     """
     # TODO: return full UserAchievementResponse once join is implemented
     return []

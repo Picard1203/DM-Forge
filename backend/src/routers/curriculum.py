@@ -20,26 +20,28 @@ async def list_modules(
     """Return all modules ordered by their position in the curriculum.
 
     Args:
-        _current_user: Authenticated user (access guard).
-        curriculum_service: Injected CurriculumService instance.
+        _current_user (User): Authenticated user (access guard).
+        curriculum_service (CurriculumService): Injected service instance.
 
     Returns:
-        Ordered list of ModuleResponse objects.
+        List[ModuleResponse]: Ordered list of ModuleResponse objects.
     """
     modules = await curriculum_service.list_modules()
-    return [
-        ModuleResponse(
-            id=str(m.id),
-            slug=m.slug,
-            title=m.title,
-            description=m.description,
-            order=m.order,
-            estimated_minutes=m.estimated_minutes,
-            icon=m.icon,
-            is_extension=m.is_extension,
+    responses: List[ModuleResponse] = []
+    for module in modules:
+        responses.append(
+            ModuleResponse(
+                id=str(module.id),
+                slug=module.slug,
+                title=module.title,
+                description=module.description,
+                order=module.order,
+                estimated_minutes=module.estimated_minutes,
+                icon=module.icon,
+                is_extension=module.is_extension,
+            )
         )
-        for m in modules
-    ]
+    return responses
 
 
 @router.get("/{module_id}", response_model=ModuleDetailResponse)
@@ -51,31 +53,32 @@ async def get_module(
     """Return a single module with its ordered task list.
 
     Args:
-        module_id: The module's document ID.
-        _current_user: Authenticated user (access guard).
-        curriculum_service: Injected CurriculumService instance.
+        module_id (str): The module's document ID.
+        _current_user (User): Authenticated user (access guard).
+        curriculum_service (CurriculumService): Injected service instance.
 
     Returns:
-        A ModuleDetailResponse with embedded tasks.
+        ModuleDetailResponse: A ModuleDetailResponse with embedded tasks.
     """
     module = await curriculum_service.get_module(module_id)
     tasks = await curriculum_service.get_module_tasks(module_id)
-    task_responses = [
-        TaskResponse(
-            id=str(t.id),
-            module_id=t.module_id,
-            slug=t.slug,
-            title=t.title,
-            task_type=t.task_type,
-            content_url=t.content_url,
-            description=t.description,
-            order=t.order,
-            estimated_minutes=t.estimated_minutes,
-            xp_reward=t.xp_reward,
-            tags=t.tags,
+    task_responses: List[TaskResponse] = []
+    for task in tasks:
+        task_responses.append(
+            TaskResponse(
+                id=str(task.id),
+                module_id=task.module_id,
+                slug=task.slug,
+                title=task.title,
+                task_type=task.task_type,
+                content_url=task.content_url,
+                description=task.description,
+                order=task.order,
+                estimated_minutes=task.estimated_minutes,
+                xp_reward=task.xp_reward,
+                tags=task.tags,
+            )
         )
-        for t in tasks
-    ]
     return ModuleDetailResponse(
         id=str(module.id),
         slug=module.slug,
@@ -98,27 +101,29 @@ async def list_module_tasks(
     """Return all tasks for a module ordered by position.
 
     Args:
-        module_id: The parent module's document ID.
-        _current_user: Authenticated user (access guard).
-        curriculum_service: Injected CurriculumService instance.
+        module_id (str): The parent module's document ID.
+        _current_user (User): Authenticated user (access guard).
+        curriculum_service (CurriculumService): Injected service instance.
 
     Returns:
-        Ordered list of TaskResponse objects.
+        List[TaskResponse]: Ordered list of TaskResponse objects.
     """
     tasks = await curriculum_service.get_module_tasks(module_id)
-    return [
-        TaskResponse(
-            id=str(t.id),
-            module_id=t.module_id,
-            slug=t.slug,
-            title=t.title,
-            task_type=t.task_type,
-            content_url=t.content_url,
-            description=t.description,
-            order=t.order,
-            estimated_minutes=t.estimated_minutes,
-            xp_reward=t.xp_reward,
-            tags=t.tags,
+    responses: List[TaskResponse] = []
+    for task in tasks:
+        responses.append(
+            TaskResponse(
+                id=str(task.id),
+                module_id=task.module_id,
+                slug=task.slug,
+                title=task.title,
+                task_type=task.task_type,
+                content_url=task.content_url,
+                description=task.description,
+                order=task.order,
+                estimated_minutes=task.estimated_minutes,
+                xp_reward=task.xp_reward,
+                tags=task.tags,
+            )
         )
-        for t in tasks
-    ]
+    return responses

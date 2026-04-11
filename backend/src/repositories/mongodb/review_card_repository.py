@@ -1,6 +1,6 @@
 """MongoDB implementation of the AbstractReviewCardRepository."""
 
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import List, Optional
 
 from beanie import PydanticObjectId
@@ -16,10 +16,10 @@ class MongoReviewCardRepository(AbstractReviewCardRepository):
         """Fetch a flashcard by its document ID.
 
         Args:
-            card_id: String representation of the MongoDB ObjectId.
+            card_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching SpacedRepCard, or None if not found.
+            Optional[SpacedRepCard]: The matching SpacedRepCard, or None if not found.
         """
         return await SpacedRepCard.get(PydanticObjectId(card_id))
 
@@ -27,13 +27,13 @@ class MongoReviewCardRepository(AbstractReviewCardRepository):
         """Fetch cards due for review by the given user.
 
         Args:
-            user_id: The user's document ID.
-            limit: Maximum number of due cards to return.
+            user_id (str): The user's document ID.
+            limit (int): Maximum number of due cards to return.
 
         Returns:
-            List of UserCardReview documents with ``next_review_at`` in the past.
+            List[UserCardReview]: List of UserCardReview documents.
         """
-        now = datetime.utcnow()
+        now = datetime.now(UTC)
         return await UserCardReview.find(
             UserCardReview.user_id == user_id,
             UserCardReview.next_review_at <= now,
@@ -43,11 +43,11 @@ class MongoReviewCardRepository(AbstractReviewCardRepository):
         """Fetch the SM-2 review state for a specific user–card pair.
 
         Args:
-            user_id: The user's document ID.
-            card_id: The SpacedRepCard's document ID.
+            user_id (str): The user's document ID.
+            card_id (str): The SpacedRepCard's document ID.
 
         Returns:
-            The UserCardReview document, or None if never reviewed.
+            Optional[UserCardReview]: The review state, or None if never reviewed.
         """
         return await UserCardReview.find_one(
             UserCardReview.user_id == user_id,
@@ -58,10 +58,10 @@ class MongoReviewCardRepository(AbstractReviewCardRepository):
         """Create or update the SM-2 state for a user–card pair.
 
         Args:
-            review: The UserCardReview document to upsert.
+            review (UserCardReview): The UserCardReview document to upsert.
 
         Returns:
-            The persisted or updated UserCardReview document.
+            UserCardReview: The persisted or updated UserCardReview document.
         """
         existing = await self.get_review_state(
             user_id=review.user_id,

@@ -7,9 +7,9 @@ class RegisterRequest(BaseModel):
     """Request body for the registration endpoint.
 
     Attributes:
-        email: The user's email address.
-        username: Chosen display name (3–30 characters).
-        password: Plain-text password (min 8 characters).
+        email (EmailStr): The user's email address.
+        username (str): Chosen display name (3–30 characters).
+        password (str): Plain-text password (min 8 characters).
     """
 
     email: EmailStr
@@ -21,8 +21,8 @@ class LoginRequest(BaseModel):
     """Request body for the login endpoint.
 
     Attributes:
-        email: The registered email address.
-        password: The plain-text password.
+        email (EmailStr): The registered email address.
+        password (str): The plain-text password.
     """
 
     email: EmailStr
@@ -33,8 +33,8 @@ class TokenResponse(BaseModel):
     """Response body returned after successful authentication.
 
     Attributes:
-        access_token: Signed JWT access token.
-        token_type: Always ``"bearer"``.
+        access_token (str): Signed JWT access token.
+        token_type (str): Always bearer.
     """
 
     access_token: str
@@ -42,17 +42,17 @@ class TokenResponse(BaseModel):
 
 
 class UserResponse(BaseModel):
-    """Serialised user returned from the /me endpoint.
+    """Serialised user returned from the authenticated profile endpoint.
 
     Attributes:
-        id: MongoDB document ID as a string.
-        email: The user's email address.
-        username: The user's display name.
-        avatar_title: Current gamification title.
-        xp: Total experience points.
-        level: Current level.
-        current_streak: Consecutive active days.
-        longest_streak: Historical maximum streak.
+        id (str): MongoDB document ID as a string.
+        email (str): The user's email address.
+        username (str): The user's display name.
+        avatar_title (str): Current gamification title.
+        xp (int): Total experience points.
+        level (int): Current level.
+        current_streak (int): Consecutive active days.
+        longest_streak (int): Historical maximum streak.
     """
 
     id: str

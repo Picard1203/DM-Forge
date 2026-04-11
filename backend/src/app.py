@@ -30,9 +30,6 @@ def register_middleware(application: FastAPI) -> None:
 
     Args:
         application (FastAPI): The FastAPI application instance to configure.
-
-    Returns:
-        None
     """
     application.add_middleware(
         CORSMiddleware,
@@ -48,9 +45,6 @@ def register_routers(application: FastAPI) -> None:
 
     Args:
         application (FastAPI): The FastAPI application instance to configure.
-
-    Returns:
-        None
     """
     application.include_router(auth.router)
     application.include_router(users.router)
@@ -65,15 +59,8 @@ def register_routers(application: FastAPI) -> None:
 def register_exception_handlers(application: FastAPI) -> None:
     """Register custom exception handlers on the application.
 
-    Domain exceptions (EmailAlreadyExistsError, InvalidCredentialsError, etc.)
-    inherit from HTTPException and are handled automatically by FastAPI.
-    Add any handler overrides here as the application grows.
-
     Args:
         application (FastAPI): The FastAPI application instance to configure.
-
-    Returns:
-        None
     """
 
 
@@ -90,9 +77,7 @@ def create_app() -> FastAPI:
         redoc_url="/redoc",
         lifespan=lifespan,
     )
-
     register_middleware(application)
     register_routers(application)
     register_exception_handlers(application)
-
     return application

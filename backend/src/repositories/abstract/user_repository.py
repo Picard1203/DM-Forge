@@ -1,27 +1,24 @@
 """Abstract repository interface for the User domain."""
 
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 from typing import Optional
 
 from src.models.user import User
+from src.repositories.abstract.base_repository import AbstractBaseRepository
 
 
-class AbstractUserRepository(ABC):
-    """Abstract contract for user data persistence operations.
-
-    All methods are async to support non-blocking I/O in FastAPI.
-    Concrete implementations are located in repositories/mongodb/.
-    """
+class AbstractUserRepository(AbstractBaseRepository):
+    """Abstract contract for user data persistence operations."""
 
     @abstractmethod
     async def get_by_id(self, user_id: str) -> Optional[User]:
         """Fetch a user by their MongoDB document ID.
 
         Args:
-            user_id: String representation of the MongoDB ObjectId.
+            user_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         raise NotImplementedError
 
@@ -30,10 +27,10 @@ class AbstractUserRepository(ABC):
         """Fetch a user by their email address.
 
         Args:
-            email: The email address to search for.
+            email (str): The email address to search for.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         raise NotImplementedError
 
@@ -42,10 +39,10 @@ class AbstractUserRepository(ABC):
         """Fetch a user by their username.
 
         Args:
-            username: The username to search for.
+            username (str): The username to search for.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         raise NotImplementedError
 
@@ -54,10 +51,10 @@ class AbstractUserRepository(ABC):
         """Persist a new user document.
 
         Args:
-            user: The User instance to insert.
+            user (User): The User instance to insert.
 
         Returns:
-            The persisted User document with its assigned ID.
+            User: The persisted User document with its assigned ID.
         """
         raise NotImplementedError
 
@@ -66,9 +63,9 @@ class AbstractUserRepository(ABC):
         """Persist changes to an existing user document.
 
         Args:
-            user: The User instance with updated fields.
+            user (User): The User instance with updated fields.
 
         Returns:
-            The updated User document.
+            User: The updated User document.
         """
         raise NotImplementedError

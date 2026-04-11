@@ -15,10 +15,10 @@ class MongoUserRepository(AbstractUserRepository):
         """Fetch a user by their MongoDB document ID.
 
         Args:
-            user_id: String representation of the MongoDB ObjectId.
+            user_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         return await User.get(PydanticObjectId(user_id))
 
@@ -26,10 +26,10 @@ class MongoUserRepository(AbstractUserRepository):
         """Fetch a user by their email address.
 
         Args:
-            email: The email address to search for.
+            email (str): The email address to search for.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         return await User.find_one(User.email == email)
 
@@ -37,10 +37,10 @@ class MongoUserRepository(AbstractUserRepository):
         """Fetch a user by their username.
 
         Args:
-            username: The username to search for.
+            username (str): The username to search for.
 
         Returns:
-            The matching User document, or None if not found.
+            Optional[User]: The matching User document, or None if not found.
         """
         return await User.find_one(User.username == username)
 
@@ -48,10 +48,10 @@ class MongoUserRepository(AbstractUserRepository):
         """Persist a new user document.
 
         Args:
-            user: The User instance to insert.
+            user (User): The User instance to insert.
 
         Returns:
-            The persisted User document with its assigned ID.
+            User: The persisted User document with its assigned ID.
         """
         await user.insert()
         return user
@@ -60,10 +60,10 @@ class MongoUserRepository(AbstractUserRepository):
         """Persist changes to an existing user document.
 
         Args:
-            user: The User instance with updated fields.
+            user (User): The User instance with updated fields.
 
         Returns:
-            The updated User document.
+            User: The updated User document.
         """
         await user.save()
         return user

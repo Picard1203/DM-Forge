@@ -21,13 +21,13 @@ async def complete_task(
     """Mark a task as complete and award XP to the user.
 
     Args:
-        request: Task and module IDs to mark complete.
-        current_user: The authenticated user.
-        progress_service: Injected ProgressService instance.
-        gamification_service: Injected GamificationService instance.
+        request (CompleteTaskRequest): Task and module IDs to mark complete.
+        current_user (User): The authenticated user.
+        progress_service (ProgressService): Injected ProgressService instance.
+        gamification_service (GamificationService): Injected GamificationService instance.
 
     Returns:
-        A dict with xp_awarded and a confirmation message.
+        dict: A dictionary with xp_awarded and a confirmation message.
     """
     xp_awarded = await progress_service.complete_task(
         user_id=str(current_user.id), request=request
@@ -47,10 +47,10 @@ async def get_overview(
     """Return a full progress overview for the authenticated user.
 
     Args:
-        current_user: The authenticated user.
-        progress_service: Injected ProgressService instance.
+        current_user (User): The authenticated user.
+        progress_service (ProgressService): Injected ProgressService instance.
 
     Returns:
-        A ProgressOverviewResponse with per-module and aggregate data.
+        ProgressOverviewResponse: Overview with per-module and aggregate data.
     """
     return await progress_service.get_overview(user_id=str(current_user.id))

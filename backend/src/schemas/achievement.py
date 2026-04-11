@@ -1,7 +1,6 @@
 """Pydantic schemas for achievement endpoints."""
 
 from datetime import datetime
-from typing import Optional
 
 from pydantic import BaseModel
 
@@ -10,12 +9,13 @@ class AchievementResponse(BaseModel):
     """Serialised Achievement definition.
 
     Attributes:
-        id: MongoDB document ID.
-        slug: Machine-readable identifier.
-        title: Display name.
-        description: How to earn this achievement.
-        icon: Emoji or icon string.
-        xp_reward: XP awarded on first earn.
+        id (str): MongoDB document ID.
+        slug (str): Machine-readable identifier.
+        title (str): Display name.
+        description (str): How to earn this achievement.
+        icon (str): Emoji or icon string.
+        xp_reward (int): XP awarded on first earn.
+
     """
 
     id: str
@@ -30,7 +30,8 @@ class UserAchievementResponse(AchievementResponse):
     """Achievement with the date it was earned by the current user.
 
     Attributes:
-        earned_at: UTC timestamp when the achievement was awarded.
+        earned_at (datetime): UTC timestamp when the achievement was awarded.
+
     """
 
     earned_at: datetime
