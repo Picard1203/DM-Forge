@@ -51,7 +51,7 @@ class SessionService:
                 already_done = await self._progress_service.is_task_complete(
                     user_id=user_id, task_id=str(task.id)
                 )
-                if already_done is False and task.estimated_minutes <= remaining:
+                if (already_done is False) and (task.estimated_minutes <= remaining):
                     task_response = TaskResponse(
                         id=str(task.id),
                         module_id=task.module_id,

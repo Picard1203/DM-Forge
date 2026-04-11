@@ -71,7 +71,7 @@ class AchievementService:
         all_achievements: List[Achievement] = await self._achievement_repository.get_all()
         newly_awarded: List[str] = []
         for achievement in all_achievements:
-            if achievement.trigger_type == trigger_type and current_value >= achievement.trigger_threshold:
+            if (achievement.trigger_type == trigger_type) and (current_value >= achievement.trigger_threshold):
                 already_has = await self._achievement_repository.has_achievement(
                     user_id=user_id, achievement_id=str(achievement.id)
                 )
