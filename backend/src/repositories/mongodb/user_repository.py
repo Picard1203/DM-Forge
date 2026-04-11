@@ -67,3 +67,13 @@ class MongoUserRepository(AbstractUserRepository):
         """
         await user.save()
         return user
+
+    async def delete(self, user_id: str) -> None:
+        """Delete a user document from the data store by its ID.
+
+        Args:
+            user_id (str): The string representation of the MongoDB ObjectId.
+        """
+        user = await User.get(PydanticObjectId(user_id))
+        if user is not None:
+            await user.delete()
