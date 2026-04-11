@@ -69,7 +69,7 @@ async def list_modules(
         curriculum_service (CurriculumService): Injected service instance.
 
     Returns:
-        (List[ModuleResponse]): Ordered list of ModuleResponse objects.
+        List[ModuleResponse]: Ordered list of ModuleResponse objects.
     """
     modules = await curriculum_service.get_all_modules()
     responses: List[ModuleResponse] = []
@@ -112,7 +112,7 @@ async def list_module_tasks(
         curriculum_service (CurriculumService): Injected service instance.
 
     Returns:
-        (List[TaskResponse]): Ordered list of TaskResponse objects.
+        List[TaskResponse]: Ordered list of TaskResponse objects.
     """
     tasks = await curriculum_service.get_tasks_for_module(slug)
     responses: List[TaskResponse] = []
