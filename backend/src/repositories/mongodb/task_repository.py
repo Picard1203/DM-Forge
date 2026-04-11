@@ -18,7 +18,7 @@ class MongoTaskRepository(AbstractTaskRepository):
             module_id (str): The parent module's document ID string.
 
         Returns:
-            (List[Task]): Ordered list of Task documents for the given module.
+        List[Task]: Ordered list of Task documents for the given module.
         """
         return await Task.find(Task.module_id == module_id).sort("+order").to_list()
 
@@ -29,7 +29,7 @@ class MongoTaskRepository(AbstractTaskRepository):
             slug (str): The URL-safe slug to search for.
 
         Returns:
-            (Optional[Task]): The matching Task document, or None if not found.
+        Optional[Task]: The matching Task document, or None if not found.
         """
         return await Task.find_one(Task.slug == slug)
 
@@ -40,6 +40,6 @@ class MongoTaskRepository(AbstractTaskRepository):
             task_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            (Optional[Task]): The matching Task document, or None if not found.
+        Optional[Task]: The matching Task document, or None if not found.
         """
         return await Task.get(PydanticObjectId(task_id))
