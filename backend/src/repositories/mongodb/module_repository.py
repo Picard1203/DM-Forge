@@ -13,7 +13,7 @@ class MongoModuleRepository(AbstractModuleRepository):
         """Retrieve all modules sorted by display order ascending.
 
         Returns:
-            (List[Module]): All Module documents ordered by their order field.
+        List[Module]: All Module documents ordered by their order field.
         """
         return await Module.find_all().sort("+order").to_list()
 
@@ -24,6 +24,6 @@ class MongoModuleRepository(AbstractModuleRepository):
             slug (str): The URL-safe slug to search for.
 
         Returns:
-            (Optional[Module]): The matching Module document, or None if not found.
+        Optional[Module]: The matching Module document, or None if not found.
         """
         return await Module.find_one(Module.slug == slug)
