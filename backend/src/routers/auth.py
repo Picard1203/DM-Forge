@@ -1,4 +1,4 @@
-"""Authentication router: register, login, and /me endpoints."""
+"""Authentication router: register and login endpoints."""
 
 from fastapi import APIRouter, Depends, status
 
@@ -18,11 +18,11 @@ async def register(
     """Register a new user account and return an access token.
 
     Args:
-        request: Validated registration payload.
-        auth_service: Injected AuthService instance.
+        request (RegisterRequest): Validated registration payload.
+        auth_service (AuthService): Injected AuthService instance.
 
     Returns:
-        A TokenResponse containing the signed JWT.
+        TokenResponse: A TokenResponse containing the signed JWT.
     """
     return await auth_service.register(request)
 
@@ -35,11 +35,11 @@ async def login(
     """Authenticate with email and password and return an access token.
 
     Args:
-        request: Validated login payload.
-        auth_service: Injected AuthService instance.
+        request (LoginRequest): Validated login payload.
+        auth_service (AuthService): Injected AuthService instance.
 
     Returns:
-        A TokenResponse containing the signed JWT.
+        TokenResponse: A TokenResponse containing the signed JWT.
     """
     return await auth_service.login(email=request.email, password=request.password)
 
@@ -49,10 +49,10 @@ async def me(current_user: User = Depends(get_current_user)) -> UserResponse:
     """Return the profile of the currently authenticated user.
 
     Args:
-        current_user: The user resolved from the Bearer token.
+        current_user (User): The user resolved from the Bearer token.
 
     Returns:
-        A UserResponse with the user's public profile fields.
+        UserResponse: A UserResponse with the user's public profile fields.
     """
     return UserResponse(
         id=str(current_user.id),

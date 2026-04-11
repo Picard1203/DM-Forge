@@ -11,14 +11,14 @@ class AchievementService:
     """Handles achievement trigger evaluation and award persistence.
 
     Attributes:
-        _achievement_repository: Injected repository for achievement operations.
+        _achievement_repository (AbstractAchievementRepository): Injected repository.
     """
 
     def __init__(self, achievement_repository: AbstractAchievementRepository) -> None:
         """Initialise the service with an achievement repository.
 
         Args:
-            achievement_repository: An AbstractAchievementRepository implementation.
+            achievement_repository (AbstractAchievementRepository): Repository instance.
         """
         self._achievement_repository = achievement_repository
 
@@ -26,29 +26,31 @@ class AchievementService:
         """Return all achievement definitions.
 
         Returns:
-            List of AchievementResponse objects.
+            List[AchievementResponse]: List of AchievementResponse objects.
         """
         achievements: List[Achievement] = await self._achievement_repository.get_all()
-        return [
-            AchievementResponse(
-                id=str(a.id),
-                slug=a.slug,
-                title=a.title,
-                description=a.description,
-                icon=a.icon,
-                xp_reward=a.xp_reward,
+        responses: List[AchievementResponse] = []
+        for achievement in achievements:
+            responses.append(
+                AchievementResponse(
+                    id=str(achievement.id),
+                    slug=achievement.slug,
+                    title=achievement.title,
+                    description=achievement.description,
+                    icon=achievement.icon_slug,
+                    xp_reward=0,  # Placeholder until xp_reward added to model
+                )
             )
-            for a in achievements
-        ]
+        return responses
 
     async def list_user_achievements(self, user_id: str) -> List[UserAchievementResponse]:
         """Return achievements earned by a specific user.
 
         Args:
-            user_id: The user's document ID.
+            user_id (str): The user's document ID.
 
         Returns:
-            List of UserAchievementResponse objects.
+            List[UserAchievementResponse]: List of UserAchievementResponse objects.
         """
         # TODO: join with Achievement definitions for full data
         raise NotImplementedError
@@ -59,20 +61,19 @@ class AchievementService:
         """Evaluate all achievements matching a trigger type and award eligible ones.
 
         Args:
-            user_id: The user's document ID.
-            trigger_type: The type of event that triggered this check.
-            current_value: The current value to compare against trigger thresholds.
+            user_id (str): The user's document ID.
+            trigger_type (str): The type of event that triggered this check.
+            current_value (int): The value to compare against thresholds.
 
         Returns:
-            List of achievement slugs newly awarded in this call.
+            List[str]: List of achievement slugs newly awarded in this call.
         """
         all_achievements: List[Achievement] = await self._achievement_repository.get_all()
         newly_awarded: List[str] = []
-
         for achievement in all_achievements:
             if achievement.trigger_type != trigger_type:
                 continue
-            if current_value < achievement.trigger_value:
+            if current_value < achievement.trigger_threshold:
                 continue
             already_has = await self._achievement_repository.has_achievement(
                 user_id=user_id, achievement_id=str(achievement.id)
@@ -85,5 +86,4 @@ class AchievementService:
             )
             await self._achievement_repository.award(user_achievement)
             newly_awarded.append(achievement.slug)
-
         return newly_awarded

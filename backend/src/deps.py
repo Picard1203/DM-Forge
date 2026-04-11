@@ -1,8 +1,4 @@
-"""Composition root — the only module that imports MongoDB concrete implementations.
-
-All FastAPI dependency functions are defined here. Services are constructed by
-injecting the appropriate concrete repository implementations.
-"""
+"""Composition root — the only module that imports MongoDB concrete implementations."""
 
 from typing import Optional
 
@@ -35,7 +31,8 @@ def get_auth_service() -> AuthService:
     """Construct an AuthService with a MongoDB user repository.
 
     Returns:
-        Fully wired AuthService instance.
+        AuthService: Fully wired AuthService instance.
+
     """
     return AuthService(user_repository=MongoUserRepository())
 
@@ -44,7 +41,8 @@ def get_user_service() -> UserService:
     """Construct a UserService with a MongoDB user repository.
 
     Returns:
-        Fully wired UserService instance.
+        UserService: Fully wired UserService instance.
+
     """
     return UserService(user_repository=MongoUserRepository())
 
@@ -53,7 +51,8 @@ def get_curriculum_service() -> CurriculumService:
     """Construct a CurriculumService with MongoDB repositories.
 
     Returns:
-        Fully wired CurriculumService instance.
+        CurriculumService: Fully wired CurriculumService instance.
+
     """
     return CurriculumService(
         module_repository=MongoModuleRepository(),
@@ -65,7 +64,8 @@ def get_progress_service() -> ProgressService:
     """Construct a ProgressService with MongoDB repositories.
 
     Returns:
-        Fully wired ProgressService instance.
+        ProgressService: Fully wired ProgressService instance.
+
     """
     return ProgressService(
         progress_repository=MongoProgressRepository(),
@@ -77,7 +77,8 @@ def get_quiz_service() -> QuizService:
     """Construct a QuizService with MongoDB repositories.
 
     Returns:
-        Fully wired QuizService instance.
+        QuizService: Fully wired QuizService instance.
+
     """
     return QuizService(quiz_repository=MongoQuizRepository())
 
@@ -86,7 +87,8 @@ def get_session_service() -> SessionService:
     """Construct a SessionService with required dependencies.
 
     Returns:
-        Fully wired SessionService instance.
+        SessionService: Fully wired SessionService instance.
+
     """
     return SessionService(
         curriculum_service=get_curriculum_service(),
@@ -98,7 +100,8 @@ def get_achievement_service() -> AchievementService:
     """Construct an AchievementService with MongoDB repositories.
 
     Returns:
-        Fully wired AchievementService instance.
+        AchievementService: Fully wired AchievementService instance.
+
     """
     return AchievementService(achievement_repository=MongoAchievementRepository())
 
@@ -107,7 +110,8 @@ def get_gamification_service() -> GamificationService:
     """Construct a GamificationService with required dependencies.
 
     Returns:
-        Fully wired GamificationService instance.
+        GamificationService: Fully wired GamificationService instance.
+
     """
     return GamificationService(
         user_repository=MongoUserRepository(),
@@ -119,7 +123,8 @@ def get_review_service() -> ReviewService:
     """Construct a ReviewService with MongoDB repositories.
 
     Returns:
-        Fully wired ReviewService instance.
+        ReviewService: Fully wired ReviewService instance.
+
     """
     return ReviewService(review_card_repository=MongoReviewCardRepository())
 
@@ -131,15 +136,15 @@ async def get_current_user(
     """Extract and validate the current user from the Bearer token.
 
     Args:
-        credentials: HTTP Authorization header credentials.
-        auth_service: Injected AuthService instance.
+        credentials (Optional[HTTPAuthorizationCredentials]): Bearer token credentials.
+        auth_service (AuthService): Injected AuthService instance.
 
     Returns:
-        The authenticated User document.
+        User: The authenticated User document.
 
     Raises:
-        InvalidCredentialsError: If the token is missing, invalid, or the user
-            is not found.
+        InvalidCredentialsError: If token is missing, invalid, or user not found.
+
     """
     if credentials is None:
         raise InvalidCredentialsError()

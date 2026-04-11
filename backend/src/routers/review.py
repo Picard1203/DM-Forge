@@ -20,11 +20,11 @@ async def get_due_cards(
     """Return flashcards due for review for the authenticated user.
 
     Args:
-        current_user: The authenticated user.
-        review_service: Injected ReviewService instance.
+        current_user (User): The authenticated user.
+        review_service (ReviewService): Injected service instance.
 
     Returns:
-        List of CardReviewResponse objects with front/back content.
+        List[CardReviewResponse]: List of CardReviewResponse objects.
     """
     return await review_service.get_due_cards(user_id=str(current_user.id))
 
@@ -38,12 +38,12 @@ async def submit_review(
     """Submit a quality rating for a reviewed flashcard.
 
     Args:
-        request: Contains the review ID and quality rating (0–5).
-        _current_user: Authenticated user (access guard).
-        review_service: Injected ReviewService instance.
+        request (ReviewSubmitRequest): Contains review ID and quality rating.
+        _current_user (User): Authenticated user (access guard).
+        review_service (ReviewService): Injected service instance.
 
     Returns:
-        A ReviewSubmitResponse with the updated schedule.
+        ReviewSubmitResponse: Response with the updated schedule.
     """
     return await review_service.submit_review(
         user_id=str(_current_user.id), request=request

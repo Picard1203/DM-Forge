@@ -19,14 +19,25 @@ async def get_quiz(
     """Return a quiz with its questions (correct answers hidden).
 
     Args:
-        quiz_id: The quiz's document ID.
-        _current_user: Authenticated user (access guard).
-        quiz_service: Injected QuizService instance.
+        quiz_id (str): The quiz's document ID.
+        _current_user (User): Authenticated user (access guard).
+        quiz_service (QuizService): Injected service instance.
 
     Returns:
-        A QuizResponse with embedded questions.
+        QuizResponse: A QuizResponse with embedded questions.
     """
     quiz, questions = await quiz_service.get_quiz_with_questions(quiz_id)
+    question_responses: list[QuizQuestionResponse] = []
+    for question in questions:
+        question_responses.append(
+            QuizQuestionResponse(
+                id=str(question.id),
+                question_text=question.question_text,
+                question_type=question.question_type,
+                options=question.options,
+                order=question.order,
+            )
+        )
     return QuizResponse(
         id=str(quiz.id),
         module_id=quiz.module_id,
@@ -34,16 +45,7 @@ async def get_quiz(
         description=quiz.description,
         passing_score=quiz.passing_score,
         xp_reward=quiz.xp_reward,
-        questions=[
-            QuizQuestionResponse(
-                id=str(q.id),
-                question_text=q.question_text,
-                question_type=q.question_type,
-                options=q.options,
-                order=q.order,
-            )
-            for q in questions
-        ],
+        questions=question_responses,
     )
 
 
@@ -57,13 +59,13 @@ async def submit_quiz(
     """Submit answers for a quiz and receive a graded result.
 
     Args:
-        quiz_id: The quiz's document ID.
-        request: The list of question-answer pairs.
-        current_user: The authenticated user.
-        quiz_service: Injected QuizService instance.
+        quiz_id (str): The quiz's document ID.
+        request (SubmitAnswersRequest): The answer submissions.
+        current_user (User): The authenticated user.
+        quiz_service (QuizService): Injected service instance.
 
     Returns:
-        A QuizResultResponse with score, pass status, and XP awarded.
+        QuizResultResponse: Result with score, pass status, and XP.
     """
     return await quiz_service.submit_answers(
         user_id=str(current_user.id),

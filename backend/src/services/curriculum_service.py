@@ -12,8 +12,8 @@ class CurriculumService:
     """Handles retrieval and ordering of curriculum content.
 
     Attributes:
-        _module_repository: Injected repository for module operations.
-        _task_repository: Injected repository for task operations.
+        _module_repository (AbstractModuleRepository): Repository for modules.
+        _task_repository (AbstractTaskRepository): Repository for tasks.
     """
 
     def __init__(
@@ -24,17 +24,17 @@ class CurriculumService:
         """Initialise the service with module and task repositories.
 
         Args:
-            module_repository: An AbstractModuleRepository implementation.
-            task_repository: An AbstractTaskRepository implementation.
+            module_repository (AbstractModuleRepository): Module repository.
+            task_repository (AbstractTaskRepository): Task repository.
         """
         self._module_repository = module_repository
         self._task_repository = task_repository
 
     async def list_modules(self) -> List[Module]:
-        """Return all modules ordered by their ``order`` field.
+        """Return all modules ordered by their order field.
 
         Returns:
-            Ordered list of Module documents.
+            List[Module]: Ordered list of Module documents.
         """
         return await self._module_repository.get_ordered()
 
@@ -42,10 +42,10 @@ class CurriculumService:
         """Fetch a single module by ID.
 
         Args:
-            module_id: The module's document ID.
+            module_id (str): The module's document ID.
 
         Returns:
-            The matching Module document.
+            Module: The matching Module document.
 
         Raises:
             ResourceNotFoundError: If no module with that ID exists.
@@ -56,13 +56,13 @@ class CurriculumService:
         return module
 
     async def get_module_tasks(self, module_id: str) -> List[Task]:
-        """Fetch all tasks for a module, ordered by ``order`` ascending.
+        """Fetch all tasks for a module, ordered by order ascending.
 
         Args:
-            module_id: The parent module's document ID.
+            module_id (str): The parent module's document ID.
 
         Returns:
-            Ordered list of Task documents.
+            List[Task]: Ordered list of Task documents.
         """
         return await self._task_repository.get_by_module(module_id)
 
@@ -70,10 +70,10 @@ class CurriculumService:
         """Fetch a single task by ID.
 
         Args:
-            task_id: The task's document ID.
+            task_id (str): The task's document ID.
 
         Returns:
-            The matching Task document.
+            Task: The matching Task document.
 
         Raises:
             ResourceNotFoundError: If no task with that ID exists.

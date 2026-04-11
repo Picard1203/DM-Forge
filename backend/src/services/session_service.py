@@ -12,8 +12,8 @@ class SessionService:
     """Builds a time-aware session plan from incomplete tasks.
 
     Attributes:
-        _curriculum_service: Injected curriculum service.
-        _progress_service: Injected progress service.
+        _curriculum_service (CurriculumService): Curriculum data service.
+        _progress_service (ProgressService): User progress service.
     """
 
     def __init__(
@@ -24,8 +24,8 @@ class SessionService:
         """Initialise the service with curriculum and progress services.
 
         Args:
-            curriculum_service: Provides module and task data.
-            progress_service: Provides completion state per user.
+            curriculum_service (CurriculumService): Provides module/task data.
+            progress_service (ProgressService): Provides completion state.
         """
         self._curriculum_service = curriculum_service
         self._progress_service = progress_service
@@ -33,26 +33,22 @@ class SessionService:
     async def build_plan(self, user_id: str, request: SessionRequest) -> SessionPlanResponse:
         """Build a session plan fitting within the requested time budget.
 
-        Selects incomplete tasks in module order, adding them until the time
-        budget would be exceeded.
-
         Args:
-            user_id: The ID of the user requesting the session.
-            request: Contains the number of available minutes.
+            user_id (str): The ID of the user requesting the session.
+            request (SessionRequest): Documentation regarding available minutes.
 
         Returns:
-            A SessionPlanResponse with an ordered list of tasks and totals.
+            SessionPlanResponse: Plan with an ordered list of tasks.
         """
         modules = await self._curriculum_service.list_modules()
         budget = request.available_minutes
         remaining = budget
         items: List[SessionTaskItem] = []
         xp_potential = 0
-
         for module in modules:
             tasks = await self._curriculum_service.get_module_tasks(str(module.id))
             for task in tasks:
-                already_done = await self._progress_service._progress_repository.is_task_complete(
+                already_done = await self._progress_service.is_task_complete(
                     user_id=user_id, task_id=str(task.id)
                 )
                 if already_done is True:
@@ -80,7 +76,6 @@ class SessionService:
                 )
                 remaining -= task.estimated_minutes
                 xp_potential += task.xp_reward
-
         return SessionPlanResponse(
             items=items,
             total_minutes=budget - remaining,

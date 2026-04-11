@@ -8,6 +8,7 @@ class EmailAlreadyExistsError(HTTPException):
 
     Attributes:
         status_code: HTTP 409 Conflict.
+
     """
 
     def __init__(self) -> None:
@@ -23,6 +24,7 @@ class UsernameAlreadyExistsError(HTTPException):
 
     Attributes:
         status_code: HTTP 409 Conflict.
+
     """
 
     def __init__(self) -> None:
@@ -38,6 +40,7 @@ class InvalidCredentialsError(HTTPException):
 
     Attributes:
         status_code: HTTP 401 Unauthorized.
+
     """
 
     def __init__(self) -> None:
@@ -54,6 +57,7 @@ class UserNotFoundError(HTTPException):
 
     Attributes:
         status_code: HTTP 404 Not Found.
+
     """
 
     def __init__(self) -> None:
@@ -69,6 +73,7 @@ class ResourceNotFoundError(HTTPException):
 
     Attributes:
         status_code: HTTP 404 Not Found.
+
     """
 
     def __init__(self, resource: str = "Resource") -> None:
@@ -76,6 +81,7 @@ class ResourceNotFoundError(HTTPException):
 
         Args:
             resource: Human-readable name of the missing resource.
+
         """
         super().__init__(
             status_code=status.HTTP_404_NOT_FOUND,
@@ -88,6 +94,7 @@ class ForbiddenError(HTTPException):
 
     Attributes:
         status_code: HTTP 403 Forbidden.
+
     """
 
     def __init__(self) -> None:
