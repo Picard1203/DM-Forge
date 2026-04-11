@@ -6,17 +6,17 @@ from beanie import init_beanie
 from httpx import ASGITransport, AsyncClient
 from mongomock_motor import AsyncMongoMockClient
 
-from app.main import app
-from app.models.achievement import Achievement, UserAchievement
-from app.models.curriculum import Module, Task
-from app.models.progress import TaskCompletion, UserProgress
-from app.models.quiz import Quiz, QuizAttempt, QuizQuestion
-from app.models.review_card import SpacedRepCard, UserCardReview
-from app.models.user import User
-from app.repositories.mongodb.user_repository import MongoUserRepository
-from app.services.auth_service import AuthService
-from app.deps import get_auth_service
-from app.utils.security import get_password_hash
+from src.main import app
+from src.models.achievement import Achievement, UserAchievement
+from src.models.curriculum import Module, Task
+from src.models.progress import TaskCompletion, UserProgress
+from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
+from src.models.review_card import SpacedRepCard, UserCardReview
+from src.models.user import User
+from src.repositories.mongodb.user_repository import MongoUserRepository
+from src.services.auth_service import AuthService
+from src.deps import get_auth_service
+from src.utils.security import get_password_hash
 
 
 @pytest_asyncio.fixture(autouse=True)
