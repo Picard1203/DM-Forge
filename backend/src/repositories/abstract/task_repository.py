@@ -17,7 +17,7 @@ class AbstractTaskRepository(ABC):
             module_id (str): The parent module's document ID string.
 
         Returns:
-            (List[Task]): Ordered list of Task documents for the given module.
+        List[Task]: Ordered list of Task documents for the given module.
         """
         raise NotImplementedError
 
@@ -29,7 +29,7 @@ class AbstractTaskRepository(ABC):
             slug (str): The URL-safe slug to search for.
 
         Returns:
-            (Optional[Task]): The matching Task document, or None if not found.
+        Optional[Task]: The matching Task document, or None if not found.
         """
         raise NotImplementedError
 
@@ -41,6 +41,6 @@ class AbstractTaskRepository(ABC):
             task_id (str): String representation of the MongoDB ObjectId.
 
         Returns:
-            (Optional[Task]): The matching Task document, or None if not found.
+        Optional[Task]: The matching Task document, or None if not found.
         """
         raise NotImplementedError
