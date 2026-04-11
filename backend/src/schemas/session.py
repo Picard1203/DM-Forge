@@ -11,7 +11,7 @@ class SessionRequest(BaseModel):
     """Request body for generating a session plan.
 
     Attributes:
-        available_minutes: Time the user has available for this session.
+        available_minutes (int): Time the user has available for this session.
     """
 
     available_minutes: int = Field(..., ge=5, le=240)
@@ -21,8 +21,8 @@ class SessionTaskItem(BaseModel):
     """A single task scheduled within a session plan.
 
     Attributes:
-        task: The task to complete.
-        estimated_minutes: Time allocated to this task in the session.
+        task (TaskResponse): The task to complete.
+        estimated_minutes (int): Time allocated to this task.
     """
 
     task: TaskResponse
@@ -33,9 +33,9 @@ class SessionPlanResponse(BaseModel):
     """A fully constructed session plan.
 
     Attributes:
-        items: Ordered list of task items fitting within the time budget.
-        total_minutes: Sum of all task time allocations.
-        xp_potential: Total XP available if all tasks are completed.
+        items (List[SessionTaskItem]): Task items fitting the budget.
+        total_minutes (int): Sum of all task time allocations.
+        xp_potential (int): Total XP available if all tasks are finished.
     """
 
     items: List[SessionTaskItem]

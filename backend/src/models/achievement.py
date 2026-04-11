@@ -1,49 +1,46 @@
 """Beanie Document models for the Achievement domain."""
 
-from datetime import datetime
-from typing import Optional
+from datetime import UTC, datetime
 
 from beanie import Document
 from pydantic import Field
 
 
 class Achievement(Document):
-    """MongoDB document defining an earnable achievement badge.
+    """MongoDB document defining an achievement and its award criteria.
 
     Attributes:
-        slug: Unique machine-readable identifier.
-        title: Display name shown to the user.
-        description: Explanation of how to earn this achievement.
-        icon: Emoji or icon identifier for display.
-        xp_reward: XP awarded when this achievement is first earned.
-        trigger_type: Category of trigger (e.g. "task_count", "streak", "quiz_pass").
-        trigger_value: Threshold value for the trigger condition.
+        slug (str): Unique URL-friendly identifier.
+        title (str): Human-readable achievement name.
+        description (str): Detailed text explaining how to earn it.
+        trigger_type (str): Category of trigger (e.g. xp_total, level, streak).
+        trigger_threshold (int): The value required to unlock the achievement.
+        icon_slug (str): Identifier for the frontend icon asset.
     """
 
     slug: str
     title: str
     description: str = ""
-    icon: str = "🏆"
-    xp_reward: int = 25
     trigger_type: str
-    trigger_value: int = 1
+    trigger_threshold: int
+    icon_slug: str = "default_medal"
 
     class Settings:
         name = "achievements"
 
 
 class UserAchievement(Document):
-    """MongoDB document recording an achievement earned by a user.
+    """MongoDB record of an achievement earned by a specific user.
 
     Attributes:
-        user_id: ID of the user who earned the achievement.
-        achievement_id: ID of the Achievement document.
-        earned_at: UTC timestamp when the achievement was awarded.
+        user_id (str): ID of the user.
+        achievement_id (str): ID of the Achievement.
+        earned_at (datetime): UTC timestamp when awarded.
     """
 
     user_id: str
     achievement_id: str
-    earned_at: datetime = Field(default_factory=datetime.utcnow)
+    earned_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     class Settings:
         name = "user_achievements"

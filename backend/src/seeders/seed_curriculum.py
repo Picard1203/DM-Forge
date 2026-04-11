@@ -1,10 +1,6 @@
 """Curriculum seeder: loads YAML module/task files into MongoDB.
 
-Usage:
-    python -m src.seeders.seed_curriculum
 
-The seeder reads all YAML files under backend/curriculum/modules/ and upserts
-them into MongoDB so that running it multiple times is idempotent.
 """
 
 import asyncio
@@ -23,17 +19,12 @@ _MODULES_DIR = pathlib.Path(__file__).parent.parent.parent / "curriculum" / "mod
 async def seed_modules() -> None:
     """Load all module YAML files and upsert into MongoDB.
 
-    For each module file:
-    - Upserts the Module document by slug.
-    - Upserts each Task document by slug.
     """
     await init_db()
     yaml_files: List[pathlib.Path] = sorted(_MODULES_DIR.glob("*.yaml"))
-
     for yaml_file in yaml_files:
         with yaml_file.open("r", encoding="utf-8") as fh:
             data: Dict[str, Any] = yaml.safe_load(fh)
-
         existing_module = await Module.find_one(Module.slug == data["slug"])
         if existing_module is None:
             module = Module(
@@ -48,7 +39,6 @@ async def seed_modules() -> None:
             await module.insert()
         else:
             module = existing_module
-
         tasks: List[Dict[str, Any]] = data.get("tasks", [])
         for task_data in tasks:
             existing_task = await Task.find_one(Task.slug == task_data["slug"])
@@ -66,7 +56,6 @@ async def seed_modules() -> None:
                     tags=task_data.get("tags", []),
                 )
                 await task.insert()
-
         print(f"Seeded module: {data['slug']} ({len(tasks)} tasks)")
 
 
