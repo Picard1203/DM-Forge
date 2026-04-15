@@ -2,97 +2,68 @@
 
 from typing import List, Optional
 
-from src.models.progress import TaskCompletion, UserProgress
+from src.models.progress import UserProgress
 from src.repositories.abstract.progress_repository import AbstractProgressRepository
 
 
 class MongoProgressRepository(AbstractProgressRepository):
     """Concrete MongoDB repository for progress tracking using Beanie ODM."""
 
-    async def get_user_progress(self, user_id: str, module_id: str) -> Optional[UserProgress]:
-        """Fetch a user's progress record for a specific module.
-
-        Args:
-            user_id (str): The user's document ID.
-            module_id (str): The module's document ID.
-
-        Returns:
-            Optional[UserProgress]: Progress document, or None if not started.
-        """
-        return await UserProgress.find_one(
-            UserProgress.user_id == user_id,
-            UserProgress.module_id == module_id,
-        )
-
-    async def get_all_user_progress(self, user_id: str) -> List[UserProgress]:
-        """Fetch all progress records for a user across all modules.
-
-        Args:
-            user_id (str): The user's document ID.
-
-        Returns:
-            List[UserProgress]: List of UserProgress documents.
-        """
-        return await UserProgress.find(UserProgress.user_id == user_id).to_list()
-
-    async def mark_task_complete(self, completion: TaskCompletion) -> TaskCompletion:
-        """Persist a task completion event.
-
-        Args:
-            completion (TaskCompletion): The document to insert.
-
-        Returns:
-            TaskCompletion: The persisted TaskCompletion document.
-        """
-        await completion.insert()
-        return completion
-
-    async def is_task_complete(self, user_id: str, task_id: str) -> bool:
-        """Check whether a specific task has already been completed.
+    async def get_by_user_and_task(
+        self, user_id: str, task_id: str
+    ) -> Optional[UserProgress]:
+        """Fetch the progress record for a specific user-task pair.
 
         Args:
             user_id (str): The user's document ID.
             task_id (str): The task's document ID.
 
         Returns:
-            bool: True if a completion record exists, False otherwise.
+            Optional[UserProgress]: The matching document, or None if not found.
         """
-        existing = await TaskCompletion.find_one(
-            TaskCompletion.user_id == user_id,
-            TaskCompletion.task_id == task_id,
+        return await UserProgress.find_one(
+            UserProgress.user_id == user_id,
+            UserProgress.task_id == task_id,
         )
-        return existing is not None
 
-    async def upsert_module_progress(self, progress: UserProgress) -> UserProgress:
-        """Create or update the module-level progress summary.
+    async def get_by_user_and_module(
+        self, user_id: str, module_id: str
+    ) -> List[UserProgress]:
+        """Fetch all progress records for a user within a specific module.
 
         Args:
-            progress (UserProgress): The UserProgress document to upsert.
+            user_id (str): The user's document ID.
+            module_id (str): The module's document ID.
 
         Returns:
-            UserProgress: The persisted or updated UserProgress document.
+            List[UserProgress]: All UserProgress documents for that module.
         """
-        existing = await self.get_user_progress(
-            user_id=progress.user_id,
-            module_id=progress.module_id,
-        )
-        if existing is not None:
-            existing.tasks_completed = progress.tasks_completed
-            existing.tasks_total = progress.tasks_total
-            existing.percent_complete = progress.percent_complete
-            existing.completed_at = progress.completed_at
-            await existing.save()
-            return existing
-        await progress.insert()
-        return progress
+        return await UserProgress.find(
+            UserProgress.user_id == user_id,
+            UserProgress.module_id == module_id,
+        ).to_list()
 
-    async def count_user_completions(self, user_id: str) -> int:
-        """Count the total number of task completions for a user.
+    async def get_all_for_user(self, user_id: str) -> List[UserProgress]:
+        """Fetch every progress record belonging to a user across all modules.
 
         Args:
             user_id (str): The user's document ID.
 
         Returns:
-            int: Total task completion count.
+            List[UserProgress]: All UserProgress documents for the user.
         """
-        return await TaskCompletion.find(TaskCompletion.user_id == user_id).count()
+        return await UserProgress.find(
+            UserProgress.user_id == user_id
+        ).to_list()
+
+    async def create(self, progress: UserProgress) -> UserProgress:
+        """Persist a new UserProgress document.
+
+        Args:
+            progress (UserProgress): The document instance to insert.
+
+        Returns:
+            UserProgress: The persisted document with its assigned ID.
+        """
+        await progress.insert()
+        return progress
