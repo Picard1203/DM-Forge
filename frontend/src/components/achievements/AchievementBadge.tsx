@@ -1,8 +1,8 @@
 import React from 'react'
-import type { Achievement } from '@/types'
+import type { AchievementResponse } from '@/types'
 
 interface Props {
-  achievement: Achievement
+  achievement: AchievementResponse
   earned: boolean
 }
 

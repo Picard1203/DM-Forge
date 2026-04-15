@@ -1,12 +1,12 @@
 import client from './client'
-import type { ProgressOverview } from '@/types'
+import type { CompleteTaskResponse, ProgressOverviewResponse } from '@/types'
 
-export async function getOverview(): Promise<ProgressOverview> {
-  const response = await client.get<ProgressOverview>('/progress/overview')
+export async function getOverview(): Promise<ProgressOverviewResponse> {
+  const response = await client.get<ProgressOverviewResponse>('/progress/overview')
   return response.data
 }
 
-export async function completeTask(taskId: string, moduleId: string): Promise<unknown> {
-  const response = await client.post('/progress/complete', { task_id: taskId, module_id: moduleId })
+export async function completeTask(taskId: string): Promise<CompleteTaskResponse> {
+  const response = await client.post<CompleteTaskResponse>('/progress/complete', { task_id: taskId })
   return response.data
 }

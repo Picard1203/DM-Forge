@@ -56,63 +56,91 @@ export interface QuizQuestion {
   question_text: string
   question_type: string
   options: string[]
+  scenario_context?: string
   order: number
 }
 
-export interface QuizResult {
-  score: number
-  passed: boolean
-  xp_awarded: number
-  correct_count: number
-  total_count: number
+export interface QuizQuestionResult {
+  question_index: number
+  correct: boolean
+  correct_answer_index: number
+  explanation: string
 }
 
-export interface ModuleProgress {
-  module_id: string
-  tasks_completed: number
-  tasks_total: number
-  percent_complete: number
-}
-
-export interface ProgressOverview {
-  modules: ModuleProgress[]
-  total_tasks_completed: number
-  total_xp: number
-}
-
-export interface Achievement {
+export interface AchievementResponse {
   id: string
   slug: string
   title: string
   description: string
   icon: string
   xp_reward: number
-  earned_at?: string
+}
+
+export interface UserAchievementResponse {
+  id: string
+  slug: string
+  title: string
+  description: string
+  icon: string
+  xp_reward: number
+  earned_at: string
+}
+
+export interface CompleteTaskResponse {
+  already_completed: boolean
+  xp_earned: number
+  new_xp: number
+  new_level: number
+  earned_achievements: AchievementResponse[]
+}
+
+export interface ModuleProgressItem {
+  module_id: string
+  completed: number
+  total: number
+  percent: number
+}
+
+export interface ProgressOverviewResponse {
+  modules: ModuleProgressItem[]
+  total_xp: number
+}
+
+export interface QuizResult {
+  score: number
+  passed: boolean
+  xp_earned: number
+  already_completed: boolean
+  question_results: QuizQuestionResult[]
+  earned_achievements: AchievementResponse[]
 }
 
 export interface ReviewCard {
-  review_id: string
-  card_id: string
+  id: string
   front: string
   back: string
-  module_id: string
+  tags: string[]
 }
 
 export interface ReviewSubmitResponse {
-  review_id: string
-  next_review_at: string
+  next_review: string
   interval_days: number
+  ease_factor: number
 }
 
 export interface SessionTaskItem {
-  task: Task
+  task_id: string
+  slug: string
+  title: string
+  task_type: string
   estimated_minutes: number
+  xp_reward: number
 }
 
-export interface SessionPlan {
-  items: SessionTaskItem[]
+export interface SessionPlanResponse {
+  tasks: SessionTaskItem[]
   total_minutes: number
-  xp_potential: number
+  has_review_slot: boolean
 }
 
 export interface TokenResponse {

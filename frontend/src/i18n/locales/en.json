@@ -42,5 +42,17 @@
     "next": "Next",
     "complete": "Complete",
     "minutes": "{{count}} min"
+  },
+  "xp": {
+    "level": "Level {{level}}",
+    "to_next": "{{xp}} XP to level {{next}}",
+    "max_level": "Max Level"
+  },
+  "progress": {
+    "modules_heading": "Module Progress",
+    "tasks_done": "tasks",
+    "mark_complete": "Mark Complete",
+    "completed": "Completed ✓",
+    "percent": "{{percent}}% complete"
   }
 }
