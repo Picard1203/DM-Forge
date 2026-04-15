@@ -19,7 +19,7 @@ async def plan_session(
     """Generate a session plan fitting within the user's available time.
 
     Args:
-        request (SessionRequest): Documentation contains available minutes.
+        request (SessionRequest): Contains available_minutes for the session.
         current_user (User): The authenticated user.
         session_service (SessionService): Injected service instance.
 
@@ -27,5 +27,6 @@ async def plan_session(
         SessionPlanResponse: Plan with an ordered task list.
     """
     return await session_service.build_plan(
-        user_id=str(current_user.id), request=request
+        user_id=str(current_user.id),
+        available_minutes=request.available_minutes,
     )
