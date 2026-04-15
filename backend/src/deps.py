@@ -60,8 +60,18 @@ def get_curriculum_service() -> CurriculumService:
     )
 
 
+def get_gamification_service() -> GamificationService:
+    """Construct a GamificationService with a MongoDB user repository.
+
+    Returns:
+        GamificationService: Fully wired GamificationService instance.
+
+    """
+    return GamificationService(user_repository=MongoUserRepository())
+
+
 def get_progress_service() -> ProgressService:
-    """Construct a ProgressService with MongoDB repositories.
+    """Construct a ProgressService with MongoDB repositories and GamificationService.
 
     Returns:
         ProgressService: Fully wired ProgressService instance.
@@ -70,6 +80,7 @@ def get_progress_service() -> ProgressService:
     return ProgressService(
         progress_repository=MongoProgressRepository(),
         task_repository=MongoTaskRepository(),
+        gamification_service=get_gamification_service(),
     )
 
 
@@ -104,19 +115,6 @@ def get_achievement_service() -> AchievementService:
 
     """
     return AchievementService(achievement_repository=MongoAchievementRepository())
-
-
-def get_gamification_service() -> GamificationService:
-    """Construct a GamificationService with required dependencies.
-
-    Returns:
-        GamificationService: Fully wired GamificationService instance.
-
-    """
-    return GamificationService(
-        user_repository=MongoUserRepository(),
-        achievement_service=get_achievement_service(),
-    )
 
 
 def get_review_service() -> ReviewService:
