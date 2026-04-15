@@ -1,9 +1,9 @@
 import React from 'react'
-import type { Achievement } from '@/types'
+import type { AchievementResponse } from '@/types'
 import AchievementBadge from './AchievementBadge'
 
 interface Props {
-  achievements: Achievement[]
+  achievements: AchievementResponse[]
   earnedIds: Set<string>
 }
 

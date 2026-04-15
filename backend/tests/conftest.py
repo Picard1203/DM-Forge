@@ -8,7 +8,7 @@ from mongomock_motor import AsyncMongoMockClient
 from src.main import app
 from src.models.achievement import Achievement, UserAchievement
 from src.models.curriculum import Module, Task
-from src.models.progress import TaskCompletion, UserProgress
+from src.models.progress import UserProgress
 from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
 from src.models.review_card import SpacedRepCard, UserCardReview
 from src.models.user import User
@@ -29,7 +29,6 @@ async def init_test_db():
             Module,
             Task,
             UserProgress,
-            TaskCompletion,
             Quiz,
             QuizQuestion,
             QuizAttempt,
@@ -43,6 +42,7 @@ async def init_test_db():
     await User.find_all().delete()
     await Module.find_all().delete()
     await Task.find_all().delete()
+    await UserProgress.find_all().delete()
 
 
 def _override_auth_service() -> AuthService:
@@ -140,4 +140,9 @@ async def seeded_curriculum() -> dict:
     )
     await task_two.insert()
 
-    return {"rules-fundamentals": module_alpha, "narrative-tools": module_beta}
+    return {
+        "rules-fundamentals": module_alpha,
+        "narrative-tools": module_beta,
+        "task_one": task_one,
+        "task_two": task_two,
+    }

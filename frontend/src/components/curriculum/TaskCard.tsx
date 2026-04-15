@@ -1,11 +1,16 @@
 import React from 'react'
 import type { Task } from '@/types'
+import { useProgressStore } from '@/store/progressStore'
 
 interface Props {
   task: Task
 }
 
 const TaskCard: React.FC<Props> = ({ task }) => {
+  const completeTask = useProgressStore((s) => s.completeTask)
+  const completedTaskIds = useProgressStore((s) => s.completedTaskIds)
+  const isCompleted = completedTaskIds.has(task.id)
+
   const renderBody = () => {
     if (task.task_type === 'video') {
       const content = task.content as { youtube_url?: string }
@@ -72,6 +77,10 @@ const TaskCard: React.FC<Props> = ({ task }) => {
     return null
   }
 
+  const handleComplete = () => {
+    completeTask(task.id)
+  }
+
   return (
     <div className="bg-surface border border-border rounded-lg p-4">
       <div className="flex items-start justify-between gap-4 mb-2">
@@ -84,7 +93,24 @@ const TaskCard: React.FC<Props> = ({ task }) => {
         <span className="text-muted text-xs">{task.estimated_minutes} min</span>
         <span className="text-gold text-xs">{task.xp_reward} XP</span>
       </div>
-      {renderBody()}
+      <div className="mb-3">{renderBody()}</div>
+      <div className="border-t border-border pt-3 mt-2">
+        {isCompleted ? (
+          <button
+            disabled
+            className="text-xs text-green-400 border border-green-400/30 rounded px-3 py-1 cursor-not-allowed opacity-70"
+          >
+            Completed ✓
+          </button>
+        ) : (
+          <button
+            onClick={handleComplete}
+            className="text-xs text-primary border border-primary/40 rounded px-3 py-1 hover:bg-primary/10 transition-colors"
+          >
+            Mark Complete
+          </button>
+        )}
+      </div>
     </div>
   )
 }

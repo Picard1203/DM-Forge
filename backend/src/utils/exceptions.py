@@ -135,3 +135,19 @@ class TaskNotFoundError(HTTPException):
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Task not found.",
         )
+
+
+class TaskAlreadyCompletedError(HTTPException):
+    """Raised when attempting to complete a task the user has already finished.
+
+    Attributes:
+        status_code: HTTP 409 Conflict.
+
+    """
+
+    def __init__(self) -> None:
+        """Initialise with a fixed 409 status and descriptive detail."""
+        super().__init__(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="Task has already been completed.",
+        )

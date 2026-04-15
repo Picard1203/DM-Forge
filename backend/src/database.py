@@ -8,7 +8,7 @@ from beanie import Document, init_beanie
 from src.config import settings
 from src.models.achievement import Achievement, UserAchievement
 from src.models.curriculum import Module, Task
-from src.models.progress import TaskCompletion, UserProgress
+from src.models.progress import UserProgress
 from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
 from src.models.review_card import SpacedRepCard, UserCardReview
 from src.models.user import User
@@ -18,7 +18,6 @@ _document_models: List[type[Document]] = [
     Module,
     Task,
     UserProgress,
-    TaskCompletion,
     Quiz,
     QuizQuestion,
     QuizAttempt,
