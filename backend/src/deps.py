@@ -95,15 +95,16 @@ def get_quiz_service() -> QuizService:
 
 
 def get_session_service() -> SessionService:
-    """Construct a SessionService with required dependencies.
+    """Construct a SessionService with required repositories.
 
     Returns:
         SessionService: Fully wired SessionService instance.
 
     """
     return SessionService(
-        curriculum_service=get_curriculum_service(),
-        progress_service=get_progress_service(),
+        module_repository=MongoModuleRepository(),
+        task_repository=MongoTaskRepository(),
+        progress_repository=MongoProgressRepository(),
     )
 
 
