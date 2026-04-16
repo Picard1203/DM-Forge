@@ -6,6 +6,8 @@ import QuizResult from '@/components/quiz/QuizResult'
 import * as quizzesApi from '@/api/quizzes'
 import type { Quiz, QuizResult as QuizResultType } from '@/types'
 import { useToastStore } from '@/store/toastStore'
+import { useAuthStore } from '@/store/authStore'
+import { useProgressStore } from '@/store/progressStore'
 
 const QuizPage: React.FC = () => {
   const { quizId } = useParams<{ quizId: string }>()
@@ -16,6 +18,7 @@ const QuizPage: React.FC = () => {
   const [result, setResult] = useState<QuizResultType | null>(null)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
   const pushToast = useToastStore((s) => s.push)
+  const fetchOverview = useProgressStore((s) => s.fetchOverview)
 
   useEffect(() => {
     if (quizId === undefined) return
@@ -48,6 +51,15 @@ const QuizPage: React.FC = () => {
     try {
       const quizResult = await quizzesApi.submitQuiz(quizId, answers)
       setResult(quizResult)
+      if (quizResult.already_completed === false && quizResult.xp_earned > 0) {
+        const currentUser = useAuthStore.getState().user
+        if (currentUser !== null) {
+          useAuthStore.setState({
+            user: { ...currentUser, xp: currentUser.xp + quizResult.xp_earned },
+          })
+        }
+        fetchOverview()
+      }
       for (const achievement of quizResult.earned_achievements) {
         pushToast({ title: 'Achievement Unlocked!', message: achievement.title })
       }

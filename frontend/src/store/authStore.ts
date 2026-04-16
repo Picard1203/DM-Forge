@@ -21,7 +21,7 @@ interface AuthActions {
 
 export const useAuthStore = create<AuthState & AuthActions>((set) => ({
   user: null,
-  token: null,
+  token: localStorage.getItem(TOKEN_KEY),
   isLoading: false,
   error: null,
 

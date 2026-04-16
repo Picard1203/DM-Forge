@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useRegisterSW } from 'virtual:pwa-register/react'
 import { useAuthStore } from '@/store/authStore'
 import ProtectedRoute from '@/components/layout/ProtectedRoute'
 import LoginPage from '@/pages/LoginPage'
@@ -18,6 +19,13 @@ const App: React.FC = () => {
   const hydrate = useAuthStore((s) => s.hydrate)
   const fetchMe = useAuthStore((s) => s.fetchMe)
   const token = useAuthStore((s) => s.token)
+  const [showUpdatePrompt, setShowUpdatePrompt] = useState(false)
+
+  const { updateServiceWorker } = useRegisterSW({
+    onNeedRefresh() {
+      setShowUpdatePrompt(true)
+    },
+  })
 
   useEffect(() => {
     hydrate()
@@ -31,6 +39,23 @@ const App: React.FC = () => {
 
   return (
     <>
+    {showUpdatePrompt && (
+      <div className="fixed bottom-4 right-4 z-50 bg-surface border border-border rounded-lg px-4 py-3 flex items-center gap-3 shadow-lg">
+        <span className="text-white text-sm">A new version is available.</span>
+        <button
+          onClick={() => updateServiceWorker(true)}
+          className="text-gold text-sm font-medium hover:underline"
+        >
+          Update
+        </button>
+        <button
+          onClick={() => setShowUpdatePrompt(false)}
+          className="text-muted text-sm hover:text-white"
+        >
+          Later
+        </button>
+      </div>
+    )}
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />

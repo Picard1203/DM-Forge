@@ -38,6 +38,14 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
         const updated = new Set(current)
         updated.add(taskId)
         set({ completedTaskIds: updated })
+
+        const currentUser = useAuthStore.getState().user
+        if (currentUser !== null) {
+          useAuthStore.setState({
+            user: { ...currentUser, xp: result.new_xp, level: result.new_level },
+          })
+        }
+
         for (const achievement of result.earned_achievements) {
           useToastStore.getState().push({
             title: 'Achievement Unlocked!',
@@ -46,7 +54,6 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
         }
       }
       await get().fetchOverview()
-      await useAuthStore.getState().fetchMe()
     } catch {
       // silently ignore errors for now
     }

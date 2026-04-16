@@ -10,7 +10,6 @@ const ReviewPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0)
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [isFlipped, setIsFlipped] = useState<boolean>(false)
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
 
   useEffect(() => {
     reviewApi.getDueCards().then((data) => {
@@ -25,19 +24,12 @@ const ReviewPage: React.FC = () => {
     setIsFlipped(true)
   }
 
-  const handleQuality = async (quality: number) => {
+  const handleQuality = (quality: number) => {
     const card = cards[currentIndex]
     if (card === undefined) return
-    setIsSubmitting(true)
-    try {
-      await reviewApi.submitReview(card.id, quality)
-    } catch {
-      // ignore
-    } finally {
-      setIsSubmitting(false)
-      setIsFlipped(false)
-      setCurrentIndex((prev) => prev + 1)
-    }
+    setIsFlipped(false)
+    setCurrentIndex((prev) => prev + 1)
+    reviewApi.submitReview(card.id, quality).catch(() => {})
   }
 
   const currentCard = cards[currentIndex]
@@ -80,7 +72,7 @@ const ReviewPage: React.FC = () => {
             {isFlipped && (
               <div className="space-y-3">
                 <p className="text-muted text-xs text-center">How well did you know this?</p>
-                <QualityButtons onSelect={handleQuality} disabled={isSubmitting} />
+                <QualityButtons onSelect={handleQuality} disabled={false} />
               </div>
             )}
           </div>

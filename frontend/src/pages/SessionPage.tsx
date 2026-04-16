@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import Navbar from '@/components/layout/Navbar'
 import * as sessionsApi from '@/api/sessions'
@@ -13,6 +13,10 @@ const SessionPage: React.FC = () => {
   const [availableMinutes, setAvailableMinutes] = useState<number>(30)
   const [plan, setPlan] = useState<SessionPlanResponse | null>(null)
   const [isLoading, setIsLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    handleSliderChange(availableMinutes)
+  }, [])
 
   const handleSliderChange = async (value: number) => {
     setAvailableMinutes(value)
@@ -69,7 +73,7 @@ const SessionPage: React.FC = () => {
           <p className="text-muted text-sm">{t('common.loading')}</p>
         )}
 
-        {plan !== null && !isLoading && (
+        {plan !== null && (
           <div>
             <div className="flex items-center gap-4 mb-4">
               <p className="text-muted text-sm">

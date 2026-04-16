@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're offline — The DM Forge</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #0a0e1a;
+      color: #fff;
+      font-family: Inter, system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    .card {
+      background: #12182b;
+      border: 1px solid #1e2a3a;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      max-width: 400px;
+    }
+    h1 { margin: 0 0 0.5rem; font-size: 1.5rem; }
+    p { margin: 0; color: #6b7a99; font-size: 0.9rem; line-height: 1.6; }
+    button {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.4rem;
+      background: #CC3333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    button:hover { background: #b32b2b; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>You're offline</h1>
+    <p>The DM Forge needs a connection to load. Check your network and try again.</p>
+    <button onclick="window.location.reload()">Retry</button>
+  </div>
+</body>
+</html>
