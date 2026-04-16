@@ -7,7 +7,7 @@ from beanie import Document
 from pydantic import Field
 
 
-class SpacedRepCard(Document):
+class ReviewCard(Document):
     """MongoDB document representing a static review card in a module.
 
     Attributes:
@@ -31,21 +31,21 @@ class UserCardReview(Document):
 
     Attributes:
         user_id (str): ID of the reviewing user.
-        card_id (str): ID of the SpacedRepCard.
-        easiness_factor (float): SM-2 easiness factor (default 2.5).
+        card_id (str): ID of the ReviewCard.
+        ease_factor (float): SM-2 easiness factor (default 2.5).
         interval_days (int): Current review interval in days.
         repetitions (int): Number of successful consecutive reviews.
-        next_review_at (datetime): UTC timestamp of the next review.
-        last_reviewed_at (Optional[datetime]): UTC timestamp of the most recent review.
+        next_review (datetime): UTC timestamp of the next scheduled review.
+        last_reviewed (Optional[datetime]): UTC timestamp of the most recent review.
     """
 
     user_id: str
     card_id: str
-    easiness_factor: float = 2.5
+    ease_factor: float = 2.5
     interval_days: int = 1
     repetitions: int = 0
-    next_review_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-    last_reviewed_at: Optional[datetime] = None
+    next_review: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    last_reviewed: Optional[datetime] = None
 
     class Settings:
         name = "user_card_reviews"

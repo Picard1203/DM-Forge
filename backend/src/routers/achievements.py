@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends
 
 from src.deps import get_achievement_service, get_current_user
 from src.models.user import User
-from src.schemas.achievement import AchievementResponse
+from src.schemas.achievement import AchievementResponse, UserAchievementResponse
 from src.services.achievement_service import AchievementService
 
 router = APIRouter(prefix="/api/v1/achievements", tags=["achievements"])
@@ -29,11 +29,11 @@ async def list_achievements(
     return await achievement_service.list_all()
 
 
-@router.get("/mine", response_model=List[AchievementResponse])
+@router.get("/mine", response_model=List[UserAchievementResponse])
 async def list_my_achievements(
     current_user: User = Depends(get_current_user),
     achievement_service: AchievementService = Depends(get_achievement_service),
-) -> List[AchievementResponse]:
+) -> List[UserAchievementResponse]:
     """Return achievements earned by the authenticated user.
 
     Args:
@@ -41,7 +41,6 @@ async def list_my_achievements(
         achievement_service (AchievementService): Injected service instance.
 
     Returns:
-        List[AchievementResponse]: List of AchievementResponse objects.
+        List[UserAchievementResponse]: Earned achievements with earned_at timestamps.
     """
-    # TODO: return full UserAchievementResponse once join is implemented
-    return []
+    return await achievement_service.list_user_achievements(user_id=str(current_user.id))

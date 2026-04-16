@@ -70,8 +70,18 @@ def get_gamification_service() -> GamificationService:
     return GamificationService(user_repository=MongoUserRepository())
 
 
+def get_achievement_service() -> AchievementService:
+    """Construct an AchievementService with a MongoDB achievement repository.
+
+    Returns:
+        AchievementService: Fully wired AchievementService instance.
+
+    """
+    return AchievementService(achievement_repository=MongoAchievementRepository())
+
+
 def get_progress_service() -> ProgressService:
-    """Construct a ProgressService with MongoDB repositories and GamificationService.
+    """Construct a ProgressService with MongoDB repositories and service dependencies.
 
     Returns:
         ProgressService: Fully wired ProgressService instance.
@@ -81,17 +91,21 @@ def get_progress_service() -> ProgressService:
         progress_repository=MongoProgressRepository(),
         task_repository=MongoTaskRepository(),
         gamification_service=get_gamification_service(),
+        achievement_service=get_achievement_service(),
     )
 
 
 def get_quiz_service() -> QuizService:
-    """Construct a QuizService with MongoDB repositories.
+    """Construct a QuizService with MongoDB repositories and service dependencies.
 
     Returns:
         QuizService: Fully wired QuizService instance.
 
     """
-    return QuizService(quiz_repository=MongoQuizRepository())
+    return QuizService(
+        quiz_repository=MongoQuizRepository(),
+        gamification_service=get_gamification_service(),
+    )
 
 
 def get_session_service() -> SessionService:
@@ -106,16 +120,6 @@ def get_session_service() -> SessionService:
         task_repository=MongoTaskRepository(),
         progress_repository=MongoProgressRepository(),
     )
-
-
-def get_achievement_service() -> AchievementService:
-    """Construct an AchievementService with MongoDB repositories.
-
-    Returns:
-        AchievementService: Fully wired AchievementService instance.
-
-    """
-    return AchievementService(achievement_repository=MongoAchievementRepository())
 
 
 def get_review_service() -> ReviewService:

@@ -4,7 +4,7 @@ from typing import List, Optional
 
 from beanie import PydanticObjectId
 
-from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
+from src.models.quiz import Quiz, QuizAttempt
 from src.repositories.abstract.quiz_repository import AbstractQuizRepository
 
 
@@ -22,18 +22,27 @@ class MongoQuizRepository(AbstractQuizRepository):
         """
         return await Quiz.get(PydanticObjectId(quiz_id))
 
-    async def get_questions(self, quiz_id: str) -> List[QuizQuestion]:
-        """Fetch all questions for a quiz, ordered by order ascending.
+    async def get_by_slug(self, slug: str) -> Optional[Quiz]:
+        """Fetch a quiz by its slug.
 
         Args:
-            quiz_id (str): The parent quiz's document ID.
+            slug (str): The unique slug identifier.
 
         Returns:
-            List[QuizQuestion]: Ordered list of QuizQuestion documents.
+            Optional[Quiz]: The matching Quiz document, or None if not found.
         """
-        return await QuizQuestion.find(
-            QuizQuestion.quiz_id == quiz_id
-        ).sort(+QuizQuestion.order).to_list()
+        return await Quiz.find_one(Quiz.slug == slug)
+
+    async def get_by_module_id(self, module_id: str) -> List[Quiz]:
+        """Fetch all quizzes associated with a module.
+
+        Args:
+            module_id (str): The module's document ID.
+
+        Returns:
+            List[Quiz]: All Quiz documents for that module.
+        """
+        return await Quiz.find(Quiz.module_id == module_id).to_list()
 
     async def save_attempt(self, attempt: QuizAttempt) -> QuizAttempt:
         """Persist a new quiz attempt.
@@ -47,7 +56,7 @@ class MongoQuizRepository(AbstractQuizRepository):
         await attempt.insert()
         return attempt
 
-    async def get_attempts(self, user_id: str, quiz_id: str) -> List[QuizAttempt]:
+    async def get_attempts_for_user(self, user_id: str, quiz_id: str) -> List[QuizAttempt]:
         """Fetch all attempts a user has made on a specific quiz.
 
         Args:
@@ -60,21 +69,4 @@ class MongoQuizRepository(AbstractQuizRepository):
         return await QuizAttempt.find(
             QuizAttempt.user_id == user_id,
             QuizAttempt.quiz_id == quiz_id,
-        ).sort(-QuizAttempt.attempted_at).to_list()
-
-    async def has_passed(self, user_id: str, quiz_id: str) -> bool:
-        """Check whether a user has ever passed a specific quiz.
-
-        Args:
-            user_id (str): The user's document ID.
-            quiz_id (str): The quiz's document ID.
-
-        Returns:
-            bool: True if at least one passing attempt exists.
-        """
-        passing = await QuizAttempt.find_one(
-            QuizAttempt.user_id == user_id,
-            QuizAttempt.quiz_id == quiz_id,
-            QuizAttempt.passed is True,
-        )
-        return passing is not None
+        ).to_list()

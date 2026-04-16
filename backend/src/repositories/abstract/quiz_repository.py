@@ -1,13 +1,12 @@
 """Abstract repository interface for the Quiz domain."""
 
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from typing import List, Optional
 
-from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
-from src.repositories.abstract.base_repository import AbstractBaseRepository
+from src.models.quiz import Quiz, QuizAttempt
 
 
-class AbstractQuizRepository(AbstractBaseRepository):
+class AbstractQuizRepository(ABC):
     """Abstract contract for quiz data persistence operations."""
 
     @abstractmethod
@@ -23,14 +22,26 @@ class AbstractQuizRepository(AbstractBaseRepository):
         raise NotImplementedError
 
     @abstractmethod
-    async def get_questions(self, quiz_id: str) -> List[QuizQuestion]:
-        """Fetch all questions for a quiz, ordered by order ascending.
+    async def get_by_slug(self, slug: str) -> Optional[Quiz]:
+        """Fetch a quiz by its slug.
 
         Args:
-            quiz_id (str): The parent quiz's document ID.
+            slug (str): The unique slug identifier.
 
         Returns:
-            List[QuizQuestion]: Ordered list of QuizQuestion documents.
+            Optional[Quiz]: The matching Quiz document, or None if not found.
+        """
+        raise NotImplementedError
+
+    @abstractmethod
+    async def get_by_module_id(self, module_id: str) -> List[Quiz]:
+        """Fetch all quizzes associated with a module.
+
+        Args:
+            module_id (str): The module's document ID.
+
+        Returns:
+            List[Quiz]: All Quiz documents for that module.
         """
         raise NotImplementedError
 
@@ -47,7 +58,7 @@ class AbstractQuizRepository(AbstractBaseRepository):
         raise NotImplementedError
 
     @abstractmethod
-    async def get_attempts(self, user_id: str, quiz_id: str) -> List[QuizAttempt]:
+    async def get_attempts_for_user(self, user_id: str, quiz_id: str) -> List[QuizAttempt]:
         """Fetch all attempts a user has made on a specific quiz.
 
         Args:
@@ -56,18 +67,5 @@ class AbstractQuizRepository(AbstractBaseRepository):
 
         Returns:
             List[QuizAttempt]: List of QuizAttempt documents.
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    async def has_passed(self, user_id: str, quiz_id: str) -> bool:
-        """Check whether a user has ever passed a specific quiz.
-
-        Args:
-            user_id (str): The user's document ID.
-            quiz_id (str): The quiz's document ID.
-
-        Returns:
-            bool: True if at least one passing attempt exists.
         """
         raise NotImplementedError

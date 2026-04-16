@@ -1,12 +1,10 @@
 """Quizzes router: quiz retrieval and answer submission endpoints."""
 
-from typing import List
-
 from fastapi import APIRouter, Depends
 
 from src.deps import get_current_user, get_quiz_service
 from src.models.user import User
-from src.schemas.quiz import QuizResponse, QuizQuestionResponse, QuizResultResponse, SubmitAnswersRequest
+from src.schemas.quiz import QuizResponse, QuizResultResponse, SubmitQuizRequest
 from src.services.quiz_service import QuizService
 
 router = APIRouter(prefix="/api/v1/quizzes", tags=["quizzes"])
@@ -28,33 +26,13 @@ async def get_quiz(
     Returns:
         QuizResponse: A QuizResponse with embedded questions.
     """
-    quiz, questions = await quiz_service.get_quiz_with_questions(quiz_id)
-    question_responses: List[QuizQuestionResponse] = []
-    for question in questions:
-        question_responses.append(
-            QuizQuestionResponse(
-                id=str(question.id),
-                question_text=question.question_text,
-                question_type=question.question_type,
-                options=question.options,
-                order=question.order,
-            )
-        )
-    return QuizResponse(
-        id=str(quiz.id),
-        module_id=quiz.module_id,
-        title=quiz.title,
-        description=quiz.description,
-        passing_score=quiz.passing_score,
-        xp_reward=quiz.xp_reward,
-        questions=question_responses,
-    )
+    return await quiz_service.get_quiz(quiz_id=quiz_id)
 
 
 @router.post("/{quiz_id}/submit", response_model=QuizResultResponse)
 async def submit_quiz(
     quiz_id: str,
-    request: SubmitAnswersRequest,
+    request: SubmitQuizRequest,
     current_user: User = Depends(get_current_user),
     quiz_service: QuizService = Depends(get_quiz_service),
 ) -> QuizResultResponse:
@@ -62,15 +40,15 @@ async def submit_quiz(
 
     Args:
         quiz_id (str): The quiz's document ID.
-        request (SubmitAnswersRequest): The answer submissions.
+        request (SubmitQuizRequest): One answer index per question in order.
         current_user (User): The authenticated user.
         quiz_service (QuizService): Injected service instance.
 
     Returns:
-        QuizResultResponse: Result with score, pass status, and XP.
+        QuizResultResponse: Result with score, pass status, XP earned, and per-question breakdown.
     """
-    return await quiz_service.submit_answers(
-        user_id=str(current_user.id),
+    return await quiz_service.submit_quiz(
+        user=current_user,
         quiz_id=quiz_id,
         request=request,
     )
