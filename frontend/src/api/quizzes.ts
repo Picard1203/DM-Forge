@@ -6,10 +6,7 @@ export async function getQuiz(quizId: string): Promise<Quiz> {
   return response.data
 }
 
-export async function submitQuiz(
-  quizId: string,
-  answers: Array<{ question_id: string; selected_index: number }>
-): Promise<QuizResult> {
+export async function submitQuiz(quizId: string, answers: number[]): Promise<QuizResult> {
   const response = await client.post<QuizResult>(`/quizzes/${quizId}/submit`, { answers })
   return response.data
 }

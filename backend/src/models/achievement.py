@@ -13,17 +13,20 @@ class Achievement(Document):
         slug (str): Unique URL-friendly identifier.
         title (str): Human-readable achievement name.
         description (str): Detailed text explaining how to earn it.
-        trigger_type (str): Category of trigger (e.g. xp_total, level, streak).
-        trigger_threshold (int): The value required to unlock the achievement.
-        icon_slug (str): Identifier for the frontend icon asset.
+        icon (str): Icon identifier string for the frontend.
+        trigger_type (str): Event category (module_complete, quiz_perfect, streak,
+            xp_threshold, tasks_completed).
+        trigger_value (str): The value required to unlock the achievement.
+        xp_reward (int): XP awarded when the achievement is first earned.
     """
 
     slug: str
     title: str
     description: str = ""
+    icon: str = "award"
     trigger_type: str
-    trigger_threshold: int
-    icon_slug: str = "default_medal"
+    trigger_value: str
+    xp_reward: int = 0
 
     class Settings:
         name = "achievements"

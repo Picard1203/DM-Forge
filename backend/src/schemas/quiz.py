@@ -1,85 +1,87 @@
 """Pydantic schemas for quiz endpoints."""
 
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
+from src.schemas.achievement import AchievementResponse
+
 
 class QuizQuestionResponse(BaseModel):
-    """Serialised quiz question (options shown, correct answer hidden).
+    """Serialised quiz question with options shown and correct answer hidden.
 
     Attributes:
-        id (str): MongoDB document ID.
+        id (str): Zero-based question index as a string (used as React key).
         question_text (str): The question prompt.
-        question_type (str): Category of question.
+        question_type (str): Category of question (multiple_choice or scenario).
         options (List[str]): List of answer options.
-        order (int): Position within the quiz.
+        scenario_context (Optional[str]): Optional context paragraph for scenario questions.
     """
 
     id: str
     question_text: str
     question_type: str
     options: List[str]
-    order: int
+    scenario_context: Optional[str] = None
 
 
 class QuizResponse(BaseModel):
-    """Serialised Quiz with embedded questions.
+    """Serialised Quiz with embedded questions (correct answers stripped).
 
     Attributes:
         id (str): MongoDB document ID.
-        module_id (str): Associated module ID.
+        slug (str): URL-friendly quiz identifier.
         title (str): Quiz display title.
-        description (str): Pre-quiz description.
-        passing_score (float): Minimum pass percentage.
-        xp_reward (int): XP awarded on pass.
         questions (List[QuizQuestionResponse]): Ordered list of questions.
     """
 
     id: str
-    module_id: str
+    slug: str
     title: str
-    description: str
-    passing_score: float
-    xp_reward: int
     questions: List[QuizQuestionResponse]
 
 
-class SubmitAnswerItem(BaseModel):
-    """Single answer submission within a quiz attempt.
-
-    Attributes:
-        question_id (str): ID of the question answered.
-        selected_index (int): Zero-based index of the chosen option.
-    """
-
-    question_id: str
-    selected_index: int
-
-
-class SubmitAnswersRequest(BaseModel):
+class SubmitQuizRequest(BaseModel):
     """Request body for submitting a completed quiz.
 
     Attributes:
-        answers (List[SubmitAnswerItem]): List of answer submissions.
+        answers (List[int]): One selected answer index per question, in question order.
     """
 
-    answers: List[SubmitAnswerItem]
+    answers: List[int]
+
+
+class QuizQuestionResult(BaseModel):
+    """Per-question grading result returned after a quiz submission.
+
+    Attributes:
+        question_index (int): Zero-based position of the question.
+        correct (bool): Whether the submitted answer was correct.
+        correct_answer_index (int): The index of the correct answer.
+        explanation (str): Explanation text shown after answering.
+    """
+
+    question_index: int
+    correct: bool
+    correct_answer_index: int
+    explanation: str
 
 
 class QuizResultResponse(BaseModel):
     """Result returned after grading a quiz attempt.
 
     Attributes:
-        score (float): Percentage score achieved.
+        score (float): Fraction of questions correct (0.0–1.0).
         passed (bool): Whether the score met the passing threshold.
-        xp_awarded (int): XP granted (non-zero on first pass).
-        correct_count (int): Number of correctly answered questions.
-        total_count (int): Total number of questions.
+        xp_earned (int): XP granted (non-zero on first passing attempt only).
+        already_completed (bool): True if the user has previously passed this quiz.
+        question_results (List[QuizQuestionResult]): Per-question breakdown.
+        earned_achievements (List[AchievementResponse]): Achievements unlocked by this attempt.
     """
 
     score: float
     passed: bool
-    xp_awarded: int
-    correct_count: int
-    total_count: int
+    xp_earned: int
+    already_completed: bool
+    question_results: List[QuizQuestionResult]
+    earned_achievements: List[AchievementResponse] = []

@@ -54,5 +54,32 @@
     "mark_complete": "Mark Complete",
     "completed": "Completed ✓",
     "percent": "{{percent}}% complete"
+  },
+  "achievements": {
+    "heading": "Achievements",
+    "earned_count": "{{count}} / {{total}} earned",
+    "none": "No achievements found."
+  },
+  "toast": {
+    "achievement_unlocked": "Achievement Unlocked!"
+  },
+  "quiz": {
+    "loading": "Loading quiz...",
+    "not_found": "Quiz not found.",
+    "question_counter": "{{current}} / {{total}}",
+    "next": "Next",
+    "submit": "Submit Quiz",
+    "submitting": "Submitting...",
+    "passed": "Passed!",
+    "failed": "Not quite — try again",
+    "correct_count": "{{correct}}/{{total}} correct"
+  },
+  "review": {
+    "heading": "Spaced Review",
+    "loading": "Loading cards...",
+    "flip_hint": "Click the card to reveal the answer",
+    "quality_hint": "How well did you know this?",
+    "all_done": "All done!",
+    "all_done_sub": "No more cards due for review right now."
   }
 }

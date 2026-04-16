@@ -1,0 +1,40 @@
+# curriculum/quizzes/rules-fundamentals-quiz.yaml
+
+quizzes:
+  - slug: rules-fundamentals-quiz
+    module_slug: rules-fundamentals
+    title: "Rules Fundamentals Quiz"
+    description: "Test your knowledge of core D&D 5e rules before your first session."
+    passing_score: 0.7
+    xp_reward: 75
+    questions:
+      - question_text: "What does AC stand for in D&D 5e?"
+        question_type: multiple_choice
+        options:
+          - "Action Count"
+          - "Armor Class"
+          - "Attack Chance"
+          - "Adventure Capability"
+        correct_answer_index: 1
+        explanation: "AC stands for Armor Class. It represents how hard a creature is to hit in combat. An attacker must roll equal to or higher than the target's AC to land a hit."
+
+      - question_text: "Which ability score modifier is typically added to initiative rolls?"
+        question_type: multiple_choice
+        options:
+          - "Strength"
+          - "Constitution"
+          - "Dexterity"
+          - "Wisdom"
+        correct_answer_index: 2
+        explanation: "Initiative rolls use your Dexterity modifier. At the start of combat, each combatant rolls a d20 and adds their Dex modifier; the highest result acts first."
+
+      - question_text: "Your rogue hides behind a barrel before combat begins. The enemy guards do not notice her. What happens to the first attack she makes while hidden?"
+        question_type: scenario
+        scenario_context: "Combat has just started. The rogue used her action to Hide successfully before the first round and has not been detected. She is about to attack a guard who is unaware of her position."
+        options:
+          - "She attacks normally with no special benefit"
+          - "She rolls the attack with Advantage and deals Sneak Attack damage if applicable"
+          - "She automatically hits but deals minimum damage"
+          - "She must spend a Bonus Action to reveal herself before attacking"
+        correct_answer_index: 1
+        explanation: "Attacking from a hidden position grants Advantage on the attack roll. Additionally, a Rogue can apply Sneak Attack damage whenever they have Advantage on the attack roll, making this a powerful opening move."

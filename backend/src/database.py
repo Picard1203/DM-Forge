@@ -9,8 +9,8 @@ from src.config import settings
 from src.models.achievement import Achievement, UserAchievement
 from src.models.curriculum import Module, Task
 from src.models.progress import UserProgress
-from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
-from src.models.review_card import SpacedRepCard, UserCardReview
+from src.models.quiz import Quiz, QuizAttempt
+from src.models.review_card import ReviewCard, UserCardReview
 from src.models.user import User
 
 _document_models: List[type[Document]] = [
@@ -19,11 +19,10 @@ _document_models: List[type[Document]] = [
     Task,
     UserProgress,
     Quiz,
-    QuizQuestion,
     QuizAttempt,
     Achievement,
     UserAchievement,
-    SpacedRepCard,
+    ReviewCard,
     UserCardReview,
 ]
 

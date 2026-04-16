@@ -10,12 +10,15 @@ from fastapi.responses import JSONResponse
 from src.config import settings
 from src.database import init_db
 from src.routers import achievements, auth, curriculum, progress, quizzes, review, sessions, users
+from src.seeders.seed_achievements import seed_achievements
 from src.seeders.seed_curriculum import seed_curriculum
+from src.seeders.seed_quizzes import seed_quizzes
+from src.seeders.seed_review_cards import seed_review_cards
 
 
 @asynccontextmanager
 async def lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
-    """Manage application lifespan: initialise DB on startup, clean up on shutdown.
+    """Manage application lifespan: initialise DB and run seeders on startup.
 
     Args:
         application (FastAPI): The FastAPI application instance.
@@ -25,6 +28,9 @@ async def lifespan(application: FastAPI) -> AsyncGenerator[None, None]:
     """
     await init_db()
     await seed_curriculum()
+    await seed_quizzes()
+    await seed_review_cards()
+    await seed_achievements()
     yield
 
 

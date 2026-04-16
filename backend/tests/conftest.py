@@ -9,8 +9,8 @@ from src.main import app
 from src.models.achievement import Achievement, UserAchievement
 from src.models.curriculum import Module, Task
 from src.models.progress import UserProgress
-from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
-from src.models.review_card import SpacedRepCard, UserCardReview
+from src.models.quiz import Quiz, QuizAttempt
+from src.models.review_card import ReviewCard, UserCardReview
 from src.models.user import User
 from src.repositories.mongodb.user_repository import MongoUserRepository
 from src.services.auth_service import AuthService
@@ -30,11 +30,10 @@ async def init_test_db():
             Task,
             UserProgress,
             Quiz,
-            QuizQuestion,
             QuizAttempt,
             Achievement,
             UserAchievement,
-            SpacedRepCard,
+            ReviewCard,
             UserCardReview,
         ],
     )
@@ -43,6 +42,12 @@ async def init_test_db():
     await Module.find_all().delete()
     await Task.find_all().delete()
     await UserProgress.find_all().delete()
+    await Quiz.find_all().delete()
+    await QuizAttempt.find_all().delete()
+    await Achievement.find_all().delete()
+    await UserAchievement.find_all().delete()
+    await ReviewCard.find_all().delete()
+    await UserCardReview.find_all().delete()
 
 
 def _override_auth_service() -> AuthService:

@@ -1,37 +1,36 @@
 """Pydantic schemas for spaced repetition review endpoints."""
 
 from datetime import datetime
+from typing import List
 
 from pydantic import BaseModel, Field
 
 
-class CardReviewResponse(BaseModel):
+class ReviewCardResponse(BaseModel):
     """Serialised flashcard presented to the user for review.
 
     Attributes:
-        review_id (str): ID of the UserCardReview document (SM-2 state).
-        card_id (str): ID of the SpacedRepCard.
+        id (str): MongoDB document ID of the ReviewCard.
         front (str): The question/prompt side of the card.
         back (str): The answer/explanation side of the card.
-        module_id (str): Associated module ID.
+        tags (List[str]): Free-form labels.
     """
 
-    review_id: str
-    card_id: str
+    id: str
     front: str
     back: str
-    module_id: str
+    tags: List[str]
 
 
 class ReviewSubmitRequest(BaseModel):
-    """Request body for submitting the quality rating for a card.
+    """Request body for submitting the quality rating for a reviewed card.
 
     Attributes:
-        review_id (str): ID of the UserCardReview to update.
-        quality (int): SM-2 quality rating from 0 to 5.
+        card_id (str): MongoDB document ID of the ReviewCard that was reviewed.
+        quality (int): SM-2 quality rating from 0 (complete blackout) to 5 (perfect).
     """
 
-    review_id: str
+    card_id: str
     quality: int = Field(..., ge=0, le=5)
 
 
@@ -39,11 +38,11 @@ class ReviewSubmitResponse(BaseModel):
     """Response returned after processing a card review submission.
 
     Attributes:
-        review_id (str): ID of the updated UserCardReview.
-        next_review_at (datetime): UTC timestamp of the next review.
+        next_review (datetime): UTC timestamp of the next scheduled review.
         interval_days (int): New review interval in days.
+        ease_factor (float): Updated SM-2 easiness factor.
     """
 
-    review_id: str
-    next_review_at: datetime
+    next_review: datetime
     interval_days: int
+    ease_factor: float

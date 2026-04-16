@@ -151,3 +151,19 @@ class TaskAlreadyCompletedError(HTTPException):
             status_code=status.HTTP_409_CONFLICT,
             detail="Task has already been completed.",
         )
+
+
+class QuizNotFoundError(HTTPException):
+    """Raised when a requested quiz cannot be located in the database.
+
+    Attributes:
+        status_code: HTTP 404 Not Found.
+
+    """
+
+    def __init__(self) -> None:
+        """Initialise with a fixed 404 status and descriptive detail."""
+        super().__init__(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Quiz not found.",
+        )

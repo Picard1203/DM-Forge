@@ -1,13 +1,12 @@
 """Abstract repository interface for the Achievement domain."""
 
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 from typing import List, Optional
 
 from src.models.achievement import Achievement, UserAchievement
-from src.repositories.abstract.base_repository import AbstractBaseRepository
 
 
-class AbstractAchievementRepository(AbstractBaseRepository):
+class AbstractAchievementRepository(ABC):
     """Abstract contract for achievement data persistence operations."""
 
     @abstractmethod
