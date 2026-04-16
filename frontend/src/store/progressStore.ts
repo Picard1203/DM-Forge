@@ -2,6 +2,7 @@ import { create } from 'zustand'
 import * as progressApi from '@/api/progress'
 import type { ProgressOverviewResponse } from '@/types'
 import { useToastStore } from '@/store/toastStore'
+import { useAuthStore } from '@/store/authStore'
 
 interface ProgressState {
   overview: ProgressOverviewResponse | null
@@ -45,6 +46,7 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
         }
       }
       await get().fetchOverview()
+      await useAuthStore.getState().fetchMe()
     } catch {
       // silently ignore errors for now
     }
