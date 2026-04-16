@@ -39,6 +39,10 @@ async def _seed_file(yaml_path: Path) -> None:
 async def _upsert_achievement(entry: Dict[str, Any]) -> None:
     """Insert or update a single Achievement document from a YAML entry.
 
+    If an existing document has the old shape (trigger_threshold field present
+    instead of trigger_value), it is deleted and re-inserted with the new shape
+    to ensure the model is consistent.
+
     Args:
         entry (Dict[str, Any]): Parsed YAML dictionary for one achievement.
 
@@ -47,6 +51,12 @@ async def _upsert_achievement(entry: Dict[str, Any]) -> None:
     """
     slug: str = entry.get("slug", "")
     existing: Optional[Achievement] = await Achievement.find_one(Achievement.slug == slug)
+    if existing is not None:
+        existing_dict = existing.model_dump()
+        has_old_shape = "trigger_threshold" in existing_dict
+        if has_old_shape is True:
+            await existing.delete()
+            existing = None
     if existing is not None:
         existing.title = entry.get("title", existing.title)
         existing.description = entry.get("description", existing.description)
