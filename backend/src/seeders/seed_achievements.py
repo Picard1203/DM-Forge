@@ -14,7 +14,7 @@ async def seed_achievements() -> None:
     Returns:
         None
     """
-    yaml_path = Path(__file__).resolve().parents[3] / "curriculum" / "achievements.yaml"
+    yaml_path = Path(__file__).resolve().parents[2] / "curriculum" / "achievements.yaml"
     if not yaml_path.exists():
         return
     await _seed_file(yaml_path)
