@@ -1,0 +1,65 @@
+# curriculum/review_cards/combat-mastery-cards.yaml
+
+review_cards:
+  - module_slug: combat-mastery
+    front: "What is an Opportunity Attack, and when can you make one?"
+    back: "A reaction melee attack triggered when a hostile creature you can see leaves your reach (typically 5 feet). You use your reaction, make ONE melee weapon attack against that creature. You cannot make an opportunity attack if the creature Disengaged, teleported, or was moved involuntarily."
+    tags:
+      - combat
+      - opportunity-attack
+      - reactions
+
+  - module_slug: combat-mastery
+    front: "What does the Dodge action do, and when is it worth using?"
+    back: "Until the start of your next turn: attack rolls against you have disadvantage (if you can see the attacker) and you have advantage on Dex saves. Worth using when you need to survive (low HP, enemy priority target) and you don't have a better action. Defensive casters use Dodge while maintaining concentration on a spell."
+    tags:
+      - combat
+      - actions
+      - defense
+
+  - module_slug: combat-mastery
+    front: "Why are four goblins often more dangerous than one ogre of equivalent XP?"
+    back: "Action economy. Four goblins get four attacks per round; the ogre gets one. Four goblins also have four chances to crit, can split up to flank and engage multiple party members, and can isolate the back-line casters. The ogre hits like a truck but gets focus-fired. Action economy is the single most important tactical concept in combat."
+    tags:
+      - combat
+      - action-economy
+      - encounter-design
+
+  - module_slug: combat-mastery
+    front: "How do you calculate Armor Class (AC) for a character wearing medium armor?"
+    back: "Base AC from the armor + Dex modifier (capped at +2 for medium armor) + any shield bonus + other modifiers (class features, magic items). Example: Half plate (AC 15) + Dex 16 (+2) + shield (+2) = AC 19. Heavy armor ignores Dex entirely; light armor uses the full Dex mod."
+    tags:
+      - armor-class
+      - combat
+
+  - module_slug: combat-mastery
+    front: "What are Death Saving Throws, and what are the critical thresholds?"
+    back: "When you drop to 0 HP, at the start of each of your turns you roll a d20. 10 or higher = success; 9 or lower = failure. 3 successes = stable. 3 failures = dead. Natural 20 = regain 1 HP immediately. Natural 1 = counts as TWO failures. Taking any damage at 0 HP = automatic failure (crit = 2 failures)."
+    tags:
+      - death-saves
+      - combat
+      - fundamentals
+
+  - module_slug: combat-mastery
+    front: "What is the Grapple action in 2024 D&D?"
+    back: "Replace one attack in your Attack action with a grapple attempt. The target makes a Strength or Dexterity save (target's choice) against your Spell Save DC or unarmed-attack-based save DC. Failed save = grappled (speed 0, and you can drag them at half your speed). Much simpler than the 2014 'contested Athletics check' version."
+    tags:
+      - grapple
+      - combat
+      - 2024-rules
+
+  - module_slug: combat-mastery
+    front: "What's the fastest way to speed up slow combat at the table?"
+    back: "1) Pre-roll monster initiative before the session. 2) Track monster HP in secret (no rolling dice in the open for HP). 3) Use a 60-second turn timer for players. 4) Narrate attacks and results in one sentence. 5) Don't read stat blocks during combat — know your monsters beforehand. DMG p.47 covers this in detail."
+    tags:
+      - pacing
+      - dm-skills
+      - combat
+
+  - module_slug: combat-mastery
+    front: "What is the Improvising Damage table (DMG p.30), and why should every DM know it exists?"
+    back: "A reference table matching improvised damage to 'severity' categories: Setback (1d10), Dangerous (2d10), Deadly (4d10), etc. When a player drops a chandelier on enemies, rolls a boulder down a hill, or sets an oil barrel on fire, you look here for the damage. Scales by character level too. Memorize this page exists."
+    tags:
+      - dm-tools
+      - improvisation
+      - combat

@@ -4,7 +4,7 @@ import pytest
 from httpx import AsyncClient
 
 from src.models.curriculum import Module
-from src.models.quiz import Quiz, QuizAttempt, QuizQuestion
+from src.models.quiz import Quiz, QuizQuestion
 
 
 async def _seed_quiz(module: Module, passing_score: float = 0.7) -> Quiz:

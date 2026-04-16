@@ -1,0 +1,53 @@
+# curriculum/review_cards/magic-items-and-treasure-cards.yaml
+
+review_cards:
+  - module_slug: magic-items-and-treasure
+    front: "What are the 7 rarity tiers for magic items in D&D 2024?"
+    back: "Common, Uncommon, Rare, Very Rare, Legendary, Artifact (unique legendary items). Rarity roughly indicates the character level at which it's appropriate: Common/Uncommon 1-4, Rare 5-10, Very Rare 11-16, Legendary 17+. Giving a Rare item to a level 1 party breaks the game."
+    tags:
+      - magic-items
+      - rarity
+      - fundamentals
+
+  - module_slug: magic-items-and-treasure
+    front: "What's the difference between 'attunement' and 'wielding' a magic item?"
+    back: "Most minor items (potions, simple +1 weapons, common items) just need to be held or worn. Attunement is a deeper bond: one hour of meditation to form, limits a character to 3 attuned items at a time, and is required for most powerful magic items. Attunement prevents characters from stockpiling dozens of effects."
+    tags:
+      - attunement
+      - magic-items
+
+  - module_slug: magic-items-and-treasure
+    front: "What is a Sentient Magic Item, and why is it a great storytelling tool?"
+    back: "A magic item with an alignment, personality, intelligence, senses, and a means of communication (telepathy, speech, empathic). It can argue with its wielder, try to dominate them, or refuse to function. A sentient weapon that disapproves of killing surrendered foes creates constant moral tension — pure story fuel, zero extra rules needed."
+    tags:
+      - sentient-items
+      - storytelling
+
+  - module_slug: magic-items-and-treasure
+    front: "What are the classic magic items every early-campaign DM should know?"
+    back: "Bag of Holding, Cloak of Protection (+1 AC and saves, attunement), +1 Weapons and Armor, Healing Potion, Potion of Greater Healing, Rope of Climbing, Boots of Elvenkind, Boots of Speed, Goggles of Night, Gauntlets of Ogre Power. These appear in adventures constantly — know them cold."
+    tags:
+      - classic-items
+      - magic-items
+
+  - module_slug: magic-items-and-treasure
+    front: "When should you use a cursed item?"
+    back: "Sparingly, and with narrative purpose. A cursed item that makes the wielder increasingly aggressive over time is a great plot device. A random 'gotcha' cursed item that punishes the player for the crime of picking up treasure just annoys people. Cursed items should BECOME stories, not waste game time on removal quests."
+    tags:
+      - cursed-items
+      - magic-items
+
+  - module_slug: magic-items-and-treasure
+    front: "Why does 'awarding magic items' matter as much as the items themselves?"
+    back: "HOW you deliver an item is part of the reward. Found in a dragon's hoard = standard loot. Taken from a defeated enemy who'd used it against the party = personal trophy. Gifted by an NPC who owes the party a life debt = ongoing story. Items tied to narrative moments feel important — items dumped in a chest feel like video game drops."
+    tags:
+      - dm-craft
+      - magic-items
+
+  - module_slug: magic-items-and-treasure
+    front: "What's the key balance principle for distributing treasure?"
+    back: "Magic items are multipliers — they don't just add to a character, they amplify what the character already does. A Paladin with a +2 holy avenger is DRAMATICALLY stronger than with a +1 longsword. Test items by asking 'what's the character's output with this?' If the answer breaks combat math, hold it for higher levels."
+    tags:
+      - balance
+      - magic-items
+      - dm-adjudication

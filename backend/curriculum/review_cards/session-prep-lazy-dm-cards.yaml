@@ -1,0 +1,54 @@
+# curriculum/review_cards/session-prep-lazy-dm-cards.yaml
+
+review_cards:
+  - module_slug: session-prep-lazy-dm
+    front: "What are the 8 steps of The Lazy DM methodology?"
+    back: "1) Review the characters, 2) Create a strong start, 3) Outline potential scenes, 4) Define secrets and clues, 5) Develop fantastic locations, 6) Outline important NPCs, 7) Choose relevant monsters, 8) Select magic item rewards. The whole session prep fits on one page. By Sly Flourish."
+    tags:
+      - lazy-dm
+      - session-prep
+      - fundamentals
+
+  - module_slug: session-prep-lazy-dm
+    front: "Why is 'review the characters' Step 1 of Lazy DM prep?"
+    back: "Your session's story should revolve around the PCs, not the plot you wrote. Reviewing character backstories, bonds, and current goals before prep ensures you hook each PC into the session. Tailored hooks create engagement; generic hooks create 'sure, I guess my character would do this.'"
+    tags:
+      - lazy-dm
+      - pc-focus
+
+  - module_slug: session-prep-lazy-dm
+    front: "What does 'strong start' mean in the Lazy DM framework?"
+    back: "The opening moment of the session — designed to pull players in immediately. NOT 'you're at the tavern' or 'you wake up'. Instead: a cliffhanger resolution, an immediate threat, a mysterious arrival, a time pressure. The first 2 minutes should make players lean forward. Can be written in 1-2 sentences."
+    tags:
+      - lazy-dm
+      - session-prep
+      - pacing
+
+  - module_slug: session-prep-lazy-dm
+    front: "What are 'secrets and clues' in the Lazy DM method, and how many should you prepare?"
+    back: "5-10 pieces of information the players can discover. Not tied to specific locations, checks, or NPCs — if players skip one vector, you deliver the secret through another. Prepared as a BULLET LIST, not a narrative. This is the single most useful step for handling player unpredictability."
+    tags:
+      - lazy-dm
+      - secrets-and-clues
+
+  - module_slug: session-prep-lazy-dm
+    front: "What are 'fantastic locations' in the Lazy DM framework, and why does it matter?"
+    back: "2-3 evocative, memorable places prepared for the session. Each described with 3 sensory details (sight, sound, smell/feel). 'The tavern' is forgettable; 'The Crooked Mast, where a petrified krakentooth hangs over the bar and the floorboards lean toward the hearth' is fantastic. Locations are where sessions HAPPEN — make them stick."
+    tags:
+      - lazy-dm
+      - locations
+      - narration
+
+  - module_slug: session-prep-lazy-dm
+    front: "What's the total prep time target for a Lazy DM session?"
+    back: "30-60 minutes, once per session. The philosophy: prep what you'll USE at the table, skip what you won't. A one-page session summary. This scales with experience — a new DM might take 90 minutes; a veteran, 20. The goal is to prep the MINIMUM to run confidently, not to feel prepared."
+    tags:
+      - lazy-dm
+      - prep-efficiency
+
+  - module_slug: session-prep-lazy-dm
+    front: "Where can you get the Lazy GM resource document for free?"
+    back: "slyflourish.com/lazy_gm_resource_document.html — the free Creative Commons version of the 8 steps with examples. Bookmark it. It covers the full method with worked examples and is updated as the methodology evolves. Print it for your DM binder; read it before every prep session until the steps are internalized."
+    tags:
+      - lazy-dm
+      - resources

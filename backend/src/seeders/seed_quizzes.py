@@ -1,6 +1,5 @@
 """Seeder: load quiz YAML files and upsert Quiz documents."""
 
-import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -19,7 +18,7 @@ async def seed_quizzes() -> None:
     Returns:
         None
     """
-    quiz_dir = Path(__file__).resolve().parents[3] / "curriculum" / "quizzes"
+    quiz_dir = Path(__file__).resolve().parents[2] / "curriculum" / "quizzes"
     if not quiz_dir.exists():
         return
     yaml_files = sorted(quiz_dir.glob("*.yaml"))

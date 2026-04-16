@@ -1,0 +1,60 @@
+# curriculum/review_cards/spells-and-magic-cards.yaml
+
+review_cards:
+  - module_slug: spells-and-magic
+    front: "What is the difference between spell level and character level?"
+    back: "They are NOT the same. Spell level (0-9) describes the power tier of a spell. Character level (1-20) describes the character's overall power. A level 1 Wizard can only cast level 1 spells and cantrips. Level 5 Wizards unlock level 3 spells. Max-level spell (9th) becomes available at character level 17."
+    tags:
+      - spellcasting
+      - fundamentals
+
+  - module_slug: spells-and-magic
+    front: "What are the rules for Concentration, and why is it the most important balancing mechanic in spellcasting?"
+    back: "A caster can concentrate on only ONE spell at a time. Concentration breaks when: taking damage (Con save DC 10 or half damage, whichever is higher), casting another concentration spell, being incapacitated, or voluntarily dropping it. As DM, always track concentration — it's what keeps Hold Person, Polymorph, and Bless from dominating every fight."
+    tags:
+      - concentration
+      - spellcasting
+      - dm-adjudication
+
+  - module_slug: spells-and-magic
+    front: "What is upcasting, and how does it work?"
+    back: "Casting a spell using a spell slot higher than the spell's base level. Some spells have 'At Higher Levels' entries describing the effect. Example: Magic Missile gains one additional dart per slot level above 1st. Cure Wounds heals an additional 1d8. Not every spell benefits from upcasting."
+    tags:
+      - spellcasting
+      - upcasting
+
+  - module_slug: spells-and-magic
+    front: "What is ritual casting, and which classes can do it?"
+    back: "A ritual is a spell cast with the ritual tag that can be cast without expending a spell slot, but takes 10 extra minutes. Bards, Clerics, Druids, and Wizards can cast any prepared ritual spell this way. Useful out of combat — Detect Magic, Identify, Comprehend Languages as free utilities."
+    tags:
+      - ritual-casting
+      - spellcasting
+
+  - module_slug: spells-and-magic
+    front: "What are the three types of spell components, and what does it mean when a player says 'I want Subtle Spell'?"
+    back: "V (Verbal — speak forcefully), S (Somatic — free hand gesture), M (Material — specific components or a spellcasting focus). A silenced or gagged caster can't cast V spells. A caster with both hands full can't do S spells. Subtle Spell (Metamagic) removes V and S requirements — useful for casting in disguise or while grappled."
+    tags:
+      - components
+      - spellcasting
+
+  - module_slug: spells-and-magic
+    front: "Name five spells every DM should know cold because they appear in almost every session."
+    back: "1) Healing Word — bonus action heal at range, revives downed allies. 2) Shield — +5 AC reaction, trivializes attacks. 3) Counterspell — cancel enemy spells. 4) Fireball — iconic area damage. 5) Misty Step — 30ft bonus action teleport. Others to know: Magic Missile, Bless, Hold Person, Spiritual Weapon, Polymorph."
+    tags:
+      - key-spells
+      - dm-prep
+
+  - module_slug: spells-and-magic
+    front: "What is a Prepared vs. Known spellcaster?"
+    back: "Prepared casters (Cleric, Druid, Paladin, Wizard) can swap their list of available spells after a long rest — flexible daily loadout. Known casters (Bard, Sorcerer, Warlock, Ranger) have a fixed, smaller list of spells they know, and can only change it when leveling up. Prepared = versatile; Known = fewer choices but usually more per-day slots."
+    tags:
+      - spellcasting
+      - classes
+      - fundamentals
+
+  - module_slug: spells-and-magic
+    front: "What happens when a creature fails a Constitution save to maintain concentration?"
+    back: "The concentration spell ends immediately. Any ongoing effects from that spell (like Hold Person keeping a creature paralyzed) end. The spell slot is still expended. Players new to casters often forget this — losing Polymorph mid-fight because of an 8-damage hit and a failed DC 10 save is a brutal lesson."
+    tags:
+      - concentration
+      - spellcasting

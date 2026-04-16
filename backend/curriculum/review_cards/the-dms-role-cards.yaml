@@ -1,0 +1,52 @@
+# curriculum/review_cards/the-dms-role-cards.yaml
+
+review_cards:
+  - module_slug: the-dms-role
+    front: "What is Session Zero, and what should it cover?"
+    back: "The prep session before the campaign begins. Covers: tone and genre, player expectations, safety tools (X-card, lines and veils), house rules, scheduling, character backstories and how the party meets, and any content restrictions. Prevents most of the conflicts that otherwise destroy campaigns."
+    tags:
+      - session-zero
+      - dm-skills
+      - fundamentals
+
+  - module_slug: the-dms-role
+    front: "What are the X-card and 'lines and veils' safety tools?"
+    back: "X-card: any player can tap/raise a card at any time to instantly remove content from the scene — no explanation needed. Lines: hard 'no' topics that never appear. Veils: topics that happen but 'fade to black' without detail. Established during Session Zero. Essential for tables with varied comfort levels."
+    tags:
+      - safety-tools
+      - session-zero
+
+  - module_slug: the-dms-role
+    front: "What are the common player types from Colville's framework?"
+    back: "Power Gamer (optimize mechanics), Butt-Kicker (wants combat), Tactician (loves planning), Actor (deep roleplay), Storyteller (cares about narrative), Casual (there for social time), Method Actor (IS the character). Most players are a mix. Know yours so sessions reward everyone."
+    tags:
+      - player-types
+      - dm-skills
+
+  - module_slug: the-dms-role
+    front: "What does a DM actually do during a session?"
+    back: "1) Describe the world, 2) Adjudicate rules and make calls when they're unclear, 3) Play every NPC and monster, 4) Keep the story moving, 5) Ensure everyone is having fun. You are NOT an adversary — you're the facilitator of a shared story. The players are your co-authors, not your opponents."
+    tags:
+      - dm-role
+      - fundamentals
+
+  - module_slug: the-dms-role
+    front: "What's the key mindset difference between a 'Sandbox' and 'Railroad' DM style?"
+    back: "Railroad: predetermined plot, player choices are cosmetic, outcome is fixed. Sandbox: players have full agency, DM responds with consequences. Most good games are in between — a loose plot with real branch points. Pure railroad makes players feel like spectators. Pure sandbox requires heavy improv. Find the balance that fits you."
+    tags:
+      - dm-style
+      - player-agency
+
+  - module_slug: the-dms-role
+    front: "What does 'fail forward' mean in adjudication?"
+    back: "When a player fails a check, the story should still move — just with a cost, complication, or twist. Instead of 'you fail to pick the lock, nothing happens,' try 'you pick it, but the pick breaks AND the noise alerts the guard.' Failure should create new problems, not dead ends."
+    tags:
+      - adjudication
+      - dm-skills
+
+  - module_slug: the-dms-role
+    front: "When should a DM call for a dice roll versus just say yes?"
+    back: "Roll only when: 1) The outcome is uncertain, AND 2) Both success and failure are interesting. If the request is reasonable and consequences of failure are boring ('you fail to climb a 3-foot fence'), just say yes. If success is impossible ('I convince the king to give me his throne'), just say no. Dice are for meaningful uncertainty."
+    tags:
+      - adjudication
+      - dm-skills

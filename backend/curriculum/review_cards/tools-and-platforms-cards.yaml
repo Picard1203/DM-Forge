@@ -1,0 +1,55 @@
+# curriculum/review_cards/tools-and-platforms-cards.yaml
+
+review_cards:
+  - module_slug: tools-and-platforms
+    front: "What is D&D Beyond, and what does its free tier cover?"
+    back: "The official digital companion to D&D (dndbeyond.com). Free tier: character builder and digital sheet (using only the free Basic Rules content), spell and monster search (basic), encounter builder, dice roller. Paid tier unlocks full PHB/DMG/MM content and advanced sharing. For most players, the free tier is usable."
+    tags:
+      - dnd-beyond
+      - tools
+
+  - module_slug: tools-and-platforms
+    front: "What is a Virtual Tabletop (VTT), and when would a new DM need one?"
+    back: "A web-based or downloaded app that digitally recreates the tabletop — map, tokens, line-of-sight, dice rolls. Needed for: online games, hybrid games (some players remote), or in-person games where you want a projected/tablet map. Owlbear Rodeo is the simplest free option; Roll20 and Foundry VTT are feature-rich alternatives."
+    tags:
+      - vtt
+      - tools
+
+  - module_slug: tools-and-platforms
+    front: "What is Owlbear Rodeo, and why is it beginner-friendly?"
+    back: "A free, in-browser VTT (owlbear.rodeo) with no account required. Create a room, upload a map image, place tokens, share the link — done. Minimal features on purpose: no complex rules automation, no subscription. Perfect for in-person projected play or casual online sessions. Learn it in 10 minutes."
+    tags:
+      - owlbear-rodeo
+      - vtt
+      - tools
+
+  - module_slug: tools-and-platforms
+    front: "What is Inkarnate, and what can its free tier do?"
+    back: "A browser-based map-making tool (inkarnate.com). Free tier supports regional maps, battle maps, and dungeons with a limited asset library — still more than enough for a home campaign. Paid tier ($5-8/month) unlocks full asset library and higher export resolution. Fast to learn, good-looking output."
+    tags:
+      - inkarnate
+      - maps
+      - tools
+
+  - module_slug: tools-and-platforms
+    front: "What tools make D&D music/ambience easy at the table?"
+    back: "Syrinscape (subscription, curated D&D-specific soundscapes with one-tap moods — 'dungeon', 'combat', 'tavern'). DMDJ (free/cheap, simpler). YouTube playlists like 'Tabletop Audio' or 'Michael Ghelfi' (free, no subscription). Ambient sound transforms sessions — worth setting up even with just a phone and speaker."
+    tags:
+      - music
+      - ambience
+      - tools
+
+  - module_slug: tools-and-platforms
+    front: "What digital tool should you recommend to a player who wants to track their character between sessions?"
+    back: "D&D Beyond digital character sheet. Automatic math (AC, attack bonuses, saves), spell slot tracking, inventory, notes — accessible from phone or laptop. Even on the free tier with only Basic Rules content, it covers core classes for a first campaign. Sharing character sheets with the DM is one click."
+    tags:
+      - dnd-beyond
+      - player-tools
+
+  - module_slug: tools-and-platforms
+    front: "What's the minimum toolkit for running a hybrid in-person + projector D&D game?"
+    back: "1) Laptop connected to projector or large TV showing Owlbear Rodeo (or similar). 2) Uploaded battle maps and token images for encounters. 3) A phone or tablet for ambient music via Syrinscape or a YouTube playlist. 4) Physical dice for players. Budget: under $0 if you already own the laptop + TV."
+    tags:
+      - setup
+      - tools
+      - hybrid-play

@@ -1,0 +1,60 @@
+# curriculum/review_cards/running-the-table-cards.yaml
+
+review_cards:
+  - module_slug: running-the-table
+    front: "What does 'spotlight management' mean, and why is it the most important table skill?"
+    back: "Ensuring every player gets meaningful time as the focus of the scene across a session. If one player dominates and another goes 30 minutes without a line, the quiet player disengages. Rotate focus actively: ask the quiet player what their character is doing, cut scenes when the loud player is winning too much time, design encounters that spotlight different characters."
+    tags:
+      - spotlight
+      - table-management
+      - fundamentals
+
+  - module_slug: running-the-table
+    front: "How do you handle a rules-lawyer player who constantly interrupts?"
+    back: "Acknowledge, defer, move on. 'Good point, I'll check between sessions — for tonight we're going with this ruling.' Write it in your notes. Never argue rules mid-combat; it kills pacing and embarrasses other players. If it's chronic, have a private conversation: 'I value you knowing the rules, but mid-session isn't the place. DM me between sessions.'"
+    tags:
+      - problem-players
+      - table-management
+
+  - module_slug: running-the-table
+    front: "What are three techniques for running D&D for large groups (6+ players)?"
+    back: "1) Group initiative (all players roll together, take turns in any order during the 'player phase'). 2) Encounter scaling — more monsters, not harder ones, to keep everyone engaged. 3) Parallel scenes — split the party deliberately for short scenes so three players resolve their side-quest while four explore the main site. Cuts combat dead-time by 40%+."
+    tags:
+      - large-groups
+      - table-management
+
+  - module_slug: running-the-table
+    front: "When should you cut a scene short as DM?"
+    back: "When the dramatic question has been answered. If the party has decided to take the quest, don't roleplay 20 more minutes of tavern chit-chat. 'Great — we cut to the next morning, you're on the road.' Cutting forward is one of the most underused DM tools. Players rarely notice; pacing improves dramatically."
+    tags:
+      - pacing
+      - scene-management
+
+  - module_slug: running-the-table
+    front: "How do you keep engagement high when a player is waiting for their turn in a long combat?"
+    back: "1) Warn them one turn ahead ('you're up after the goblin'). 2) Invite them to narrate the environment or describe their character's expression. 3) Ask players on other sides to react to events ('Tharok, you see this — what do you do?'). 4) Keep turns under 60 seconds each. Dead air kills interest faster than a bad encounter."
+    tags:
+      - engagement
+      - pacing
+
+  - module_slug: running-the-table
+    front: "What's the right way to handle a player on their phone during the session?"
+    back: "Don't publicly shame them. Two options: 1) Pull them into the scene ('Kira, roll Perception — you notice something the others don't'). 2) Private check-in after the session: 'Hey, I noticed you seemed disengaged — is something going on with the game?' Sometimes phones are symptoms of deeper issues (bored with their character, conflict at the table, real-life distraction)."
+    tags:
+      - problem-players
+      - engagement
+
+  - module_slug: running-the-table
+    front: "What is 'reading the room' as a DM, and how do you act on it?"
+    back: "Noticing the energy of the table: are players leaning in or checking phones? Laughing or quiet? Energized or tired? Act on what you see: cut to a combat to re-energize a dragging scene; pause combat for roleplay if the table is emotionally invested in an NPC; call an early break if everyone's fried. The written plan is less important than the actual vibe."
+    tags:
+      - table-awareness
+      - dm-skills
+
+  - module_slug: running-the-table
+    front: "When is the right time to take a break during a session?"
+    back: "After a climactic moment (combat ends, big reveal drops), not in the middle of one. Breaks every 90-120 minutes. 10 minutes is usually enough. If energy is crashing and you're only 2 hours in, take one anyway. Sessions are marathons, not sprints — protect your and your players' brains."
+    tags:
+      - pacing
+      - breaks
+      - stamina

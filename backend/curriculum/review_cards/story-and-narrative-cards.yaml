@@ -1,0 +1,52 @@
+# curriculum/review_cards/story-and-narrative-cards.yaml
+
+review_cards:
+  - module_slug: story-and-narrative
+    front: "Why is 'player agency' the most important concept in D&D storytelling?"
+    back: "Players need to feel their choices matter. If the story reaches the same outcome regardless of what they do, they check out — you're watching a movie, not playing a game. Every major story beat should have at least one player choice that genuinely changes what comes next. Without agency, the best-written plot still falls flat."
+    tags:
+      - player-agency
+      - narrative
+      - fundamentals
+
+  - module_slug: story-and-narrative
+    front: "What's the difference between a 'plot' and a 'situation' in D&D narrative design?"
+    back: "A plot is a sequence of events that must happen. A situation is a set of conditions (factions, goals, resources, locations) that the players can interact with in any order. Situations preserve agency; plots kill it. Instead of 'the players investigate the murder, then confront the mayor,' set up 'a murder happened, here's who knows what' and let them drive."
+    tags:
+      - plot-vs-situation
+      - player-agency
+
+  - module_slug: story-and-narrative
+    front: "What is a 'campaign hook' versus a 'session hook'?"
+    back: "Campaign hook: a long-running reason the party exists and pursues the overarching goal ('reclaim the lost homeland', 'stop the returning god'). Session hook: the specific reason TODAY'S session starts ('the innkeeper begs you to investigate the missing shipment'). Every session needs a hook strong enough to pull players into action within 5 minutes of start."
+    tags:
+      - hooks
+      - pacing
+
+  - module_slug: story-and-narrative
+    front: "What is foreshadowing in a D&D context, and how is it different from 'setup'?"
+    back: "Foreshadowing: plant information the players will recognize LATER when something pays off. The sword the villain carries in chapter 1 that becomes important in chapter 8. Setup: provide information the players need NOW to make a decision. Foreshadowing rewards attention; setup prevents confusion. Great D&D campaigns use heavy foreshadowing — players love spotting the clues."
+    tags:
+      - foreshadowing
+      - narrative-craft
+
+  - module_slug: story-and-narrative
+    front: "What are the four pillars of a session's pacing arc?"
+    back: "1) Strong start (cold open on an inciting moment — don't start with 'you're at the tavern'). 2) Rising tension (complications stack as players investigate). 3) Climax (decisive encounter, choice, or confrontation). 4) Resolution (consequences, reward, hook for next session). Every session is a mini-story."
+    tags:
+      - session-structure
+      - pacing
+
+  - module_slug: story-and-narrative
+    front: "What does 'show, don't tell' mean when narrating D&D?"
+    back: "Instead of 'the tavern is tense', describe what the party SEES: 'Conversations die as you enter. A man at the bar puts his hand on his knife. Someone coughs. The bartender doesn't look up.' The players feel the tension because they infer it. Telling them a mood is less effective than showing them the details that create the mood."
+    tags:
+      - narration
+      - dm-skills
+
+  - module_slug: story-and-narrative
+    front: "What is the 'Yes, and...' / 'Yes, but...' / 'No, but...' framework for improv adjudication?"
+    back: "When a player tries something unexpected: 'Yes, and...' (success + bonus). 'Yes, but...' (success + complication). 'No, but...' (failure + partial benefit or info). 'No' alone is a conversation-killer. The 'and/but' keeps the story moving forward regardless of outcome — and keeps players feeling heard."
+    tags:
+      - improvisation
+      - adjudication

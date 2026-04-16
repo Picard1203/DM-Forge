@@ -1,0 +1,58 @@
+# curriculum/review_cards/advanced-dm-techniques-cards.yaml
+
+review_cards:
+  - module_slug: advanced-dm-techniques
+    front: "What makes a good trap versus a bad trap?"
+    back: "Good traps are DETECTABLE, INVESTIGABLE, and DISARMABLE. Players can notice them (Perception), figure out how they work (Investigation), and overcome them (Thieves' Tools or creative solutions). Bad traps: 'you walk into a room, take 20 damage, there was no warning.' Good traps create tension and decisions; bad traps punish players for the crime of existing."
+    tags:
+      - traps
+      - dungeon-design
+
+  - module_slug: advanced-dm-techniques
+    front: "What is the 'three-node' structure of good dungeon rooms?"
+    back: "Each room should have a PURPOSE (why it exists in the dungeon fiction), a HAZARD (something to overcome — monster, trap, puzzle, environmental), and a CHOICE (multiple ways forward, or a meaningful decision to make). Rooms that are just 'empty corridor, then another empty corridor' are filler. DMG p.65 (2024) covers this."
+    tags:
+      - dungeon-design
+      - room-design
+
+  - module_slug: advanced-dm-techniques
+    front: "What are chase rules, and when do you use them instead of Athletics checks?"
+    back: "Multi-round mini-game from DMG Ch.3. Each round: participants roll Dex saves or make Athletics/Acrobatics checks while rolling on a complications table (market stall in the way, cart tips over, etc.). Use when a chase should feel cinematic and lasting multiple rounds — not when 'roll Athletics, higher wins' is enough. DMG p.52."
+    tags:
+      - chases
+      - optional-rules
+
+  - module_slug: advanced-dm-techniques
+    front: "How should you handle a player character's death?"
+    back: "Let it matter. Don't retcon it unless Session Zero established 'no character death'. Give the table a moment — a real pause, narration of the character's last thoughts, reactions from other PCs. Then offer resurrection options (Revivify in 1 minute, Raise Dead, Resurrection) appropriate to party level and resources. Death that sticks makes death that's reversed meaningful."
+    tags:
+      - character-death
+      - dm-craft
+
+  - module_slug: advanced-dm-techniques
+    front: "What is 'Rule of Cool' and when should it override Rules as Written?"
+    back: "When a player describes something awesome that the rules don't technically support — swinging from a chandelier to kick a goblin into a fireplace, using a spell creatively, improvising an environmental kill — just let it work (or assign a reasonable DC). RAW exists to serve fun, not constrain it. Overrule Rule of Cool only when the bend would trivialize a core mechanic or invalidate another player's choices."
+    tags:
+      - rule-of-cool
+      - adjudication
+
+  - module_slug: advanced-dm-techniques
+    front: "What are downtime activities, and why do they matter between adventures?"
+    back: "Structured actions between adventuring days: crafting, training, carousing, working a job, research. DMG covers mechanics. They matter because: 1) They give PCs personality beyond combat, 2) They advance character goals outside the DM's plot, 3) They generate story hooks (the carousing PC ends up in debt to the wrong person). Skip them and your campaign feels like one long combat."
+    tags:
+      - downtime
+      - campaign-structure
+
+  - module_slug: advanced-dm-techniques
+    front: "How do you design a good puzzle for D&D?"
+    back: "1) Multiple solution paths (one intended, several creative options accepted). 2) Give a clue for every puzzle — never require a specific logical leap. 3) Set a cost for getting it wrong (damage, time, noise) instead of failure being 'puzzle stays locked'. 4) Time-box it — if the table is stuck 15 minutes, give a hint. Puzzles that stall sessions are the worst table energy killer."
+    tags:
+      - puzzles
+      - design
+
+  - module_slug: advanced-dm-techniques
+    front: "What should you do if players go completely off-script, into territory you didn't prep?"
+    back: "Embrace it — this is normal and a good sign (they have agency). Use the Lazy DM secrets-and-clues list; those clues can appear anywhere. Pull NPCs, monsters, and locations from your prep and re-skin them on the fly (the bandit camp becomes a smuggler's cave). Take a 5-minute break if you need to think. Players rarely notice improv; they notice railroading."
+    tags:
+      - improvisation
+      - adaptability

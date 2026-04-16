@@ -15,7 +15,7 @@ async def seed_review_cards() -> None:
     Returns:
         None
     """
-    card_dir = Path(__file__).resolve().parents[3] / "curriculum" / "review_cards"
+    card_dir = Path(__file__).resolve().parents[2] / "curriculum" / "review_cards"
     if not card_dir.exists():
         return
     yaml_files = sorted(card_dir.glob("*.yaml"))

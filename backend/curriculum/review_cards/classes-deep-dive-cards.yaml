@@ -1,0 +1,56 @@
+# curriculum/review_cards/classes-deep-dive-cards.yaml
+
+review_cards:
+  - module_slug: classes-deep-dive
+    front: "When does a Rogue's Sneak Attack trigger?"
+    back: "Once per TURN (not per round), on a hit with a finesse or ranged weapon, when the rogue has advantage on the attack roll OR an ally of the rogue is within 5 feet of the target and not incapacitated. The advantage/ally condition is the #1 rule new DMs get wrong."
+    tags:
+      - rogue
+      - sneak-attack
+
+  - module_slug: classes-deep-dive
+    front: "How does a Paladin's Divine Smite work, and why should DMs be ready for it?"
+    back: "On a melee weapon hit, a Paladin can expend a spell slot to deal extra radiant damage (2d8 for a level 1 slot, +1d8 per slot level above 1, max 5d8). Players will 'nova' bosses by dumping all their slots into one combat — a Paladin can deal 40+ bonus damage in a round."
+    tags:
+      - paladin
+      - divine-smite
+      - combat
+
+  - module_slug: classes-deep-dive
+    front: "How is Warlock spellcasting different from Wizard or Sorcerer?"
+    back: "Warlocks use Pact Magic, not Spell Slots. They have very few slots (1-4 total), but those slots recharge on a SHORT rest (1 hour) instead of a long rest. All their slots are always cast at their highest level. Completely different pacing from other casters."
+    tags:
+      - warlock
+      - pact-magic
+      - spellcasting
+
+  - module_slug: classes-deep-dive
+    front: "What is the key mechanical difference between Wizard and Sorcerer?"
+    back: "Wizard: prepares spells from a spellbook that can hold unlimited spells — flexible, huge list. Sorcerer: knows a small fixed list of spells but modifies them with Metamagic (Quicken, Twin, Subtle, etc.) using Sorcery Points. Wizard = versatility; Sorcerer = power and modification."
+    tags:
+      - wizard
+      - sorcerer
+      - spellcasting
+
+  - module_slug: classes-deep-dive
+    front: "What are the four key combat resources Fighters get that define the class?"
+    back: "1) Second Wind — self-heal as a bonus action, short rest recharge. 2) Action Surge — take a second action on your turn. 3) Extra Attack — multiple attacks per Attack action (2 at level 5, 3 at 11, 4 at 20). 4) The most Ability Score Improvements of any class."
+    tags:
+      - fighter
+      - combat
+
+  - module_slug: classes-deep-dive
+    front: "What makes Bardic Inspiration a powerful party support tool?"
+    back: "The Bard gives another creature a die (d6 to d12 depending on level) that the creature can roll and add to ONE ability check, attack roll, or saving throw within 10 minutes. It's a bonus action to grant, and it turns near-misses into successes across the whole party."
+    tags:
+      - bard
+      - bardic-inspiration
+      - support
+
+  - module_slug: classes-deep-dive
+    front: "Which classes are 'full casters', 'half casters', and 'third casters'?"
+    back: "Full casters (up to level 9 spells): Bard, Cleric, Druid, Sorcerer, Warlock (pact magic curve), Wizard. Half casters (up to level 5 spells): Paladin, Ranger. Third casters (up to level 4 spells, via subclass only): Eldritch Knight Fighter, Arcane Trickster Rogue."
+    tags:
+      - spellcasting
+      - classes
+      - fundamentals

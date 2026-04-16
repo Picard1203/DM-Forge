@@ -1,0 +1,53 @@
+# curriculum/review_cards/npc-design-and-roleplay-cards.yaml
+
+review_cards:
+  - module_slug: npc-design-and-roleplay
+    front: "What three things does Colville say you need to make an NPC feel real?"
+    back: "1) A want (what do they desire or need?), 2) A secret (what are they hiding?), 3) A personality quirk (one memorable mannerism or speech pattern). Three things and they come alive. Don't build full backstories for every shopkeeper — three traits is enough for any non-recurring NPC."
+    tags:
+      - npc-design
+      - fundamentals
+
+  - module_slug: npc-design-and-roleplay
+    front: "What are the three NPC Attitudes, and how do they affect social interaction?"
+    back: "Hostile (wants to oppose or harm the party), Indifferent (doesn't care either way), Friendly (wants to help). Attitude affects what the NPC is willing to do, and the DC of social skill checks. Roleplay and actions can shift attitudes up or down the scale between encounters."
+    tags:
+      - social-interaction
+      - npc-attitudes
+
+  - module_slug: npc-design-and-roleplay
+    front: "What's the most common DM mistake in social encounters?"
+    back: "Requiring a Persuasion check for everything. If the request is reasonable AND the NPC is friendly, just say yes — no roll needed. If the request is impossible or the NPC is hostile to the idea, just say no. Dice are for UNCERTAIN outcomes where both success and failure would be interesting."
+    tags:
+      - adjudication
+      - social-encounters
+
+  - module_slug: npc-design-and-roleplay
+    front: "What practical techniques create distinct NPC voices?"
+    back: "Change one or more of: pitch (higher/lower), pace (slow/rapid), accent, vocabulary (formal/crude), speech tics ('ah, you see', 'indeed'), and posture/gesture while speaking. You don't need to be a voice actor — small consistent changes make characters immediately distinguishable. Pick 2-3 traits per major NPC."
+    tags:
+      - npc-voices
+      - roleplay
+      - dm-skills
+
+  - module_slug: npc-design-and-roleplay
+    front: "What is the 'hologram technique' for villain design?"
+    back: "Introduce your villain to the party EARLY, in a situation where the party cannot defeat them — scrying, through an emissary, escaping a crime scene, at a distance. The players see the villain's power, personality, and goals before any fight. When the real confrontation comes, it has weight. Colville covers this in Running the Game #13."
+    tags:
+      - villain-design
+      - narrative
+
+  - module_slug: npc-design-and-roleplay
+    front: "Why should you use the DMG's generic NPC stat blocks (bandit, acolyte, guard, etc.)?"
+    back: "Most NPCs don't need a custom stat block. A bandit captain is a bandit captain. Use the generic stat block, give them a name, a motivation, and one custom ability if needed. This saves massive prep time and lets you focus on what makes the NPC memorable: their personality, not their math."
+    tags:
+      - npc-stats
+      - dm-prep
+      - efficiency
+
+  - module_slug: npc-design-and-roleplay
+    front: "What's the key to making a villain feel threatening beyond their stat block?"
+    back: "Show their effects before showing them. Burned villages. Terrified witnesses. Failed heroes. Letters from the villain to lieutenants that the party intercepts. A villain's stat block is just numbers — what makes them scary is everything the players know about them before the fight starts."
+    tags:
+      - villain-design
+      - narrative

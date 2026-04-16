@@ -1,0 +1,54 @@
+# curriculum/review_cards/world-building-cards.yaml
+
+review_cards:
+  - module_slug: world-building
+    front: "What's the 'start small' principle of world building?"
+    back: "You don't need a world map before session 1. You need: one village, one quest, one dungeon, three NPCs, and one problem. Expand outward from wherever the players are. The world grows as the players explore. Most beginner DMs over-prep geography and under-prep the stuff players actually interact with."
+    tags:
+      - world-building
+      - dm-prep
+
+  - module_slug: world-building
+    front: "What makes a faction useful in a campaign?"
+    back: "A faction needs: a clear goal, resources to pursue it, and conflict with at least one other faction. A thieves' guild wanting to control the docks, opposed by merchant houses wanting to keep them open, creates endless plot hooks. Factions with goals that CAN be advanced or blocked by player actions create meaningful choices."
+    tags:
+      - factions
+      - world-building
+
+  - module_slug: world-building
+    front: "How much religion/cosmology do you need to prepare for a first campaign?"
+    back: "Minimal. Use a generic pantheon or tell players 'pick a god that fits your concept and we'll define it together.' Only flesh out religion if your plot specifically requires it (divine artifacts, religious conflict, undead curses). Cosmology (planes, afterlife) can be defined the first time a spell or story beat requires it."
+    tags:
+      - religion
+      - cosmology
+      - dm-prep
+
+  - module_slug: world-building
+    front: "What three existing D&D settings cover the main fantasy flavor categories?"
+    back: "Forgotten Realms = high-fantasy kitchen sink (everything exists). Ravenloft = gothic horror (isolated Domains of Dread). Eberron = noir/magitech (magic replaces technology, morally gray). Knowing these gives you templates and inspiration even if you build homebrew. DMG Appendix A has capsule descriptions."
+    tags:
+      - settings
+      - world-building
+
+  - module_slug: world-building
+    front: "What elements should a 'starting village' have to launch a campaign?"
+    back: "Name and approximate population. 2-3 key locations (tavern, market, temple). 3-5 named NPCs with motivations. One current problem that hooks the party. Optionally: one secret that isn't obvious. That's ~20 minutes of prep and it's enough for the first 2-3 sessions. Expand as players ask questions."
+    tags:
+      - starting-village
+      - dm-prep
+
+  - module_slug: world-building
+    front: "What does a 2024 DMG-style presentation of a region include?"
+    back: "A regional map, key locations with 1-2 sentence descriptions each, major factions with their goals, 3-5 important NPCs, and adventure hooks tied to the location. The Greyhawk example in the 2024 DMG (p.143-171) is your template — study HOW it presents information, not just what the information is."
+    tags:
+      - world-building
+      - presentation
+      - dmg-2024
+
+  - module_slug: world-building
+    front: "What is Inkarnate, and why is it useful for a beginner DM?"
+    back: "A browser-based map-making tool (inkarnate.com) with a free tier that handles regional maps, battle maps, and dungeons. Drag-and-drop terrain, town icons, roads, labels. No art skill required. Good enough for campaign and session maps. Free tier limitations are mild — you can output campaign-ready maps in 15 minutes."
+    tags:
+      - tools
+      - maps
+      - inkarnate

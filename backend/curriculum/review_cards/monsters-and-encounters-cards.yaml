@@ -1,0 +1,61 @@
+# curriculum/review_cards/monsters-and-encounters-cards.yaml
+
+review_cards:
+  - module_slug: monsters-and-encounters
+    front: "What does Challenge Rating (CR) represent, and what's its core rule of thumb?"
+    back: "CR measures monster difficulty. The rule of thumb: a monster of CR X is a fair challenge for a party of four characters at level X. So CR 1 = fair for four level-1 characters. CR is a GUIDE, not a guarantee — action economy, party composition, and terrain can dramatically shift actual difficulty."
+    tags:
+      - challenge-rating
+      - encounter-design
+
+  - module_slug: monsters-and-encounters
+    front: "What are Legendary Actions, and what problem do they solve?"
+    back: "Special actions a legendary creature can take at the END of another creature's turn, outside its own turn. Usually 3 legendary actions per round, regenerated at start of the monster's turn. Solves the boss fight action economy problem: a solo dragon with 3 legendary actions effectively gets 4 turns per round vs. the party's 4."
+    tags:
+      - legendary-actions
+      - boss-fights
+
+  - module_slug: monsters-and-encounters
+    front: "What are Lair Actions, and when do they trigger?"
+    back: "Environmental effects a legendary creature can cause when fighting in its lair. Trigger on initiative count 20 (losing ties), once per round. Examples: a dragon collapses a pillar, a beholder's lair disorients the party. Make boss fights feel different from generic encounters. Only work IN the monster's lair."
+    tags:
+      - lair-actions
+      - boss-fights
+
+  - module_slug: monsters-and-encounters
+    front: "Which MM appendix lets you quickly find monsters by habitat or CR?"
+    back: "Monster Manual Appendix B: Monster Lists (p.374-382 in the 2025 MM). Lists organized by Habitat (Forest, Mountain, etc.), Creature Type (Dragon, Undead, etc.), and Challenge Rating. This is your fastest tool when building an encounter — 'I need a CR 2 monster for a swamp' is one page lookup."
+    tags:
+      - monster-manual
+      - encounter-design
+      - dm-tools
+
+  - module_slug: monsters-and-encounters
+    front: "How do you read the 'Intelligence' score on a stat block to know how a monster fights?"
+    back: "INT 1-2 (animals, oozes): fight on instinct, no tactics, flee when hurt. INT 3-7 (goblins, trolls): basic tactics, self-preservation, flank but don't plan. INT 8-11 (average humanoids): coordinate, use cover, fight smart. INT 12+ (dragons, liches): exploit weaknesses, set traps, target healers, have contingency plans."
+    tags:
+      - monster-tactics
+      - stat-blocks
+      - dm-skills
+
+  - module_slug: monsters-and-encounters
+    front: "What's the first section to read in the Monster Manual, and why?"
+    back: "'How to Use a Monster' / 'Parts of a Stat Block' / 'Running a Monster' (MM p.5-9 in the 2025 edition). It's the instruction manual for every stat block in the book — AC, HP, speed, saves, senses, CR, traits, actions, legendary/lair actions. Read it before you browse any monsters, or half the stat block won't make sense."
+    tags:
+      - monster-manual
+      - stat-blocks
+      - fundamentals
+
+  - module_slug: monsters-and-encounters
+    front: "What are the bread-and-butter low-CR monsters every DM should know?"
+    back: "Goblin, Kobold, Skeleton, Zombie, Wolf, Orc, Bugbear, Ogre. These cover the first 5 levels of nearly every campaign. Know their AC, HP, attacks, and special traits (Goblin's Nimble Escape, Orc's Aggressive, Skeleton's resistance profile). You'll use these in almost every early adventure."
+    tags:
+      - low-cr-monsters
+      - encounter-design
+
+  - module_slug: monsters-and-encounters
+    front: "How do you adjust encounter difficulty beyond just picking a CR?"
+    back: "1) Number of monsters (action economy scales up harder than CR suggests). 2) Terrain advantage (high ground, cover, chokepoints favor defenders). 3) Monster tactics (intelligent coordination vs. mindless attacks). 4) Party resources (full HP/slots vs. already-drained). 5) Surprise/ambush. A CR 1 monster in the right ambush can TPK a level 3 party."
+    tags:
+      - encounter-design
+      - difficulty-tuning

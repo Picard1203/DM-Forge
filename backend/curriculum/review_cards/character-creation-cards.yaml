@@ -1,0 +1,54 @@
+# curriculum/review_cards/character-creation-cards.yaml
+
+review_cards:
+  - module_slug: character-creation
+    front: "In the 2024 PHB, what is the correct order for creating a character?"
+    back: "1) Choose a class, 2) Determine origin (species + background), 3) Determine ability scores, 4) Choose equipment, 5) Fill in details. The big 2024 change: ability score bonuses come from background, not species."
+    tags:
+      - character-creation
+      - fundamentals
+
+  - module_slug: character-creation
+    front: "Where do ability score increases come from in 2024 D&D?"
+    back: "Backgrounds. A background grants either +2/+1 or +1/+1/+1 to three ability scores. Species no longer give ability score bonuses — they grant traits like darkvision, resistances, and special abilities."
+    tags:
+      - character-creation
+      - 2024-rules
+      - backgrounds
+
+  - module_slug: character-creation
+    front: "What does a 2024 background grant a character?"
+    back: "Five things: 1) An ability score increase (+2/+1 or +1/+1/+1), 2) An Origin Feat, 3) Two skill proficiencies, 4) One tool proficiency, 5) Starting equipment."
+    tags:
+      - backgrounds
+      - character-creation
+
+  - module_slug: character-creation
+    front: "What is the Standard Array for ability scores?"
+    back: "15, 14, 13, 12, 10, 8. Assign each number to one of the six abilities (Str, Dex, Con, Int, Wis, Cha). It's the default, balanced alternative to rolling 4d6."
+    tags:
+      - ability-scores
+      - character-creation
+
+  - module_slug: character-creation
+    front: "What are the four categories of feats in 2024 D&D, and when do you get each?"
+    back: "1) Origin Feats — from background at level 1. 2) General Feats — at level 4 and every 4 levels thereafter. 3) Fighting Style Feats — from class features. 4) Epic Boon Feats — at level 19."
+    tags:
+      - feats
+      - character-creation
+
+  - module_slug: character-creation
+    front: "What are Weapon Mastery properties, and who gets them?"
+    back: "New in 2024: eight properties (Cleave, Graze, Nick, Push, Sap, Slow, Topple, Vex) that add tactical effects to weapon attacks. Martial classes (Fighter, Barbarian, Paladin, Ranger, Rogue) get access to mastery properties on specific weapons they're proficient with."
+    tags:
+      - equipment
+      - 2024-rules
+      - weapon-mastery
+
+  - module_slug: character-creation
+    front: "For a new player who wants to play a simple, forgiving class, what do you recommend?"
+    back: "Champion Fighter. It has the simplest subclass in the game — expanded critical hit range and passive bonuses — with no extra resource management. Battle Master is the better tactical option once they're ready for more complexity."
+    tags:
+      - new-players
+      - classes
+      - recommendations
