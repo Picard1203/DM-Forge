@@ -1,7 +1,7 @@
 """Quiz service: question serving, answer grading, and attempt storage."""
 
-from typing import List
-
+from typing import List, Optional       
+from beanie import PydanticObjectId
 from src.models.quiz import Quiz, QuizAttempt
 from src.models.user import User
 from src.repositories.abstract.quiz_repository import AbstractQuizRepository
@@ -42,15 +42,15 @@ class QuizService:
         """Fetch a quiz with questions, stripping correct answers and explanations.
 
         Args:
-            quiz_id (str): The quiz's document ID.
+            quiz_id (str): The quiz's document ID or unique slug.
 
         Returns:
             QuizResponse: Quiz data safe to send to the client.
 
         Raises:
-            QuizNotFoundError: If no quiz with that ID exists.
+            QuizNotFoundError: If no quiz with that identifier exists.
         """
-        quiz = await self._quiz_repository.get_by_id(quiz_id)
+        quiz = await self._resolve_quiz(quiz_id)
         if quiz is None:
             raise QuizNotFoundError()
         return self._to_quiz_response(quiz)
@@ -62,7 +62,7 @@ class QuizService:
 
         Args:
             user (User): The authenticated user submitting the quiz.
-            quiz_id (str): The quiz's document ID.
+            quiz_id (str): The quiz's document ID or unique slug.
             request (SubmitQuizRequest): Contains the list of selected answer indices.
 
         Returns:
@@ -71,23 +71,27 @@ class QuizService:
         Raises:
             QuizNotFoundError: If the quiz does not exist.
         """
-        quiz = await self._quiz_repository.get_by_id(quiz_id)
+        quiz = await self._resolve_quiz(quiz_id)
         if quiz is None:
             raise QuizNotFoundError()
+
+        # Always use the technical ObjectId for attempt linking
+        resolved_quiz_id = str(quiz.id)
+
         question_results = self._grade_answers(quiz=quiz, answers=request.answers)
         correct_count = self._count_correct(question_results)
         total = len(quiz.questions)
         score = correct_count / total if total > 0 else 0.0
         passed = score >= quiz.passing_score
         already_completed = await self._has_prior_pass(
-            user_id=str(user.id), quiz_id=quiz_id
+            user_id=str(user.id), quiz_id=resolved_quiz_id
         )
         xp_earned = quiz.xp_reward if (passed is True and already_completed is False) else 0
         if xp_earned > 0:
             await self._gamification_service.award_xp(user=user, xp_amount=xp_earned)
         attempt = QuizAttempt(
             user_id=str(user.id),
-            quiz_id=quiz_id,
+            quiz_id=resolved_quiz_id,
             answers=request.answers,
             score=score,
             passed=passed,
@@ -101,6 +105,19 @@ class QuizService:
             question_results=question_results,
             earned_achievements=[],
         )
+
+    async def _resolve_quiz(self, identifier: str) -> Optional[Quiz]:
+        """Helper to find a quiz by either technical ObjectId or human-readable slug.
+
+        Args:
+            identifier (str): The string to resolve.
+
+        Returns:
+            Optional[Quiz]: The found quiz or None.
+        """
+        if PydanticObjectId.is_valid(identifier):
+            return await self._quiz_repository.get_by_id(identifier)
+        return await self._quiz_repository.get_by_slug(identifier)
 
     def _to_quiz_response(self, quiz: Quiz) -> QuizResponse:
         """Convert a Quiz document to a client-safe QuizResponse.
