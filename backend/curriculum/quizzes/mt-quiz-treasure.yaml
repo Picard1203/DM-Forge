@@ -1,0 +1,68 @@
+quizzes:
+- slug: mt-quiz-treasure
+  module_slug: magic-items-and-treasure
+  title: Magic Items & Treasure
+  description: Rarity, awarding items, cursed items, economy balance, random tables.
+  passing_score: 0.7
+  xp_reward: 40
+  questions:
+  - question_text: What are the five rarity tiers of magic items in D&D 5e, in order?
+    question_type: multiple_choice
+    options:
+    - Weak, Moderate, Strong, Powerful, Legendary
+    - Common, Uncommon, Rare, Very Rare, Legendary
+    - Tier 1, Tier 2, Tier 3, Tier 4, Artifact
+    - Bronze, Silver, Gold, Platinum, Mythic
+    correct_answer_index: 1
+    explanation: 'Common → Uncommon → Rare → Very Rare → Legendary, plus Artifacts
+      which are unique one-of-a-kind items. Rarity maps to levels: Common/Uncommon
+      for levels 1-4, Rare at 5-10, Very Rare at 11-16, Legendary at 17+. Artifacts
+      are story items, not standard rewards.'
+  - question_text: A level 2 party finds a Rare magic item in the first dungeon. Why
+      might this be a problem?
+    question_type: multiple_choice
+    options:
+    - It is not a problem — powerful items are always welcome
+    - Rare items at level 2 can break game balance. A +1 weapon is fine; a Rare item
+      with powerful combat abilities can trivialize encounters designed for level
+      2 characters and remove the sense of progression
+    - The item will be too heavy to carry
+    - Rare items require attunement which level 2 characters cannot do
+    correct_answer_index: 1
+    explanation: 'Magic items aren''t priced in 5e by default — they''re distributed
+      by DM choice. A Rare item with offensive power handed to a level 2 Barbarian
+      can make them feel invincible too early, collapsing the power progression the
+      level curve is designed to create. Match item rarity to tier: Common/Uncommon
+      at tiers 1-2.'
+  - question_text: What is the most important rule for making a magic item feel memorable
+      rather than generic?
+    question_type: multiple_choice
+    options:
+    - Make sure every item has the maximum stat bonus allowed
+    - Give every item a name, a visual identity, and ideally a one-line history that
+      connects it to the world. The mechanics are secondary to the story
+    - Only give out published magic items, never homebrew
+    - Always give items random properties from the tables
+    correct_answer_index: 1
+    explanation: A +1 Longsword is boring. 'The Blade of the Last Watch — a longsword
+      whose pommel bears the crest of a guard company that died holding a mountain
+      pass forty years ago, the blade slightly cold to the touch' is the same +1 bonus
+      but it's a story. Items that feel like they belong to the world feel like discoveries,
+      not loot drops.
+  - question_text: A player finds a Cloak of Displacement and attunes to it. Three
+      sessions later they notice their character has become increasingly paranoid
+      and evasive in roleplay. When they try to remove the cloak, they feel compelled
+      not to. What type of item is this?
+    question_type: multiple_choice
+    options:
+    - A standard magic item with unusual side effects
+    - A cursed magic item — it has a hidden downside (compulsion to keep it on) that
+      wasn't apparent from the item's apparent beneficial effect
+    - A sentient item trying to communicate
+    - A broken item that needs repair
+    correct_answer_index: 1
+    explanation: Cursed items look beneficial but have hidden drawbacks that become
+      apparent after attunement. The Cloak of Displacement normally grants a powerful
+      defensive benefit — a cursed version might create paranoia and compulsion as
+      the drawback. Curses work best as story tools with meaningful consequences,
+      not random punishments.

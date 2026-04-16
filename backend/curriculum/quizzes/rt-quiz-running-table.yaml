@@ -1,0 +1,97 @@
+quizzes:
+- slug: rt-quiz-running-table
+  module_slug: running-the-table
+  title: Running the Table
+  description: Spotlight, pacing, problem players, large groups, engagement.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What does 'spotlight management' mean in the context of running
+      a D&D session?
+    question_type: multiple_choice
+    options:
+    - Managing the lighting in the room for atmosphere
+    - Ensuring every player gets meaningful moments to contribute, make decisions,
+      and feel seen — actively preventing one or two players from dominating every
+      scene
+    - Tracking which NPCs are the most important to the story
+    - Deciding which combat encounters are the most dramatic
+    correct_answer_index: 1
+    explanation: Spotlight management is one of the most critical DM skills, especially
+      with large groups. In a 9-player game, a dominant player can accidentally consume
+      60% of all session time. Proactively calling on players by name, creating scenes
+      that require specific characters' skills, and giving quieter players personal
+      moments are the mechanics of good spotlight management.
+  - question_text: A player consistently interrupts other players' turns in combat
+      to suggest what they should do. Other players seem increasingly annoyed. What
+      is the correct DM response?
+    question_type: scenario
+    scenario_context: This has happened three sessions in a row. The player means
+      well and is tactically experienced, but the behavior is visibly bothering the
+      group.
+    options:
+    - Ignore it — players should work it out themselves
+    - Publicly shame the player during the session to make an example
+    - 'Address it privately between sessions: acknowledge their tactical knowledge,
+      explain the impact on other players'' fun, and set a clear expectation that
+      each player makes their own decisions'
+    - Remove the player from the campaign immediately
+    correct_answer_index: 2
+    explanation: The private conversation between sessions is almost always the right
+      first step for interpersonal issues. Address it publicly and you embarrass the
+      player and create tension. Ignore it and the problem grows. A direct, private,
+      non-accusatory conversation — 'I've noticed X, it seems to be affecting Y, can
+      we try Z' — resolves most table issues.
+  - question_text: What is the most effective strategy for keeping combat moving quickly
+      in a large group?
+    question_type: multiple_choice
+    options:
+    - Reduce the number of enemies so combat resolves faster
+    - Use a countdown timer — players who don't act in 30 seconds lose their turn
+    - Announce whose turn is next while the current player is still acting so they're
+      ready, keep your own turns brief, and have simple monsters that resolve quickly.
+      Speed comes from DM pacing as much as player prep
+    - Remove all roleplay from combat and focus purely on mechanics
+    correct_answer_index: 2
+    explanation: The biggest combat time sink is transition time — 'okay whose turn
+      is it... okay your turn... what are you doing...' Pre-announcing the next player,
+      keeping monster turns fast (goblins don't deliberate), and having players declare
+      their action before rolling all save time. A DM who runs their NPCs quickly
+      gives players more table time per hour.
+  - question_text: A player is on their phone during other players' turns and only
+      engages when it's their own turn. How does a DM handle this?
+    question_type: multiple_choice
+    options:
+    - Take the phone away — it's disrespectful
+    - Make more engaging content so the player is compelled to pay attention
+    - 'Both: have a private conversation establishing that the table expects presence,
+      AND examine whether the player''s engagement issues point to the game not giving
+      them enough to care about'
+    - It is not the DM's place to manage player behavior outside of their turn
+    correct_answer_index: 2
+    explanation: Phone disengagement is often a symptom. Is this player getting enough
+      spotlight? Is the current adventure connecting to their character? A private
+      conversation sets a social contract expectation, but the DM should also audit
+      their own content. If a player only cares about their turn, they may not feel
+      invested in the group's story.
+  - question_text: Your 9-player session is at the climactic moment of a dungeon boss
+      fight. Three players' characters have been knocked unconscious and are making
+      death saves. How do you handle their engagement during this time?
+    question_type: scenario
+    scenario_context: The three players have nothing to do mechanically except roll
+      a d20 at the start of each turn. The remaining 6 players are fighting. This
+      could last 4-6 rounds.
+    options:
+    - Have the unconscious characters automatically stabilize so those players can
+      re-engage
+    - Ignore the unconscious players — they should watch and learn
+    - Keep death save rolls dramatic, ask each unconscious player to describe what
+      their character experiences between life and death, and check in with them between
+      others' turns to maintain their presence in the moment
+    - End the combat early so all players can participate
+    correct_answer_index: 2
+    explanation: Unconscious players are emotionally at their most invested — their
+      character might die. Lean into it. 'You're on the edge — what do you see?' gives
+      them a role. The death save die roll becomes a dramatic moment, not a chore.
+      Keeping them naratively present means they're still in the scene even without
+      mechanical agency.

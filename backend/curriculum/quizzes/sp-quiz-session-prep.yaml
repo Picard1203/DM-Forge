@@ -1,0 +1,74 @@
+quizzes:
+- slug: sp-quiz-session-prep
+  module_slug: session-prep-lazy-dm
+  title: Session Prep & The Lazy DM
+  description: The 8-step method, minimal prep philosophy, improvisation, note-taking.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What is the core philosophy of the Lazy DM approach to session
+      preparation?
+    question_type: multiple_choice
+    options:
+    - Prepare as little as possible and wing everything
+    - Prepare only what you're likely to need — strong NPCs, a strong opening scene,
+      and loose situation awareness — so preparation time is spent on high-value material,
+      not content that may never be seen
+    - Run exclusively from published modules to avoid preparation
+    - Prepare for every possibility so you're never surprised
+    correct_answer_index: 1
+    explanation: The Lazy DM approach isn't lazy — it's efficient. Players are unpredictable.
+      Preparing 40 pages of dungeon description when players might skip the dungeon
+      entirely is waste. Prepare a strong opening, know your NPCs' motivations, have
+      one or two set-pieces ready, and trust your world knowledge to handle the rest.
+  - question_text: Step 1 of the Lazy DM's 8-step method is 'Review the Characters.'
+      Why does this come first?
+    question_type: multiple_choice
+    options:
+    - To check if players have made any illegal character changes
+    - Because the characters are the story. Reviewing backstory, goals, and unresolved
+      threads reminds the DM what hooks are available and what each player cares about
+      — shaping the session around them
+    - It doesn't matter — the order of the 8 steps is arbitrary
+    - To calculate the CR of encounters based on party level
+    correct_answer_index: 1
+    explanation: Starting with characters ensures the session is built around the
+      people playing it. A Paladin with a missing mentor, a Warlock whose patron is
+      getting demanding — these are ready-made hooks. The best sessions feel personal
+      because they are personal. You can't do that if you've forgotten what your players
+      care about.
+  - question_text: Mid-session, the players completely ignore the dungeon you prepared
+      and decide to sail to a city you've never detailed. What is the correct response?
+    question_type: scenario
+    scenario_context: You spent three hours prepping the dungeon. The players heard
+      a rumor about the city and are very excited. The city doesn't exist in your
+      notes.
+    options:
+    - Tell the players they can't go to the city yet — the dungeon must be completed
+      first
+    - End the session early since you can't continue without prep
+    - Embrace it. Use what you know about the world to improvise the city's flavor.
+      Drop a familiar NPC there. Ask one player a question about the city that makes
+      their character a source of information. Prep the city properly before next
+      session
+    - Have a storm destroy the ship so they return to the dungeon
+    correct_answer_index: 2
+    explanation: 'Player excitement is gold. Never punish it. A city you improvise
+      today based on player investment will feel more real to them than a dungeon
+      you spent hours on that they didn''t want to enter. The Lazy DM prepares situations,
+      not corridors. The situation is: the players want to be in this city. Start
+      there.'
+  - question_text: What should a DM write down during and immediately after a session?
+    question_type: multiple_choice
+    options:
+    - A full transcript of everything that happened
+    - Nothing — memory is sufficient for experienced DMs
+    - The names of new NPCs introduced, promises made to players, plot threads opened,
+      and any player choices that should have consequences later
+    - Only the combat encounters and their outcomes
+    correct_answer_index: 2
+    explanation: Notes serve continuity. Players remember everything their character
+      did and said. A DM running 9 players across multiple sessions will forget the
+      name of the blacksmith they named on the spot, the promise the noble made, and
+      what the Rogue found in the secret room. Four bullet points after each session
+      keeps the world consistent and makes players feel seen.

@@ -1,0 +1,94 @@
+quizzes:
+- slug: sn-quiz-narrative
+  module_slug: story-and-narrative
+  title: Story & Narrative
+  description: Story structure, player agency, hooks, pacing, villain arcs, scene
+    description.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What is the difference between a 'railroad' and a 'sandbox' campaign,
+      and what is the tension between them?
+    question_type: multiple_choice
+    options:
+    - Railroads have trains; sandboxes have deserts
+    - 'A railroad forces players down a single predetermined path. A sandbox gives
+      total freedom with no direction. Most good campaigns balance both: strong narrative
+      hooks that players choose to engage with, but genuine agency in how they engage'
+    - Railroads are used for new players; sandboxes for experienced players
+    - There is no tension — most DMs just run sandboxes
+    correct_answer_index: 1
+    explanation: 'Pure railroads feel like interactive cutscenes — player choices
+      don''t matter. Pure sandboxes feel purposeless — nothing is happening unless
+      players invent it. The sweet spot is ''reactive railroading'': the DM has a
+      story, but the players'' choices genuinely change it. Strong hooks pull players
+      forward; genuine consequences give them agency.'
+  - question_text: A session is running long and the climactic battle hasn't started
+      yet. Players are still in a tavern talking to NPCs. What should the DM do?
+    question_type: scenario
+    scenario_context: Two hours into a three-hour session. The players are engaged
+      in the tavern roleplay but the dungeon entrance is still 20 minutes away at
+      minimum. The DM has a great combat set up.
+    options:
+    - End the session — never rush players through roleplay they're enjoying
+    - Have a random encounter interrupt the tavern immediately to force movement
+    - Recognize the players are where they want to be. Either let the tavern scene
+      be the session and set up the dungeon for next time, or have something pull
+      the party toward the dungeon naturally — a messenger, a noise, a NPC they care
+      about going ahead
+    - Skip the combat entirely since there isn't time
+    correct_answer_index: 2
+    explanation: 'Pacing is one of the hardest DM skills. The wrong answer is forcing
+      the players — nothing kills roleplay faster than an artificial interruption.
+      The right answer is reading the energy: if the tavern scene is great, let it
+      be great. Reschedule the dungeon. Or use a story beat that moves them naturally.
+      Never sacrifice quality moments for a predetermined schedule.'
+  - question_text: What is a 'story hook' and what makes one effective?
+    question_type: multiple_choice
+    options:
+    - A story hook is the opening of a published adventure module
+    - A story hook is anything that gives players a reason to care and act. Effective
+      hooks connect to character backstory, present a clear threat or opportunity,
+      and leave an unanswered question that pulls players forward
+    - A story hook is always a dramatic event that happens in the first minute of
+      a session
+    - A story hook is a trap for players who don't read lore
+    correct_answer_index: 1
+    explanation: Hooks work when they create investment. 'A stranger asks you to find
+      a missing person' is weak. 'The missing person is the mentor who trained your
+      Paladin, and the last person seen with them was your Rogue's estranged brother'
+      is strong — it connects to characters, implies conflict, and leaves questions.
+      The more hooks connect to backstory, the more players chase them.
+  - question_text: What does 'player agency' mean, and how can a DM preserve it while
+      still having a planned story?
+    question_type: multiple_choice
+    options:
+    - Player agency means players write the story; the DM has no plan
+    - Player agency means players' choices have genuine consequences. A DM preserves
+      it by letting choices change outcomes — the villain succeeds if ignored, the
+      NPC dies if not helped, the political situation shifts based on player actions
+    - Player agency means players can ignore rules they don't like
+    - Player agency is a myth — the DM always controls the story
+    correct_answer_index: 1
+    explanation: 'Agency requires consequence. If players ignore the villain''s plot
+      and nothing happens, or if the story resets regardless of their choices, agency
+      is an illusion. Real agency means: if the players don''t stop the ritual, the
+      ritual completes. If they ally with the corrupt noble, that changes who trusts
+      them later. The DM has a story; the players are the main characters who shape
+      it.'
+  - question_text: Why is descriptive narration important, and what is the key principle
+      behind a strong scene description?
+    question_type: multiple_choice
+    options:
+    - Descriptions are optional flavor — the mechanics are what matter
+    - Strong descriptions engage all senses (not just sight), establish tone, and
+      give players information they can act on. Start with the most important or dramatic
+      element, not the ceiling
+    - The longer the description, the better the immersion
+    - Descriptions should always end with 'What do you do?' to give players initiative
+    correct_answer_index: 1
+    explanation: 'Lead with what hits hardest: ''The smell of copper and ash hits
+      you before your eyes adjust to the darkness'' tells players something is wrong
+      before they see it. Multi-sensory descriptions create immersion efficiently.
+      Keep them under 30 seconds — players want to interact, not listen. End when
+      there''s something to react to, not with a forced prompt.'

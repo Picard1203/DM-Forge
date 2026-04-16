@@ -1,0 +1,92 @@
+quizzes:
+- slug: rf-quiz-core-rules
+  module_slug: rules-fundamentals
+  title: 'Core Rules: Actions, Combat & Conditions'
+  description: Actions, bonus actions, reactions, combat structure, conditions, and
+    saving throws.
+  passing_score: 0.7
+  xp_reward: 75
+  questions:
+  - question_text: What is the difference between an Action and a Bonus Action?
+    question_type: multiple_choice
+    options:
+    - Actions are faster; Bonus Actions take longer to resolve
+    - Every character gets one Action per turn; Bonus Actions are only available when
+      a specific ability or spell grants them
+    - Bonus Actions can be saved between turns; Actions cannot
+    - There is no difference — they are interchangeable
+    correct_answer_index: 1
+    explanation: Every character gets one Action on their turn (Attack, Dash, Help,
+      etc.). A Bonus Action only exists when a specific feature grants it — you can't
+      just use a Bonus Action freely. If nothing grants you a Bonus Action, you don't
+      have one.
+  - question_text: When does a Reaction trigger, and how many can a character use
+      per round?
+    question_type: multiple_choice
+    options:
+    - Any time during the turn; unlimited uses
+    - Only on the character's own turn; one per turn
+    - In response to a specific trigger; one per round, resets at the start of their
+      next turn
+    - Only when attacked; one per combat
+    correct_answer_index: 2
+    explanation: A Reaction fires in response to a specific trigger (an enemy leaving
+      your reach, a spell being cast nearby, etc.). You get one Reaction per round
+      and regain it at the start of your next turn. The most common Reaction is the
+      Opportunity Attack.
+  - question_text: A player's character drops to 0 HP. They are not dead. What happens
+      next?
+    question_type: multiple_choice
+    options:
+    - They are immediately removed from combat
+    - They fall unconscious and begin making Death Saving Throws at the start of each
+      of their turns
+    - They drop to 1 HP automatically after one round
+    - They can still act but only have a Bonus Action available
+    correct_answer_index: 1
+    explanation: 'At 0 HP, a character falls unconscious. On each of their subsequent
+      turns they roll a d20: 10+ is a success, 9 or less is a failure. Three successes
+      = stabilized. Three failures = dead. A natural 1 counts as two failures; a natural
+      20 restores 1 HP.'
+  - question_text: Your fighter is engaged with a goblin. The goblin moves away without
+      Disengaging. What can the fighter do?
+    question_type: multiple_choice
+    options:
+    - Nothing — the goblin is free to move away
+    - Use their Reaction to make one melee attack against the goblin as it leaves
+    - Use their Action to chase the goblin
+    - Automatically grapple the goblin
+    correct_answer_index: 1
+    explanation: This is an Opportunity Attack. When a creature you can see leaves
+      your melee reach without using the Disengage action, you can use your Reaction
+      to make one melee weapon attack against it. This is one of the most tactically
+      important rules for melee fighters.
+  - question_text: A character is Poisoned. What does the Poisoned condition actually
+      do?
+    question_type: multiple_choice
+    options:
+    - They take 1d6 poison damage at the start of each turn
+    - They have Disadvantage on all D20 Tests and lose their Bonus Action
+    - They have Disadvantage on Attack Rolls and Ability Checks
+    - They cannot take Actions until they make a successful Constitution saving throw
+    correct_answer_index: 2
+    explanation: The Poisoned condition imposes Disadvantage on Attack Rolls and Ability
+      Checks only. It does not deal damage, remove actions, or affect saving throws.
+      Conditions have precise mechanical definitions — as DM you need to know exactly
+      what each one does and doesn't do.
+  - question_text: A wizard wants to cast Fireball and move across the room in the
+      same turn. Is this possible? In what order should they act?
+    question_type: scenario
+    scenario_context: The wizard has 30 feet of movement. Fireball is an Action. The
+      wizard needs to cross 15 feet to get closer before casting, but also doesn't
+      want to be in the blast radius.
+    options:
+    - No — spells must be cast before any movement
+    - Yes — the wizard can split movement, moving 15 feet, casting Fireball, then
+      using remaining movement
+    - Yes — but only if the wizard uses a Bonus Action to move first
+    - No — movement and Actions cannot occur in the same turn
+    correct_answer_index: 1
+    explanation: Movement can be split before and after an Action freely. The wizard
+      moves 15 feet, casts Fireball (Action), then uses remaining 15 feet to move
+      back if needed. This split-movement rule is important for tactical positioning.

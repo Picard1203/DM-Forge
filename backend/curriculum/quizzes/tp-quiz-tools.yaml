@@ -1,0 +1,81 @@
+quizzes:
+- slug: tp-quiz-tools
+  module_slug: tools-and-platforms
+  title: Tools & Platforms
+  description: D&D Beyond, virtual tabletops, world-building tools, music tools.
+  passing_score: 0.7
+  xp_reward: 40
+  questions:
+  - question_text: What is D&D Beyond's primary use case for a Dungeon Master?
+    question_type: multiple_choice
+    options:
+    - Only for purchasing official sourcebooks digitally
+    - Managing digital character sheets, looking up monster stat blocks during play,
+      building and sharing encounters, and accessing rules quickly without flipping
+      through books
+    - Replacing the DM entirely with an AI system
+    - Creating animated maps for virtual tabletop play
+    correct_answer_index: 1
+    explanation: D&D Beyond is a rules and character management hub. For DMs, the
+      monster compendium with quick stat block lookup during combat is invaluable.
+      The encounter builder helps with CR math. Players can share their character
+      sheets directly with the DM. The free tier covers most basic needs.
+  - question_text: You are running a session for your unit and cannot use phones at
+      the table. Which tool workflow makes the most sense?
+    question_type: scenario
+    scenario_context: No phone use during sessions. You have prep time before the
+      session on a computer. You want to have monster stats available and a map visible.
+    options:
+    - Cannot run D&D without phone access — postpone the session
+    - 'Use prep time on a computer: print monster stat blocks from D&D Beyond, sketch
+      or print a map from Inkarnate, and prepare physical notes. The session itself
+      runs on paper'
+    - Use only published books with no digital tools at all
+    - Have one player use their phone as a DM screen substitute
+    correct_answer_index: 1
+    explanation: The DM Forge is built around this exact constraint — phone-free sessions,
+      digital prep. Use D&D Beyond and Inkarnate during prep, print what you need,
+      run on paper at the table. This is a documented workflow, not a workaround.
+      Many professional DMs run entirely on paper.
+  - question_text: What is Owlbear Rodeo primarily used for?
+    question_type: multiple_choice
+    options:
+    - Generating NPC portraits using AI
+    - A lightweight browser-based virtual tabletop for sharing maps and moving token
+      icons — useful for remote play or showing players a map on a shared screen
+    - A podcast platform for D&D actual play content
+    - A character sheet manager that syncs with D&D Beyond
+    correct_answer_index: 1
+    explanation: Owlbear Rodeo is a minimal VTT — share a map image, drag tokens around,
+      manage fog of war basics. It requires no account for basic use. For an in-person
+      game where you want to show players a map on a tablet or laptop, it's the quickest
+      option. Roll20 is more powerful but has a steeper learning curve.
+  - question_text: What is Inkarnate used for, and what does the free tier allow?
+    question_type: multiple_choice
+    options:
+    - Inkarnate is a monster stat block generator — free tier allows 10 monsters
+    - Inkarnate is a map-making tool for fantasy world maps and dungeon maps — the
+      free tier allows creation and export of maps with a limited asset library
+    - Inkarnate is a campaign management wiki — free tier allows one campaign
+    - Inkarnate is an initiative tracker — free tier allows 6 combatants
+    correct_answer_index: 1
+    explanation: 'Inkarnate is a web-based fantasy map maker. Free tier: create world
+      maps and battle maps with a solid starter asset pack, export at lower resolution.
+      Paid tier: full asset library, higher resolution exports. For a DM building
+      a starting village or dungeon map, the free tier is sufficient and the interface
+      is beginner-friendly.'
+  - question_text: When is it worth investing time learning Roll20 vs using a simpler
+      tool like Owlbear Rodeo?
+    question_type: multiple_choice
+    options:
+    - Always use Roll20 — it is the industry standard and simpler tools are unprofessional
+    - Roll20 is worth learning when running long campaigns remotely, needing automation
+      (dice rolling, character sheets, macros, dynamic lighting). For in-person or
+      simple map display, simpler tools are faster and sufficient
+    - Never use Roll20 — it requires a paid subscription for all features
+    - Roll20 is only for experienced DMs — beginners should avoid it
+    correct_answer_index: 1
+    explanation: Tool choice should match need. Roll20 has a steep setup cost — character
+      sheet integration, macros, dynamic lighting all take time to configure. If you're
+      running in-person with occasional map display, Owlbear is faster. Roll20 earns
+      its complexity for persistent online campaigns. Don't over-tool a simple situation.

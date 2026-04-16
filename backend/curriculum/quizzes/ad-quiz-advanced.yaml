@@ -1,0 +1,94 @@
+quizzes:
+- slug: ad-quiz-advanced
+  module_slug: advanced-dm-techniques
+  title: Advanced DM Techniques
+  description: Puzzles, traps, chases, character death, rule of cool, downtime.
+  passing_score: 0.7
+  xp_reward: 60
+  questions:
+  - question_text: What makes a good puzzle in D&D, and what makes one frustrating?
+    question_type: multiple_choice
+    options:
+    - Good puzzles have a single correct answer that only the DM knows; frustrating
+      ones have multiple solutions
+    - Good puzzles present all necessary information in the game world, reward thinking
+      over dice rolling, and have multiple viable solutions. Frustrating puzzles require
+      specific knowledge the players don't have or hinge on a single Insight roll
+    - Good puzzles always involve magic; frustrating ones involve non-magical elements
+    - Good puzzles take at least 30 minutes; frustrating ones are solved too quickly
+    correct_answer_index: 1
+    explanation: 'The golden rule: the puzzle should be solvable with information
+      available in the game world. If players need knowledge they couldn''t have,
+      it''s a guessing game. Rewarding creative solutions (''can I use the water from
+      my waterskin to trigger this?'') makes players feel clever. A puzzle that stumps
+      the table for 45 minutes without progress is a session killer — have a graceful
+      degradation if needed.'
+  - question_text: The DMG's trap design principle states that good traps have three
+      phases. What are they?
+    question_type: multiple_choice
+    options:
+    - Triggering, damage, reset
+    - Detection (Perception), investigation (Investigation or knowledge), and disarmament
+      (Thieves' Tools or creative solution)
+    - Warning, avoidance, escape
+    - Discovery, consequences, reward
+    correct_answer_index: 1
+    explanation: A good trap can be noticed (Perception check reveals clues), understood
+      (Investigation or knowledge reveals how it works), and dealt with (Thieves'
+      Tools, spells, or creativity). A trap that fires with no warning and deals damage
+      is a tax on HP, not a design. Traps should create decisions, not just punish
+      movement.
+  - question_text: A player's character dies in combat. It was a dramatic, meaningful
+      moment — the character sacrificed themselves. How does the DM handle the moment
+      and the session going forward?
+    question_type: scenario
+    scenario_context: The death was not due to DM error. The player accepted the outcome.
+      The other players are visibly moved. 30 minutes of session time remain.
+    options:
+    - Continue immediately — downtime is wasted session time
+    - End the session immediately out of respect
+    - Pause, acknowledge the moment, let the other players react in-character, give
+      the player space to grieve and celebrate their character. Then — if the player
+      wants — discuss what they'd like to play next. Don't rush past meaningful character
+      death
+    - Retcon the death so the player can keep their character
+    correct_answer_index: 2
+    explanation: Character death handled well is one of the most powerful moments
+      in a campaign. Rushing past it wastes narrative weight. Let the other characters
+      react — grief, anger, tribute. Ask the dying player if they want a final monologue.
+      Then, privately or at the end of the session, start the conversation about the
+      next character. Death should feel significant, not like a character sheet problem
+      to solve.
+  - question_text: What is the 'Rule of Cool,' and when should a DM apply it vs. stick
+      to rules as written?
+    question_type: multiple_choice
+    options:
+    - The Rule of Cool means players can always do anything if it sounds exciting
+    - The Rule of Cool means a DM allows an action that the rules technically don't
+      support if it's dramatically appropriate, cinematic, and won't break game balance.
+      It should be used as a spice, not a replacement for the rules
+    - The Rule of Cool only applies to combat, never to social encounters
+    - The Rule of Cool is banned in official play
+    correct_answer_index: 1
+    explanation: A player wants to swing on the chandelier, land on the dragon's back,
+      and drive their sword in. The rules don't have a 'chandelier stunt' mechanic.
+      A DM who says yes, calls for an Acrobatics check, and makes it happen creates
+      a legendary moment. A DM who says 'there's no rule for that' kills the energy.
+      Use it for dramatic, low-stakes moments. Don't use it to override core balance
+      rules.
+  - question_text: A chase scene begins. The thief is running through a crowded market.
+      What does the DMG's chase mechanic add that a simple Athletics check doesn't?
+    question_type: multiple_choice
+    options:
+    - Nothing — a single Athletics check is more dramatic
+    - The chase mechanic creates a multi-round mini-game with Dash actions, complications
+      (overturned cart, slippery fish), distance tracking, and the risk of losing
+      sight — turning a single roll into a tense sequence with multiple decision points
+    - The chase mechanic automatically determines who wins based on Speed scores
+    - The chase mechanic is only for mounted pursuits
+    correct_answer_index: 1
+    explanation: 'The DMG chase rules (p.52 in 2024) turn pursuit into an extended
+      scene. Each round: a Dash action (with an Athletics/Acrobatics check or risk
+      of exhaustion), distance changes, optional complication tables. The thief ducks
+      through a crowd, vaults a cart, dodges a guard. Multiple rolls create multiple
+      moments of tension. One roll is a coin flip; a chase sequence is a scene.'

@@ -1,0 +1,89 @@
+quizzes:
+- slug: cc-quiz-character-creation
+  module_slug: character-creation
+  title: Character Creation & Origins
+  description: Character building steps, ability scores, backgrounds, species, equipment.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What is a Background's primary mechanical contribution to a character?
+    question_type: multiple_choice
+    options:
+    - It determines the character's starting HP
+    - It grants skill proficiencies, a feat, and starting equipment
+    - It sets the character's maximum spell level
+    - It determines how many languages the character knows
+    correct_answer_index: 1
+    explanation: In the 2024 rules, a Background grants two skill proficiencies, one
+      tool proficiency, one Origin feat, and starting equipment. Backgrounds are more
+      mechanically significant than in previous editions — the Origin feat alone can
+      define an early character.
+  - question_text: What is the Proficiency Bonus for a level 1 character, and when
+      does it increase?
+    question_type: multiple_choice
+    options:
+    - +1 at level 1, increases every level
+    - +2 at levels 1-4, +3 at levels 5-8, increasing every 4 levels
+    - +2 at levels 1-4, +3 at 5-8, +4 at 9-12, +5 at 13-16, +6 at 17-20
+    - +2 always — it never changes
+    correct_answer_index: 2
+    explanation: Proficiency Bonus starts at +2 and increases at levels 5, 9, 13,
+      and 17 — tied to the tier system, not every level. This matters because it scales
+      with skills, saving throws, spell attack bonuses, and attack rolls for martial
+      characters.
+  - question_text: A Fighter and a Wizard both start at level 1. Who has more HP,
+      and why?
+    question_type: multiple_choice
+    options:
+    - They always have the same HP — it's based on ability scores only
+    - The Fighter — they use d10 for Hit Dice vs the Wizard's d6
+    - The Wizard — spellcasters get bonus HP to compensate for weaker armor
+    - It depends entirely on their Constitution score, the class doesn't matter
+    correct_answer_index: 1
+    explanation: HP at level 1 = max Hit Die + Constitution modifier. A Fighter uses
+      d10 (starts with 10 + Con mod), a Wizard uses d6 (starts with 6 + Con mod).
+      Hit Die size is one of the biggest durability differences between classes.
+  - question_text: A player wants their character to be both sneaky and scholarly.
+      Which combination of class, background, and species would best support this
+      from level 1?
+    question_type: scenario
+    scenario_context: The player wants high Intelligence, proficiency in Stealth,
+      and proficiency in Investigation. They are building a level 1 character.
+    options:
+    - Barbarian with Soldier background — rage makes you scary which helps with deception
+    - Rogue with Sage background — Rogue grants Stealth proficiency, Sage grants Investigation
+      and Intelligence focus
+    - Paladin with Criminal background — divine smite covers all weaknesses
+    - Fighter with Acolyte background — fighters are versatile enough to do anything
+    correct_answer_index: 1
+    explanation: Rogue class grants Stealth proficiency and four skill choices from
+      its list. Sage background grants Investigation proficiency and fits an Intelligence-focused
+      character. The combination directly addresses both goals from level 1 without
+      feat investment.
+  - question_text: What is Multiclassing, and what is its main prerequisite?
+    question_type: multiple_choice
+    options:
+    - Choosing two subclasses — requires level 10 in your main class
+    - Taking levels in a second class — requires 13 in the primary ability of both
+      the current and new class
+    - Combining two species traits — requires DM approval only
+    - Respeccing a character — can be done at any level up
+    correct_answer_index: 1
+    explanation: Multiclassing lets you take levels in a second (or third) class when
+      leveling up. The prerequisite is a score of 13 or higher in the primary ability
+      of both your current class and the class you're entering. It's powerful but
+      complex — most new players should stick to a single class.
+  - question_text: Which ability score is most important for a character who wants
+      to be the party's main healer and support caster?
+    question_type: multiple_choice
+    options:
+    - Strength — healing requires physical effort
+    - Intelligence — all magic is Intelligence-based
+    - Wisdom — Cleric and Druid (the primary healers) use Wisdom as their spellcasting
+      ability
+    - Charisma — social influence helps the party more than raw healing
+    correct_answer_index: 2
+    explanation: Cleric and Druid are the primary healing classes, and both use Wisdom
+      as their spellcasting ability. A high Wisdom score increases spell attack bonus
+      and spell save DC. As DM, knowing this helps you understand why a low-Wisdom
+      Cleric is mechanically weak.

@@ -1,0 +1,84 @@
+quizzes:
+- slug: me-quiz-monsters
+  module_slug: monsters-and-encounters
+  title: Monsters & Encounters
+  description: CR, stat blocks, encounter building, legendary actions, monster tactics.
+  passing_score: 0.7
+  xp_reward: 60
+  questions:
+  - question_text: What does Challenge Rating (CR) actually measure?
+    question_type: multiple_choice
+    options:
+    - The exact level a party must be to survive the encounter
+    - An approximation of the XP value and intended difficulty — a CR equal to party
+      level is roughly a Medium encounter for a party of four
+    - The monster's intelligence and ability to plan
+    - How many rounds the monster will survive in combat
+    correct_answer_index: 1
+    explanation: CR is a guideline, not a guarantee. CR = party level is roughly Medium
+      difficulty for a standard party of four. But action economy, terrain, and class
+      composition change this dramatically. A CR 5 monster against 6 level 3 players
+      might be trivial; a CR 5 monster against 2 level 5 players might be deadly.
+  - question_text: 'Reading a stat block: a Goblin has ''Nimble Escape: The goblin
+      can take the Disengage or Hide action as a bonus action on each of its turns.''
+      How should a DM use this?'
+    question_type: scenario
+    scenario_context: The party Fighter just attacked a goblin. The goblin has 4 HP
+      left and is adjacent to the Fighter. It is the goblin's turn.
+    options:
+    - The goblin attacks and stays in melee — it has no reason to run
+    - The goblin uses Nimble Escape to Disengage (avoiding opportunity attack) then
+      retreats to a defensive position or behind cover, making it harder to kill
+    - The goblin surrenders at low HP — that is realistic behavior
+    - Nimble Escape only works if the goblin is at full HP
+    correct_answer_index: 1
+    explanation: Nimble Escape is the defining trait that makes goblins tactically
+      interesting. A smart goblin at low HP Disengages, retreats, and either hides
+      or uses ranged attacks. Goblins that stand and fight die quickly and feel boring.
+      Running traits like this correctly makes even low-CR monsters feel dynamic.
+  - question_text: What are the three difficulty tiers for encounter building in the
+      DMG, and what distinguishes a Deadly encounter?
+    question_type: multiple_choice
+    options:
+    - Easy, Medium, Hard — Deadly encounters always result in player deaths
+    - Low, Medium, High — each tier doubles the XP threshold
+    - Easy, Medium, Hard, Deadly — Deadly means the encounter could kill one or more
+      characters even with good play, and may deplete significant resources
+    - Simple, Complex, Boss — Boss encounters always include a named villain
+    correct_answer_index: 2
+    explanation: The 2024 DMG uses Easy, Medium, Hard, and Deadly. Deadly doesn't
+      mean a guaranteed TPK — it means a realistic chance of character death with
+      good play. It should also significantly drain HP and resources. Use Deadly sparingly,
+      and make sure players understand the stakes going in.
+  - question_text: 'A Lich has Legendary Resistance (3/Day): ''If the Lich fails a
+      saving throw, it can choose to succeed instead.'' A player lands a Hold Person
+      on the Lich. What happens?'
+    question_type: multiple_choice
+    options:
+    - The Lich is automatically paralyzed — spells bypass Legendary Resistance
+    - The Lich can use one charge of Legendary Resistance to succeed on the saving
+      throw and ignore the Paralyzed condition
+    - The Lich takes double damage while paralyzed
+    - The spell has no effect on legendary creatures
+    correct_answer_index: 1
+    explanation: 'Legendary Resistance is specifically designed to prevent boss monsters
+      from being trivially shut down by a single control spell. The Lich burns one
+      of three daily charges and succeeds automatically. After three uses it''s gone
+      — this is why multiple control spells in sequence can eventually land. Communicate
+      the flavor: ''The lich''s body shudders but its will pushes through.'''
+  - question_text: The party enters a dungeon room. You need to place a monster encounter
+      that feels dangerous but not fatal for four level 4 characters. Which option
+      is best?
+    question_type: multiple_choice
+    options:
+    - One Adult Red Dragon (CR 17) — dragons are iconic
+    - One Ogre (CR 2) — it sounds scary
+    - Two Bugbears (CR 1 each) + one Bugbear Chief (CR 3) — multiple enemies with
+      action economy, total XP in Hard range for level 4
+    - Twenty Rats (CR 0 each) — quantity over quality
+    correct_answer_index: 2
+    explanation: Multiple enemies with varied roles (chief as a damage dealer/leader,
+      bugbears as flankers) create tactical decisions and use action economy. The
+      total XP value and CR spread puts this in the Hard range for level 4, which
+      is appropriately challenging without being suicidal. Solo CR 2 is too easy;
+      CR 17 is an execution.

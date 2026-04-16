@@ -1,0 +1,84 @@
+quizzes:
+- slug: dr-quiz-dm-role
+  module_slug: the-dms-role
+  title: The DM's Role
+  description: DM responsibilities, session zero, safety tools, player types, preparation.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What is the primary purpose of a Session Zero?
+    question_type: multiple_choice
+    options:
+    - To run the first dungeon of the campaign as quickly as possible
+    - To establish expectations, discuss tone and themes, agree on table rules, and
+      create characters together before play begins
+    - To test whether the players know the rules well enough
+    - To let the DM reveal the entire campaign plot
+    correct_answer_index: 1
+    explanation: 'Session Zero is a pre-game conversation, not a game session. It
+      aligns expectations: what kind of story, what themes are welcome or off-limits,
+      how serious vs silly, scheduling, what the DM needs from players, what players
+      can expect from the DM. It prevents most table conflicts before they start.'
+  - question_text: A player is clearly uncomfortable with the direction of a scene
+      involving a villain's cruelty to prisoners. What is the correct DM response?
+    question_type: scenario
+    scenario_context: The DM noticed the player has gone quiet, is no longer engaging,
+      and looked away from their notes when the scene intensified.
+    options:
+    - Continue — the story must play out for narrative integrity
+    - Pause, check in with the player privately or publicly, and offer to adjust or
+      skip the scene. The players' comfort is more important than any scene
+    - Ask the player to leave if they can't handle mature content
+    - Speed through the scene as quickly as possible without addressing it
+    correct_answer_index: 1
+    explanation: Reading the room and checking in is a core DM skill. The X-card,
+      Lines & Veils, and general safety tools all exist for this reason. No narrative
+      moment is worth a player feeling genuinely distressed. A good DM notices discomfort
+      early and adjusts. The story can always be redirected.
+  - question_text: What is the difference between a 'Line' and a 'Veil' in D&D safety
+      tools?
+    question_type: multiple_choice
+    options:
+    - Lines are rules the DM sets; Veils are rules the players set
+    - Lines are content that will not appear in the game at all; Veils are content
+      that can happen but is handled off-screen without detail
+    - Lines apply to roleplay; Veils apply to combat only
+    - There is no difference — both mean the content is forbidden
+    correct_answer_index: 1
+    explanation: 'Lines = hard stops. This content does not exist in our game. Veils
+      = it can happen, but we cut away and handle it off-screen. For example: ''We
+      won''t have child harm in our game'' (Line). ''Sexual content can happen but
+      we fade to black'' (Veil). Establishing these in Session Zero prevents unexpected
+      discomfort.'
+  - question_text: A Power Gamer player constantly optimizes for mechanical advantage
+      and seems disinterested in roleplay. How should a DM approach this?
+    question_type: multiple_choice
+    options:
+    - Tell them to stop optimizing and roleplay properly
+    - Remove powerful options from the game to force roleplay
+    - Understand this is a valid play style — create encounters that reward tactical
+      play and find moments where their character's mechanical choices have narrative
+      meaning
+    - Ignore them and focus on the other players
+    correct_answer_index: 2
+    explanation: Player types (Power Gamers, Storytellers, Actors, Explorers, etc.)
+      are all valid. A good DM runs a table that has something for each type. For
+      a Power Gamer, create tactically interesting encounters. Their optimization
+      is engagement — work with it, not against it. Shaming playstyles breaks tables.
+  - question_text: You are running a campaign for 9 players — your entire unit. What
+      is the biggest structural challenge this creates compared to a standard group
+      of 4?
+    question_type: multiple_choice
+    options:
+    - The monsters will be too easy because there are more players
+    - Managing spotlight — with 9 players, each person gets far less time to act and
+      shine. Combat takes much longer, and quieter players can easily be overlooked
+      for entire sessions
+    - The rules don't work for groups larger than 6
+    - Large groups always end in conflict
+    correct_answer_index: 1
+    explanation: 'Spotlight management is the central challenge of large groups. In
+      a 9-player group, a combat round with 9 players + monsters can take 45 minutes.
+      Quieter players disappear. Solutions: shorter combat encounters, more scenes
+      that split the party, proactively calling on each player by name, and keeping
+      turns moving quickly.'

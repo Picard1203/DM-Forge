@@ -1,0 +1,65 @@
+quizzes:
+- slug: rf-quiz-ability-scores
+  module_slug: rules-fundamentals
+  title: Ability Scores & D20 Tests
+  description: The six abilities, modifiers, D20 tests, advantage and disadvantage.
+  passing_score: 0.7
+  xp_reward: 40
+  questions:
+  - question_text: What is the ability modifier for a score of 16?
+    question_type: multiple_choice
+    options:
+    - '+2'
+    - '+3'
+    - '+4'
+    - '+6'
+    correct_answer_index: 1
+    explanation: The formula is (score - 10) / 2, rounded down. (16 - 10) / 2 = +3.
+      Every even increase in score adds +1 to the modifier.
+  - question_text: Which three things are classified as D20 Tests in the 2024 rules?
+    question_type: multiple_choice
+    options:
+    - Attack rolls, ability checks, and saving throws
+    - Attack rolls, damage rolls, and ability checks
+    - Initiative, saving throws, and damage rolls
+    - Ability checks, concentration checks, and death saves
+    correct_answer_index: 0
+    explanation: D20 Test is the 2024 umbrella term covering attack rolls, ability
+      checks, and saving throws. Damage rolls are never D20 Tests — they use different
+      dice.
+  - question_text: A player rolls two d20s and takes the higher result. What is this
+      called, and when does it apply?
+    question_type: multiple_choice
+    options:
+    - Expertise — applies when proficiency is doubled
+    - Advantage — applies when circumstances favor success
+    - Inspiration — only applies once per session
+    - Critical — applies on any natural 20
+    correct_answer_index: 1
+    explanation: Advantage means roll 2d20 and take the higher. It applies when circumstances,
+      abilities, or spells put you in a favorable position. Disadvantage is the reverse
+      — take the lower roll.
+  - question_text: A character has Strength 8. What is their Strength modifier, and
+      what does it mean practically?
+    question_type: multiple_choice
+    options:
+    - +0 — no bonus or penalty to Strength checks
+    - -1 — they subtract 1 from all Strength-based rolls
+    - -2 — they subtract 2 from all Strength-based rolls
+    - +1 — the low score gives a bonus to compensate
+    correct_answer_index: 1
+    explanation: (8 - 10) / 2 = -1. A negative modifier means this character is weaker
+      than average. Every Athletics check, melee attack roll (without finesse), and
+      Strength saving throw takes a -1 penalty.
+  - question_text: When does a character add their Proficiency Bonus to an ability
+      check?
+    question_type: multiple_choice
+    options:
+    - Whenever they roll an ability check
+    - Only when the DM says the task is easy
+    - When the skill used is listed as a proficiency on their character sheet
+    - Only when they roll a natural 10 or higher
+    correct_answer_index: 2
+    explanation: Proficiency Bonus applies to ability checks when the relevant skill
+      (or tool) is listed as a proficiency for that character. A Fighter proficient
+      in Athletics adds their Proficiency Bonus to Strength (Athletics) checks.

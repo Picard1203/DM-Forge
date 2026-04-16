@@ -1,0 +1,87 @@
+quizzes:
+- slug: wb-quiz-worldbuilding
+  module_slug: world-building
+  title: World Building
+  description: Setting creation, factions, geography, lore depth, starting small.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: The 'start small' principle of world building recommends which
+      approach for a new DM?
+    question_type: multiple_choice
+    options:
+    - Build the entire continent before session one so you're never caught off-guard
+    - Begin with one detailed town or village and the immediate region around it,
+      expanding outward only as the players explore
+    - Use a published setting entirely so you don't need to create anything
+    - Generate the world randomly using dice tables every session
+    correct_answer_index: 1
+    explanation: Players can only interact with what's in front of them. A richly
+      detailed starting village with three factions, a mystery, and interesting NPCs
+      will engage players far more than a vague continent map with nothing filled
+      in. Build depth before breadth. Expand the world when the players head toward
+      the edges.
+  - question_text: What is the difference between a setting's 'lore' and its 'truth'?
+    question_type: multiple_choice
+    options:
+    - They are the same thing
+    - Lore is what people in the world believe and tell each other; Truth is what
+      actually happened. The gap between them creates mystery, unreliable narrators,
+      and plot hooks
+    - Lore is written by the DM; Truth is decided by the players
+    - Truth refers to in-game facts; Lore refers to published sourcebooks only
+    correct_answer_index: 1
+    explanation: The gap between lore (what people believe) and truth (what actually
+      happened) is one of the most powerful world building tools. The kingdom believes
+      the old king was a hero — the truth is he made a deal with a demon. Players
+      discovering this gap creates the feeling of a living, complex world.
+  - question_text: 'Your campaign''s starting village has three factions: the Merchant
+      Guild, the Temple of the Sun, and the Farmers'' Council. What purpose do factions
+      serve in world building?'
+    question_type: multiple_choice
+    options:
+    - They are just flavor text with no gameplay impact
+    - Factions create competing interests, alliances of convenience, and ongoing conflicts
+      that generate plot naturally. Players choosing which faction to support creates
+      investment and consequence
+    - Factions are required by the rules to be registered with D&D Beyond
+    - Factions only matter in political campaigns, not dungeon-crawling campaigns
+    correct_answer_index: 1
+    explanation: Factions are plot engines. When the Merchant Guild wants the dungeon
+      cleared for trade and the Temple wants it sealed because of what's inside, the
+      players must choose — and their choice has consequences. Factions make the world
+      feel alive because it has competing wants that exist independently of the players.
+  - question_text: A player asks 'What religion do people follow in this world?' You
+      haven't designed religion yet. What is the best DM response?
+    question_type: scenario
+    scenario_context: Session two. The player's Cleric wants to know what temple their
+      character might pray at. You have a village and a dungeon but no religion system.
+    options:
+    - Tell the player you haven't decided yet and move on
+    - 'Make something up on the spot: ''Most people worship Solara, goddess of harvest
+      and light. There''s a small temple in the village square.'' Then note it down
+      and build on it later'
+    - Tell the player their character wouldn't know that information
+    - Pause the session to write a full religion system before continuing
+    correct_answer_index: 1
+    explanation: 'Improv first, refine later. Give the player something real to interact
+      with now. Write it down immediately so it''s consistent. One goddess with one
+      temple is enough for session two. The religion expands as the players interact
+      with it. This is the Lazy DM principle applied to world building: what do I
+      need NOW, not what is the complete system.'
+  - question_text: Why should a DM distinguish between what they have prepared vs
+      what they will improvise, rather than trying to prepare everything?
+    question_type: multiple_choice
+    options:
+    - Because players always ignore prepared content anyway
+    - Because preparing everything is impossible and trying to do so leads to burnout.
+      Strong preparation covers the high-probability scenes; improvisation handles
+      the unexpected without derailing
+    - Because improvisation is always better than preparation
+    - There is no distinction — good DMs prepare everything
+    correct_answer_index: 1
+    explanation: 'Players are creative and unpredictable. If you prepared every possible
+      path you''d never sleep. The Lazy DM principle: prepare the things that are
+      almost certain to happen (the dungeon entrance, the key NPC meeting, the first
+      combat) and trust your world knowledge to handle detours. Knowing your factions
+      and NPCs'' motivations lets you improvise consistently.'

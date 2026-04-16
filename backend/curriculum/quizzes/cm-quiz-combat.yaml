@@ -1,0 +1,101 @@
+quizzes:
+- slug: cm-quiz-combat
+  module_slug: combat-mastery
+  title: Combat Mastery
+  description: Initiative, attack rolls, cover, opportunity attacks, action economy,
+    encounter building.
+  passing_score: 0.7
+  xp_reward: 60
+  questions:
+  - question_text: What is action economy, and why does it matter in D&D combat?
+    question_type: multiple_choice
+    options:
+    - It refers to how much gold combat costs the party
+    - It refers to the total number of Actions, Bonus Actions, and Reactions available
+      to all creatures each round — the side that gets more meaningful actions typically
+      wins
+    - It is a rule that limits how many spells can be cast per turn
+    - It describes how quickly enemies respawn
+    correct_answer_index: 1
+    explanation: Action economy is why three goblins can threaten a level 5 Fighter
+      — three Actions vs one. It's why Haste is powerful (extra Action) and why Stunning
+      Strike is feared (removes a creature's Action and Reaction). As DM, understanding
+      action economy helps you build encounters that feel challenging without being
+      unfair.
+  - question_text: A party of 4 level 3 characters faces a single Ancient Dragon (CR
+      24). What is the likely outcome and why is this a design mistake?
+    question_type: scenario
+    scenario_context: The DM thought it would be cinematic. The dragon has 567 HP,
+      +17 to hit, and deals 91 average damage per round. Each party member has roughly
+      25 HP.
+    options:
+    - The party will likely win because players are creative
+    - The encounter is almost certainly fatal — CR 24 is designed for level 20 characters.
+      The dragon will kill one character per action, and the party cannot deal meaningful
+      damage
+    - The dragon will hold back because it respects strong warriors
+    - It depends entirely on which spells the party prepared
+    correct_answer_index: 1
+    explanation: CR is calibrated for a party of four at a level roughly equal to
+      the CR. CR 24 vs level 3 is a execution, not a challenge. The dragon's attack
+      bonus (+17) exceeds most AC values at level 3 by a wide margin. This is why
+      encounter building using the DMG difficulty guidelines matters.
+  - question_text: What does Half Cover provide, and how does a DM rule it at the
+      table?
+    question_type: multiple_choice
+    options:
+    - Half cover grants the Invisible condition to the defender
+    - Half cover gives +2 to AC and Dexterity saving throws when at least half the
+      target is obscured by an obstacle
+    - Half cover reduces incoming damage by half
+    - Half cover grants Advantage on attack rolls made against the attacker
+    correct_answer_index: 1
+    explanation: 'Half Cover: +2 to AC and Dex saves. Three-Quarters Cover: +5. Total
+      Cover: cannot be targeted directly. As DM you decide what provides cover — a
+      low wall, a large creature, a table. Keep it simple: half the body obscured
+      = half cover. Most of the body = three-quarters.'
+  - question_text: On their turn, a Fighter can make an attack as their Action. What
+      other things can they do in the same turn?
+    question_type: multiple_choice
+    options:
+    - Only the attack — nothing else is allowed
+    - The attack (Action), move up to their Speed, potentially a Bonus Action if they
+      have one, and one Reaction (if triggered)
+    - Two attacks plus movement, because Fighters have Extra Attack at level 1
+    - Attack and Bonus Action only — movement costs an additional Action
+    correct_answer_index: 1
+    explanation: 'Each turn: move (up to Speed, freely split around the Action), take
+      one Action, optionally take a Bonus Action (if available), and one Reaction
+      per round (triggered, not on your turn). Extra Attack is a level 5 Fighter feature
+      — a level 1 Fighter gets one attack as their Action.'
+  - question_text: A monster has Legendary Actions. When do they activate, and what
+      is their purpose?
+    question_type: multiple_choice
+    options:
+    - Legendary Actions happen before the monster's turn as a free warm-up
+    - Legendary Actions can be used at the end of OTHER creatures' turns, giving solo
+      bosses additional actions so they don't feel overwhelmed by a full party
+    - Legendary Actions are bonus damage rolls added to every attack
+    - Legendary Actions only trigger when the monster is below half HP
+    correct_answer_index: 1
+    explanation: Legendary Actions solve the action economy problem for solo bosses.
+      A Dragon facing 4-6 players would otherwise get 1 Action vs 4-6 Actions. Legendary
+      Actions (typically 3 per round, used at end of others' turns) let the boss stay
+      threatening without becoming a multi-creature encounter.
+  - question_text: The party is fighting two trolls. One troll drops to 0 HP from
+      slashing damage. What must the party do to keep it down?
+    question_type: scenario
+    scenario_context: 'Trolls have the Regeneration trait: they regain 10 HP at the
+      start of their turn unless they took acid or fire damage since their last turn.
+      A troll at 0 HP with Regeneration will stand back up.'
+    options:
+    - Nothing — 0 HP means dead, no matter what
+    - Deal fire or acid damage to the troll before its next turn, or it regenerates
+      and stands up with HP
+    - Tie it up with rope as a Bonus Action
+    - Cast a spell with the Death keyword
+    correct_answer_index: 1
+    explanation: Troll Regeneration is one of the most important monster traits for
+      DMs to know and telegraph. A troll 'killed' by sword blows will rise again.
+      Fire, acid, or a torch thrown on the body prevents regeneration. This is a great
+      example of reading stat block traits and rewarding player knowledge.

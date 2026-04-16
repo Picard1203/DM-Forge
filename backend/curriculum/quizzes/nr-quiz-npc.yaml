@@ -1,0 +1,87 @@
+quizzes:
+- slug: nr-quiz-npc
+  module_slug: npc-design-and-roleplay
+  title: NPC Design & Roleplay
+  description: NPC creation, personality, motivation, voice, social encounters, villains.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What three elements does every memorable NPC need according to
+      strong NPC design principles?
+    question_type: multiple_choice
+    options:
+    - A name, a job, and a pet
+    - A distinct personality trait, a motivation (what they want), and a secret (what
+      they're hiding or ashamed of)
+    - High Charisma, a backstory, and magical abilities
+    - A unique accent, a quirky habit, and a catchphrase
+    correct_answer_index: 1
+    explanation: Personality makes them feel real. Motivation makes them feel active
+      — they have their own agenda. The secret creates tension and gives the players
+      something to discover. An NPC with all three feels like a person, not a plot
+      dispenser. Accent and quirks are nice but they're surface — the three core elements
+      create depth.
+  - question_text: A shopkeeper refuses to sell the party weapons because they don't
+      trust adventurers. A player wants to persuade them. How does the DM handle this
+      mechanically?
+    question_type: scenario
+    scenario_context: The player says 'I want to persuade the shopkeeper.' The shopkeeper
+      has an Unfriendly attitude and a legitimate reason to be suspicious.
+    options:
+    - Automatically allow the sale — players should always be able to buy things
+    - Call for a DC 15 Charisma (Persuasion) check immediately with no context
+    - Ask the player what their character actually says, then set a DC based on the
+      quality of the argument and the shopkeeper's attitude. Good roleplay can lower
+      the DC or succeed without a roll
+    - Deny the persuasion attempt entirely — NPCs don't change their minds
+    correct_answer_index: 2
+    explanation: The DMG's social interaction rules reward actual roleplay. A compelling
+      argument made in-character can bypass a roll entirely or lower the DC significantly.
+      Never call for a Persuasion roll before hearing the player's approach — the
+      roll represents uncertainty, not replacement for roleplay.
+  - question_text: You are playing a gruff Dwarf blacksmith NPC. What is the most
+      effective technique for making their voice distinct at the table?
+    question_type: multiple_choice
+    options:
+    - Do a full Scottish accent perfectly throughout every interaction
+    - 'Pick one or two consistent verbal habits: short sentences, referring to weapons
+      by name, distrust of magic — consistency matters more than accent'
+    - Read from a prepared script for every interaction
+    - Make the NPC speak very slowly to signal they are different
+    correct_answer_index: 1
+    explanation: Consistency beats accent every time. Players remember NPCs by their
+      personality and verbal habits, not by how well you do an accent. A dwarf who
+      always calls the party 'soft southerners,' refers to swords as 'blades worthy
+      of a name,' and scoffs at magic is memorable. Dropping your accent is fine —
+      dropping the personality breaks immersion.
+  - question_text: A villain captures one of the player characters. The villain delivers
+      a 10-minute monologue explaining their entire plan. What is wrong with this
+      scene?
+    question_type: multiple_choice
+    options:
+    - Nothing — villains should always explain their plans
+    - The villain is too helpful; real villains never explain anything
+    - A 10-minute monologue with no player input is passive for everyone not being
+      held. Good villain scenes give players something to do — a chance to escape,
+      gather information, challenge the villain's worldview, or make a choice
+    - Villains should never interact directly with player characters
+    correct_answer_index: 2
+    explanation: Villain scenes become memorable when players have agency. Even a
+      captured character can try to spot an escape route, appeal to the villain's
+      ego, plant doubt in a henchman, or stall. A monologue is a cutscene in a game.
+      Give players something — a Perception check, a Persuasion attempt, a choice.
+      Matt Colville's villain episodes cover this directly.
+  - question_text: What makes a villain more compelling than a simple evil enemy?
+    question_type: multiple_choice
+    options:
+    - High CR and powerful spells
+    - A motivation the players can understand — even if they completely disagree with
+      the methods, they understand why the villain believes what they believe
+    - Being mysterious and never explained
+    - Having a tragic backstory mentioned in passing
+    correct_answer_index: 1
+    explanation: The best villains believe they are right. Thanos believes the universe
+      needs culling. Jaime Lannister pushes a child from a window to protect his family.
+      Their logic is internally consistent even when monstrous. A villain whose goal
+      makes sense — even if repugnant — creates moral complexity. A villain who is
+      evil for evil's sake is just a monster with a name.

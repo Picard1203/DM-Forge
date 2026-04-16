@@ -1,0 +1,97 @@
+quizzes:
+- slug: cd-quiz-classes
+  module_slug: classes-deep-dive
+  title: Classes Knowledge Check
+  description: Class roles, key mechanics, spellcasting types, and party balance.
+  passing_score: 0.7
+  xp_reward: 60
+  questions:
+  - question_text: What is the key mechanical difference between a Wizard's and a
+      Sorcerer's spellcasting?
+    question_type: multiple_choice
+    options:
+    - Wizards cast stronger spells; Sorcerers cast more often
+    - Wizards prepare spells daily from a spellbook and can change their list; Sorcerers
+      have a fixed list of Known spells but gain Metamagic to modify them
+    - Sorcerers use Intelligence; Wizards use Charisma
+    - There is no difference — both are arcane full casters
+    correct_answer_index: 1
+    explanation: Wizard = prepared caster from a spellbook (flexible, changes daily,
+      Intelligence-based). Sorcerer = known spells fixed at level-up (less flexible,
+      but Metamagic lets them twin, quicken, or extend spells, Charisma-based). As
+      DM you'll adjudicate both constantly.
+  - question_text: A Warlock player complains their spell slots are already used after
+      two fights. Another player says 'just take a short rest.' Who is correct and
+      why?
+    question_type: scenario
+    scenario_context: The party has had two combat encounters. The Warlock used both
+      their spell slots in the first encounter. The Cleric still has most of their
+      slots. A short rest (1 hour) is available.
+    options:
+    - The other player is wrong — Warlocks need a long rest like everyone else
+    - The other player is correct — Warlock spell slots (Pact Magic) recharge on a
+      short rest, unlike other casters
+    - Both are wrong — Warlocks don't use spell slots at all
+    - The other player is partially right — Warlocks recover half their slots on a
+      short rest
+    correct_answer_index: 1
+    explanation: 'Pact Magic (Warlock) recharges on a short rest. This is the defining
+      resource trade-off: Warlocks have very few slots (1-2 at low levels) but recover
+      them every short rest. This means a Warlock who short-rests twice per day matches
+      a Wizard''s total spell output. Party pacing matters.'
+  - question_text: Which two classes are purely martial (no spellcasting of any kind
+      in their base class)?
+    question_type: multiple_choice
+    options:
+    - Barbarian and Fighter
+    - Barbarian and Monk
+    - Fighter and Rogue
+    - Monk and Ranger
+    correct_answer_index: 0
+    explanation: Barbarian and Fighter have no spellcasting in their base class (though
+      subclasses like Eldritch Knight or Wild Magic Barbarian add magic). Monk has
+      ki-powered abilities that mimic spells but aren't spellcasting. Ranger and Rogue
+      both get spellcasting at certain levels or subclasses.
+  - question_text: 'A new player asks: ''I want to heal people but also fight in melee.''
+      Which class best fits this description?'
+    question_type: multiple_choice
+    options:
+    - Wizard — they have healing spells and can use daggers
+    - Paladin — they wear heavy armor, fight in melee, and have healing spells plus
+      Lay on Hands
+    - Ranger — they are versatile combatants
+    - Sorcerer — Charisma helps with social situations which is like support
+    correct_answer_index: 1
+    explanation: Paladin is the archetypal melee healer. Heavy armor, martial weapons,
+      Lay on Hands (a healing pool usable any amount per long rest), and access to
+      healing spells. They also get Divine Smite for burst damage. A natural recommendation
+      for new players who want to do both.
+  - question_text: What does the Rogue's Sneak Attack feature require to activate?
+    question_type: multiple_choice
+    options:
+    - The Rogue must be hidden or invisible
+    - The attack must use a finesse or ranged weapon, and the Rogue must have Advantage
+      OR an ally adjacent to the target
+    - The target must be below half HP
+    - The Rogue must spend a Bonus Action to prepare the attack
+    correct_answer_index: 1
+    explanation: 'Sneak Attack triggers when: (1) the weapon is finesse or ranged,
+      AND (2) either the Rogue has Advantage on the roll OR an ally is within 5 feet
+      of the target and the Rogue doesn''t have Disadvantage. The hidden requirement
+      is a common misconception — a Rogue flanking openly can Sneak Attack.'
+  - question_text: As a DM, a player running a Druid says they want to Wild Shape
+      into a dragon in session 2. How do you respond?
+    question_type: scenario
+    scenario_context: The player's Druid is level 2. They believe Wild Shape lets
+      them become any animal they've seen.
+    options:
+    - Allow it — player creativity should be rewarded
+    - Explain that Wild Shape is limited to beasts (not dragons) and at level 2 is
+      limited to CR 1 or lower beasts without swim/fly speed
+    - Allow it if they make a DC 20 Nature check
+    - Wild Shape into a dragon is allowed, but only for one minute
+    correct_answer_index: 1
+    explanation: Wild Shape at level 2 is limited to Beast type creatures with CR
+      1/4 or lower, no swim speed, no fly speed. Dragons are not Beasts — they're
+      Dragons. Wild Shape improves significantly at higher levels (fly speed unlocks
+      at level 8). This is a very common new player misunderstanding.

@@ -1,0 +1,81 @@
+quizzes:
+- slug: sm-quiz-spells
+  module_slug: spells-and-magic
+  title: Spells & Magic
+  description: Spell slots, concentration, preparation vs known, casting rules.
+  passing_score: 0.7
+  xp_reward: 50
+  questions:
+  - question_text: What is the difference between spell level and character level?
+    question_type: multiple_choice
+    options:
+    - They are the same thing — a level 5 character casts level 5 spells
+    - They are completely unrelated — spell level is chosen by the player each time
+    - Spell level (0-9) refers to the power of the spell; character level determines
+      which spell levels you can access based on your class progression
+    - Character level determines spell level only for Wizards
+    correct_answer_index: 2
+    explanation: Spell level (0–9) is the power tier of the spell itself. Character
+      level determines what slot levels you have access to. A level 5 Wizard gets
+      3rd-level spell slots — they can cast 3rd-level spells, or cast lower-level
+      spells using higher slots (upcasting).
+  - question_text: A Cleric is maintaining Bless (concentration) and wants to cast
+      Spirit Guardians (also concentration). What happens?
+    question_type: multiple_choice
+    options:
+    - Both spells can be maintained simultaneously with no issue
+    - Casting Spirit Guardians automatically ends Bless — a character can only concentrate
+      on one spell at a time
+    - The Cleric must make a Constitution saving throw to maintain both
+    - They can maintain both for one round, then must choose
+    correct_answer_index: 1
+    explanation: Concentration is a hard limit — casting a new concentration spell
+      immediately ends the previous one. No save, no grace period. The Cleric must
+      choose to drop Bless before casting Spirit Guardians. As DM, always track concentration
+      — it's the main balance mechanism for powerful spells.
+  - question_text: A Wizard takes 18 damage from a fireball. They are concentrating
+      on Fly. What must they do?
+    question_type: multiple_choice
+    options:
+    - Nothing — damage doesn't affect concentration
+    - Make a Constitution saving throw, DC 9 (half of 18), or lose concentration
+    - Automatically lose concentration on any damage above 10
+    - Make a Constitution saving throw DC 18 or lose concentration
+    correct_answer_index: 1
+    explanation: When you take damage while concentrating, you make a Constitution
+      saving throw. The DC is 10 or half the damage taken, whichever is higher. Half
+      of 18 = 9, so DC is 10. Fail the save and concentration breaks. This is why
+      Resilient (Constitution) and War Caster are popular feats for casters.
+  - question_text: What is a cantrip, and why does it matter for resource management?
+    question_type: multiple_choice
+    options:
+    - A cantrip is a 0-level spell that costs a spell slot but is very cheap
+    - A cantrip is a 0-level spell that can be cast freely an unlimited number of
+      times — it never costs a spell slot
+    - A cantrip is any spell that targets a single creature
+    - A cantrip recharges on a short rest instead of a long rest
+    correct_answer_index: 1
+    explanation: 'Cantrips (spell level 0) cost nothing — no spell slot required,
+      unlimited uses. This is why Fire Bolt, Sacred Flame, and Eldritch Blast exist:
+      they give spellcasters a reliable attack that doesn''t drain resources. For
+      a Warlock with 1-2 spell slots, Eldritch Blast is their primary action most
+      of the time.'
+  - question_text: A Paladin player asks if they can cast spells in heavy armor. A
+      Wizard player says only Wizards with the right feat can do that. Who is right?
+    question_type: scenario
+    scenario_context: The Paladin is wearing plate armor (heavy). The Wizard is wearing
+      robes. Both want to cast spells.
+    options:
+    - The Wizard is right — heavy armor imposes disadvantage on all spellcasting
+    - The Paladin is right — armor proficiency determines whether you can cast in
+      armor, not spell type. Paladins are proficient in heavy armor so they cast freely
+      in it
+    - Neither is right — only Clerics can cast in heavy armor
+    - The Wizard is right — all non-Wizard casters have somatic component penalties
+      in armor
+    correct_answer_index: 1
+    explanation: 'Arcane spell failure from armor was removed in 5e entirely. The
+      rule is simpler: if you are NOT proficient with your armor, you cannot cast
+      spells (or use features requiring concentration). Paladins ARE proficient in
+      heavy armor, so they cast freely. Wizards are NOT, so a Wizard in plate couldn''t
+      cast.'
