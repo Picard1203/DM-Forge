@@ -4,9 +4,12 @@ import type { Module } from '@/types'
 
 interface Props {
   module: Module
+  progressPercent?: number
 }
 
-const ModuleCard: React.FC<Props> = ({ module }) => {
+const ModuleCard: React.FC<Props> = ({ module, progressPercent = 0 }) => {
+  const clampedPercent = Math.min(100, Math.max(0, progressPercent))
+
   return (
     <Link
       to={`/curriculum/${module.slug}`}
@@ -20,9 +23,12 @@ const ModuleCard: React.FC<Props> = ({ module }) => {
       <div className="flex gap-4 mt-3">
         <span className="text-muted text-xs">{module.estimated_hours}h</span>
         <span className="text-gold text-xs">{module.xp_reward} XP</span>
+        {clampedPercent > 0 && (
+          <span className="text-primary text-xs">{Math.round(clampedPercent)}%</span>
+        )}
       </div>
       <div className="h-1.5 bg-border rounded mt-3 overflow-hidden">
-        <div className="h-full bg-primary" style={{ width: '0%' }} />
+        <div className="h-full bg-primary transition-all" style={{ width: `${clampedPercent}%` }} />
       </div>
     </Link>
   )

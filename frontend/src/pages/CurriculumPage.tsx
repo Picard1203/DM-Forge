@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '@/components/layout/Navbar'
 import ModuleCard from '@/components/curriculum/ModuleCard'
 import { getModules } from '@/api/curriculum'
+import { useProgressStore } from '@/store/progressStore'
 import type { Module } from '@/types'
 
 const CurriculumPage: React.FC = () => {
   const [modules, setModules] = useState<Module[] | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const fetchOverview = useProgressStore((s) => s.fetchOverview)
+  const overview = useProgressStore((s) => s.overview)
 
   useEffect(() => {
     const load = async () => {
@@ -18,7 +21,16 @@ const CurriculumPage: React.FC = () => {
       }
     }
     load()
-  }, [])
+    fetchOverview()
+  }, [fetchOverview])
+
+  const getProgressPercent = (moduleId: string): number => {
+    if (overview === null) return 0
+    for (const item of overview.modules) {
+      if (item.module_id === moduleId) return item.percent
+    }
+    return 0
+  }
 
   const renderContent = () => {
     if (error !== null) {
@@ -29,7 +41,13 @@ const CurriculumPage: React.FC = () => {
     }
     const cards: React.ReactElement[] = []
     for (const mod of modules) {
-      cards.push(<ModuleCard key={mod.id} module={mod} />)
+      cards.push(
+        <ModuleCard
+          key={mod.id}
+          module={mod}
+          progressPercent={getProgressPercent(mod.id)}
+        />
+      )
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

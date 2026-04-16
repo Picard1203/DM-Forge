@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import type { Task } from '@/types'
 import { useProgressStore } from '@/store/progressStore'
 
@@ -64,10 +65,21 @@ const TaskCard: React.FC<Props> = ({ task }) => {
       )
     }
     if (task.task_type === 'quiz_ref') {
+      const content = task.content as { quiz_slug?: string }
+      if (content.quiz_slug !== undefined) {
+        return (
+          <Link
+            to={`/quiz/${content.quiz_slug}`}
+            className="inline-block text-sm text-primary border border-primary/40 rounded px-3 py-1 hover:bg-primary/10 transition-colors"
+          >
+            Take Quiz
+          </Link>
+        )
+      }
       return (
         <button
           disabled
-          title="Coming soon"
+          title="Quiz not available"
           className="text-muted text-sm border border-border rounded px-3 py-1 cursor-not-allowed opacity-50"
         >
           Take Quiz
