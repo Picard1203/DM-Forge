@@ -1,6 +1,7 @@
 import { create } from 'zustand'
 import * as progressApi from '@/api/progress'
 import type { ProgressOverviewResponse } from '@/types'
+import { useToastStore } from '@/store/toastStore'
 
 interface ProgressState {
   overview: ProgressOverviewResponse | null
@@ -36,6 +37,12 @@ export const useProgressStore = create<ProgressState & ProgressActions>((set, ge
         const updated = new Set(current)
         updated.add(taskId)
         set({ completedTaskIds: updated })
+        for (const achievement of result.earned_achievements) {
+          useToastStore.getState().push({
+            title: 'Achievement Unlocked!',
+            message: achievement.title,
+          })
+        }
       }
       await get().fetchOverview()
     } catch {

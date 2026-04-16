@@ -12,6 +12,7 @@ import ReviewPage from '@/pages/ReviewPage'
 import SessionPage from '@/pages/SessionPage'
 import AchievementsPage from '@/pages/AchievementsPage'
 import SettingsPage from '@/pages/SettingsPage'
+import ToastContainer from '@/components/ui/Toast'
 
 const App: React.FC = () => {
   const hydrate = useAuthStore((s) => s.hydrate)
@@ -29,6 +30,7 @@ const App: React.FC = () => {
   }, [token, fetchMe])
 
   return (
+    <>
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -46,6 +48,8 @@ const App: React.FC = () => {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    <ToastContainer />
+    </>
   )
 }
 

@@ -7,11 +7,11 @@ export async function getDueCards(): Promise<ReviewCard[]> {
 }
 
 export async function submitReview(
-  reviewId: string,
+  cardId: string,
   quality: number
 ): Promise<ReviewSubmitResponse> {
   const response = await client.post<ReviewSubmitResponse>('/review/submit', {
-    review_id: reviewId,
+    card_id: cardId,
     quality,
   })
   return response.data
