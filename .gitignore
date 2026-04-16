@@ -43,3 +43,8 @@ logs/
 
 # Documentation
 docs/
+CLAUDE.md
+.agent/
+.claude/
+.obsidian/
+graphify-out/
