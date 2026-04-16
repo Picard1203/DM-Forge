@@ -1,0 +1,40 @@
+# curriculum/review_cards/rules-fundamentals-cards.yaml
+
+review_cards:
+  - module_slug: rules-fundamentals
+    front: "What is initiative, and when is it rolled?"
+    back: "Initiative determines turn order in combat. Each combatant rolls a d20 and adds their Dexterity modifier at the start of every combat encounter. The highest result acts first."
+    tags:
+      - combat
+      - initiative
+
+  - module_slug: rules-fundamentals
+    front: "What does Armor Class (AC) represent?"
+    back: "AC is the difficulty number an attacker must meet or beat on their d20 attack roll to hit a creature. It reflects physical armor, natural toughness, reflexes, and magical protection."
+    tags:
+      - combat
+      - defense
+      - armor-class
+
+  - module_slug: rules-fundamentals
+    front: "What is a saving throw, and how is it made?"
+    back: "A saving throw is a d20 roll to resist or avoid an effect (e.g., a spell, trap, or hazard). Roll d20 + ability modifier (+ proficiency bonus if proficient). You must meet or beat the effect's Difficulty Class (DC)."
+    tags:
+      - rules
+      - saving-throw
+
+  - module_slug: rules-fundamentals
+    front: "What is the difference between Advantage and Disadvantage?"
+    back: "Advantage: roll 2d20 and take the higher result. Disadvantage: roll 2d20 and take the lower result. They cancel each other out regardless of how many sources you have — one of each always equals a normal roll."
+    tags:
+      - rules
+      - dice
+      - advantage
+
+  - module_slug: rules-fundamentals
+    front: "What actions are available to a creature on its turn in combat?"
+    back: "On your turn you can: Move up to your speed, and take one Action. Common actions include Attack, Cast a Spell, Dash (double move), Disengage (avoid opportunity attacks), Dodge (attacks against you have Disadvantage), Hide, Help, or Ready. A Bonus Action may also be available depending on class features or spells."
+    tags:
+      - combat
+      - action-economy
+      - turn-structure
