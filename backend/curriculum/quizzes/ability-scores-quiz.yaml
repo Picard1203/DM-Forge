@@ -1,0 +1,37 @@
+# curriculum/quizzes/ability-scores-quiz.yaml
+
+quizzes:
+  - slug: rf-quiz-ability-scores
+    module_slug: rules-fundamentals
+    title: "Ability Scores & D20 Tests Quiz"
+    description: "Deep dive into the 6 abilities, how to calculate modifiers, and the mechanics of D20 tests."
+    passing_score: 0.7
+    xp_reward: 40
+    questions:
+      - question_text: "What is the modifier for an Ability Score of 14?"
+        question_type: multiple_choice
+        options:
+          - "+1"
+          - "+2"
+          - "+3"
+          - "+4"
+        correct_answer_index: 1
+        explanation: "The formula is (Score - 10) / 2, rounded down. So (14 - 10) / 2 = 2."
+
+      - question_text: "Which Ability Score typically determines your aptitude for logic and memory?"
+        question_type: multiple_choice
+        options:
+          - "Wisdom"
+          - "Intelligence"
+          - "Charisma"
+          - "Dexterity"
+        correct_answer_index: 1
+        explanation: "Intelligence measures mental acuity, accuracy of recall, and the ability to reason."
+
+      - question_text: "True or False: A Saving Throw is considered a 'D20 Test' in the 2024 rules."
+        question_type: multiple_choice
+        options:
+          - "True"
+          - "False"
+        correct_answer_index: 0
+        explanation: "In the 2024 core rules, 'D20 Test' is an umbrella term that includes Ability Checks, Attack Rolls, and Saving Throws."

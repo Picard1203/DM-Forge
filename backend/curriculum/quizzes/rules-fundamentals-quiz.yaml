@@ -1,7 +1,7 @@
 # curriculum/quizzes/rules-fundamentals-quiz.yaml
 
 quizzes:
-  - slug: rules-fundamentals-quiz
+  - slug: rf-quiz-core-rules
     module_slug: rules-fundamentals
     title: "Rules Fundamentals Quiz"
     description: "Test your knowledge of core D&D 5e rules before your first session."
