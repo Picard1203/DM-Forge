@@ -90,12 +90,9 @@ const SessionPage: React.FC = () => {
               </div>
             )}
 
-            <button
-              disabled
-              className="mt-6 w-full border border-border text-muted rounded-lg py-2 text-sm cursor-not-allowed opacity-50"
-            >
-              Start Session
-            </button>
+            <p className="mt-6 text-muted text-sm text-center">
+              Tasks are completed from the module pages.
+            </p>
           </div>
         )}
       </main>
