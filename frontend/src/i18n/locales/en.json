@@ -17,6 +17,10 @@
     "level": "Level {{level}}",
     "xp": "{{xp}} XP",
     "streak": "{{count}} day streak",
+    "streak_one": "{{count}} day streak",
+    "streak_other": "{{count}} days streak",
+    "streak_best_one": "Best: {{count}} day",
+    "streak_best_other": "Best: {{count}} days",
     "title": "{{title}}"
   },
   "nav": {
@@ -50,7 +54,8 @@
   },
   "progress": {
     "modules_heading": "Module Progress",
-    "tasks_done": "tasks",
+    "tasks_done_one": "task",
+    "tasks_done_other": "tasks",
     "mark_complete": "Mark Complete",
     "completed": "Completed ✓",
     "percent": "{{percent}}% complete"
