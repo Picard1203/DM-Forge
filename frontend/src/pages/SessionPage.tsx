@@ -32,9 +32,9 @@ const SessionPage: React.FC = () => {
   }
 
   const renderTaskCard = (item: SessionTaskItem) => (
-    <div key={item.task_id} className="bg-surface border border-border rounded-lg p-4">
+    <div key={item.task_id} className="card-surface p-4">
       <div className="flex items-start justify-between gap-4 mb-1">
-        <p className="text-white text-sm font-medium">{item.title}</p>
+        <p className="text-white text-sm font-semibold">{item.title}</p>
         <span className="text-muted text-xs uppercase tracking-wider shrink-0">{item.task_type}</span>
       </div>
       <div className="flex gap-3">
@@ -47,10 +47,12 @@ const SessionPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-bg">
       <Navbar />
-      <main className="max-w-2xl mx-auto px-6 py-10">
-        <h1 className="text-white text-2xl font-bold mb-6">Plan a Session</h1>
+      <main className="max-w-2xl mx-auto px-6 flex flex-col min-h-[calc(100vh-4rem)] justify-center py-10">
+        <h1 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-white mb-6">
+          Plan a Session
+        </h1>
 
-        <div className="bg-surface border border-border rounded-lg p-6 mb-6">
+        <div className="card-surface p-6 mb-6">
           <label className="block text-white text-sm font-medium mb-3">
             Available time: <span className="text-gold">{availableMinutes} minutes</span>
           </label>

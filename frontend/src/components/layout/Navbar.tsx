@@ -1,7 +1,14 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuthStore } from '@/store/authStore'
+
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  `text-sm transition-colors pb-0.5 border-b-2 ${
+    isActive
+      ? 'text-white border-amber'
+      : 'text-muted hover:text-white border-transparent'
+  }`
 
 const Navbar: React.FC = () => {
   const { t } = useTranslation()
@@ -16,23 +23,23 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-surface border-b border-border px-6 py-3 flex items-center justify-between">
-      <Link to="/" className="text-gold font-bold text-lg tracking-wide">
+      <Link to="/" className="font-display text-gold font-semibold text-xl tracking-widest">
         The DM Forge
       </Link>
 
       <div className="flex items-center gap-6">
-        <Link to="/curriculum" className="text-muted hover:text-white text-sm transition-colors">
+        <NavLink to="/curriculum" className={navLinkClass}>
           {t('nav.curriculum')}
-        </Link>
-        <Link to="/session" className="text-muted hover:text-white text-sm transition-colors">
+        </NavLink>
+        <NavLink to="/session" className={navLinkClass}>
           {t('nav.session')}
-        </Link>
-        <Link to="/review" className="text-muted hover:text-white text-sm transition-colors">
+        </NavLink>
+        <NavLink to="/review" className={navLinkClass}>
           {t('nav.review')}
-        </Link>
-        <Link to="/achievements" className="text-muted hover:text-white text-sm transition-colors">
+        </NavLink>
+        <NavLink to="/achievements" className={navLinkClass}>
           {t('nav.achievements')}
-        </Link>
+        </NavLink>
       </div>
 
       <div className="flex items-center gap-4">
@@ -42,7 +49,7 @@ const Navbar: React.FC = () => {
             {' · '}
             <span className="text-white">Lv {user.level}</span>
             {' · '}
-            <span className="text-gold">{user.xp} XP</span>
+            <span className="text-gold">{user.xp.toLocaleString()} XP</span>
           </span>
         )}
         <button

@@ -87,7 +87,7 @@ const QuizPage: React.FC = () => {
 
         {quiz !== null && result !== null && (
           <div>
-            <h1 className="text-white text-2xl font-bold mb-6">{quiz.title}</h1>
+            <h1 className="font-display text-3xl font-bold tracking-wide text-white mb-6">{quiz.title}</h1>
             <QuizResult result={result} />
           </div>
         )}
@@ -95,7 +95,7 @@ const QuizPage: React.FC = () => {
         {quiz !== null && result === null && (
           <div>
             <div className="flex items-center justify-between mb-6">
-              <h1 className="text-white text-2xl font-bold">{quiz.title}</h1>
+              <h1 className="font-display text-3xl font-bold tracking-wide text-white">{quiz.title}</h1>
               <span className="text-muted text-sm">
                 {currentIndex + 1} / {quiz.questions.length}
               </span>

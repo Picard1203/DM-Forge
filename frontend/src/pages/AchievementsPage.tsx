@@ -30,7 +30,7 @@ const AchievementsPage: React.FC = () => {
       <Navbar />
       <main className="max-w-5xl mx-auto px-6 py-10">
         <div className="flex items-baseline gap-4 mb-6">
-          <h1 className="text-white text-2xl font-bold">Achievements</h1>
+          <h1 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-white">Achievements</h1>
           {!isLoading && (
             <span className="text-muted text-sm">
               {earnedCount} / {all.length} earned
