@@ -10,7 +10,7 @@ const QuizResult: React.FC<Props> = ({ result }) => {
   const totalCount = result.question_results.length
 
   return (
-    <div className="bg-surface border border-border rounded-lg p-6 space-y-4">
+    <div className="card-surface p-6 space-y-4">
       <div className="text-center space-y-2">
         <p className={`text-3xl font-bold ${result.passed ? 'text-gold' : 'text-primary'}`}>
           {Math.round(result.score * 100)}%

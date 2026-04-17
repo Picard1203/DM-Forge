@@ -94,7 +94,7 @@ const TaskCard: React.FC<Props> = ({ task }) => {
   }
 
   return (
-    <div className="bg-surface border border-border rounded-lg p-4">
+    <div className="card-surface p-4">
       <div className="flex items-start justify-between gap-4 mb-2">
         <p className="text-white text-sm font-medium">{task.title}</p>
         <span className="text-muted text-xs uppercase tracking-wider shrink-0">

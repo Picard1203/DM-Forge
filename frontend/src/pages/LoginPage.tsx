@@ -9,10 +9,10 @@ const LoginPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-bg flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        <h1 className="text-gold text-3xl font-bold text-center mb-2">The DM Forge</h1>
+        <h1 className="font-display text-gold text-3xl font-bold text-center mb-2 tracking-widest">The DM Forge</h1>
         <p className="text-muted text-center text-sm mb-8">Master the art of the Dungeon Master</p>
 
-        <div className="bg-surface border border-border rounded-xl p-6 space-y-6">
+        <div className="card-surface p-6 space-y-6">
           <h2 className="text-white text-xl font-semibold">{t('auth.login')}</h2>
           <LoginForm />
           <p className="text-muted text-sm text-center">

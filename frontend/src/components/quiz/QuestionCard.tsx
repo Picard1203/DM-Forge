@@ -9,7 +9,7 @@ interface Props {
 
 const QuestionCard: React.FC<Props> = ({ question, selectedIndex, onSelect }) => {
   return (
-    <div className="bg-surface border border-border rounded-lg p-6 space-y-4">
+    <div className="card-surface p-6 space-y-4">
       <p className="text-white font-medium">{question.question_text}</p>
       <ul className="space-y-2">
         {question.options.map((option, i) => (

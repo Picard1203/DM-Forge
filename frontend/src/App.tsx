@@ -40,7 +40,7 @@ const App: React.FC = () => {
   return (
     <>
     {showUpdatePrompt && (
-      <div className="fixed bottom-4 right-4 z-50 bg-surface border border-border rounded-lg px-4 py-3 flex items-center gap-3 shadow-lg">
+      <div className="fixed bottom-4 right-4 z-50 card-surface px-4 py-3 flex items-center gap-3 shadow-lg">
         <span className="text-white text-sm">A new version is available.</span>
         <button
           onClick={() => updateServiceWorker(true)}

@@ -22,7 +22,7 @@ const QualityButtons: React.FC<Props> = ({ onSelect, disabled }) => {
           key={q}
           onClick={() => onSelect(q)}
           disabled={disabled}
-          className="px-3 py-2 rounded border border-border text-sm text-muted hover:border-primary/50 hover:text-white disabled:opacity-40 transition-colors"
+          className="px-3 py-2 rounded-lg border border-white/10 bg-card-surface text-sm text-muted hover:border-amber/50 hover:text-white disabled:opacity-40 transition-colors"
         >
           {LABELS[q]}
         </button>

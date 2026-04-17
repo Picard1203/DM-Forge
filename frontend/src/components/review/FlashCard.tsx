@@ -11,9 +11,15 @@ const FlashCard: React.FC<Props> = ({ card }) => {
   return (
     <div
       onClick={() => setFlipped(!flipped)}
-      className="bg-surface border border-border rounded-lg p-8 text-center cursor-pointer min-h-48 flex items-center justify-center hover:border-primary/50 transition-colors"
+      className="card-interactive p-8 text-center min-h-56 flex flex-col items-center justify-center gap-3"
     >
-      <p className="text-white text-lg">{flipped ? card.back : card.front}</p>
+      <p className="text-muted text-xs uppercase tracking-widest">
+        {flipped ? 'Answer' : 'Question'}
+      </p>
+      <p className="text-white text-lg leading-relaxed">{flipped ? card.back : card.front}</p>
+      {!flipped && (
+        <p className="text-muted/60 text-xs mt-2">click to flip</p>
+      )}
     </div>
   )
 }

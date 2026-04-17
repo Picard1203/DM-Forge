@@ -13,6 +13,25 @@
   }
 }
 
+@layer components {
+  .card-surface {
+    @apply bg-card-surface border border-white/10 rounded-xl shadow-card;
+  }
+
+  .card-interactive {
+    @apply card-surface transition-all duration-200 cursor-pointer;
+  }
+
+  .card-interactive:hover {
+    @apply bg-card-surface-hover border-amber/30 shadow-card-hover;
+    transform: translateY(-2px);
+  }
+
+  .card-complete {
+    @apply shadow-card-complete border-gold/40;
+  }
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-gold;
