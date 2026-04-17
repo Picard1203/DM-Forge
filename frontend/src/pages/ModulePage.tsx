@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Navbar from '@/components/layout/Navbar'
 import TaskCard from '@/components/curriculum/TaskCard'
+import DynamicIcon from '@/components/ui/DynamicIcon'
 import { getModule, getModuleTasks } from '@/api/curriculum'
 import type { Module, Task } from '@/types'
 
@@ -33,9 +34,11 @@ const ModulePage: React.FC = () => {
   const renderHeader = (mod: Module) => (
     <div className="mb-8">
       {mod.icon !== null && (
-        <p className="text-gold text-3xl mb-2">{mod.icon}</p>
+        <div className="mb-3">
+          <DynamicIcon name={mod.icon} size={40} strokeWidth={1.5} className="text-gold" />
+        </div>
       )}
-      <h1 className="text-white text-2xl font-bold">{mod.title}</h1>
+      <h1 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-white">{mod.title}</h1>
       <p className="text-muted mt-2">{mod.description}</p>
       <div className="flex gap-4 mt-3">
         <span className="text-muted text-xs uppercase tracking-wider">
