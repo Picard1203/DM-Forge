@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const XP_THRESHOLDS: number[] = [
   0, 300, 900, 2100, 6500, 14000, 28000, 48000,
@@ -13,6 +13,20 @@ interface Props {
 }
 
 const XPBar: React.FC<Props> = ({ xp, level, title }) => {
+  const prevXpRef = useRef<number>(xp)
+  const [isShimmering, setIsShimmering] = useState(false)
+
+  useEffect(() => {
+    if (xp > prevXpRef.current) {
+      setIsShimmering(true)
+      const timer = setTimeout(() => { setIsShimmering(false) }, 1700)
+      prevXpRef.current = xp
+      return () => { clearTimeout(timer) }
+    }
+    prevXpRef.current = xp
+    return undefined
+  }, [xp])
+
   const currentThreshold = XP_THRESHOLDS[level - 1] ?? 0
   const nextThreshold = XP_THRESHOLDS[level] ?? XP_THRESHOLDS[XP_THRESHOLDS.length - 1]
   const isMaxLevel = level >= XP_THRESHOLDS.length
@@ -22,7 +36,7 @@ const XPBar: React.FC<Props> = ({ xp, level, title }) => {
     : Math.min(100, ((xp - currentThreshold) / (nextThreshold - currentThreshold)) * 100)
 
   return (
-    <div className="bg-surface border border-border rounded-lg p-4">
+    <div className="card-surface p-4">
       <div className="flex items-center justify-between mb-2">
         <div>
           <span className="text-gold font-bold text-lg">Level {level}</span>
@@ -30,11 +44,20 @@ const XPBar: React.FC<Props> = ({ xp, level, title }) => {
         </div>
         <span className="text-white text-sm font-medium">{xp.toLocaleString()} XP</span>
       </div>
-      <div className="w-full bg-bg rounded-full h-2">
+      <div className="w-full bg-bg rounded-full h-2 overflow-hidden relative">
         <div
           className="bg-gold h-2 rounded-full transition-all duration-500"
           style={{ width: `${progressPercent}%` }}
         />
+        {isShimmering && (
+          <div
+            className="absolute inset-0 rounded-full animate-shimmer"
+            style={{
+              background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%)',
+              backgroundSize: '200% 100%',
+            }}
+          />
+        )}
       </div>
       {!isMaxLevel && (
         <p className="text-muted text-xs mt-1">
